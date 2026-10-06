@@ -9,11 +9,11 @@
 
 ## 2. Key Leadership & Secretariat Contacts
 * **President / Key Representative:** Ms. Kaushalya Chamarasinghe
-* **Registered Address:** No. 328, Sri Wickrama Rajasinghe Road, 3rd Kurana, Negombo, Western Province, Sri Lanka
+* **Registered Address:** No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake, Western Province, Sri Lanka
 * **Official Email:** [bvfsrilanka@gmail.com](mailto:bvfsrilanka@gmail.com)
 * **Contact Numbers:**
-  * +94 77 970 5752
-  * +94 77 336 5114
+  * +94 77 730 4152 (0777304152)
+  * +94 77 970 5752 (0779705752)
 
 ---
 

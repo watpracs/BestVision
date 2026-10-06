@@ -352,7 +352,7 @@ BANK CODE : 088
 CURRENT ACCOUNT NUMBER : 0088 6000 0033
 SWIFT CODE : BSAMLKLX
 NGO REG NO : L-184510
-Email: bvfsrilanka@gmail.com | Phone: 0777304152 / +94 77 730 4152
+Email: bvfsrilanka@gmail.com | Phone: +94 77 730 4152 / +94 77 970 5752
 Address: No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake - Sri Lanka`;
 
     const copyText = text && text.trim().length > 0 ? text : officialDetails;
@@ -477,7 +477,7 @@ Address: No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake - Sri Lanka`;
         }
       } catch (err) {
         console.warn('Form transmission notice:', err);
-        showToast('Details recorded. You may also contact us via WhatsApp: +94 77 730 4152');
+        showToast('Details recorded. You may also contact us via WhatsApp: +94 77 730 4152 / +94 77 970 5752');
         form.reset();
         if (form.id === 'volunteerForm') {
           closeModal(volunteerModal);

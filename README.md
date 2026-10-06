@@ -4,9 +4,9 @@
 
 * **Facebook Page:** [facebook.com/profile.php?id=100095383907228](https://www.facebook.com/profile.php?id=100095383907228)
 * **President:** Ms. Kaushalya Chamarasinghe
-* **Registered Address:** No: 328, Sri Wickrama Rajasinghe Road, 3rd Kurana, Negombo, Sri Lanka
+* **Registered Address:** No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake - Sri Lanka
 * **Email:** bvfsrilanka@gmail.com
-* **Contact Numbers:** +94 77 970 5752 / +94 77 336 5114
+* **Contact Numbers:** +94 77 730 4152 / +94 77 970 5752
 
 ---
 
