@@ -7,7 +7,7 @@
   <meta name="description" content="Safeguard Sri Lankan elephants in danger zones and support community development. Explore 20 pending and proposed projects by Best Vision Foundation seeking donations to start early.">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.0">
 
   <!-- Immediate Theme Restore (Prevents Flash) -->
   <script>
@@ -267,63 +267,57 @@
         </div>
       </div>
 
-      <!-- Tab 2: Sampath Bank Wire -->
+      <!-- Tab 2: Sampath Bank Wire (Ultra-compact & futuristic) -->
       <div class="payment-tab-content" id="pageTabBank">
-        <div class="leader-dispatch-card">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem;">
-            <div>
-              <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--emerald-neon); font-weight: 700; display: block;">
-                <i class="fa-solid fa-building-columns"></i> Official Registered NGO Bank Account
-              </span>
-              <h3 style="margin: 0; color: var(--text-white); font-size: 1.5rem;">SAMPATH BANK - SRI LANKA</h3>
+        <div class="digital-bank-card" style="margin-bottom: 0;">
+          <div class="bank-card-header">
+            <div class="bank-brand-title">
+              <i class="fa-solid fa-building-columns bank-brand-icon"></i>
+              <div>
+                <div class="bank-title-text">SAMPATH BANK &bull; NEGOMBO (02)</div>
+                <div class="bank-sub-text">Govt. Reg: L-184510 &bull; Official NGO Account</div>
+              </div>
             </div>
-            <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald-neon); border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.85rem; padding: 0.4rem 0.85rem;">
-              <i class="fa-solid fa-certificate"></i> Govt. Reg: L-184510
-            </span>
+            <span class="bank-chip-tag"><i class="fa-solid fa-shield-halved"></i> AUDITED NGO</span>
           </div>
 
-          <div class="bank-detail-grid">
-            <div class="bank-detail-item">
-              <span class="label">ACCOUNT NAME</span>
-              <span class="value" style="font-size: 1.05rem;">BEST VISION FOUNDATION</span>
+          <div class="bank-account-spotlight">
+            <div class="account-number-block">
+              <span class="account-label">CURRENT ACCOUNT NUMBER</span>
+              <div class="account-digits">0088 6000 0033</div>
             </div>
-            <div class="bank-detail-item">
-              <span class="label">BANK NAME</span>
-              <span class="value" style="font-size: 1.05rem;">SAMPATH BANK</span>
-            </div>
-            <div class="bank-detail-item">
-              <span class="label">BRANCH</span>
-              <span class="value" style="font-size: 1.05rem;">NEGOMBO (02)</span>
-            </div>
-            <div class="bank-detail-item" style="border-left: 3px solid var(--emerald-neon);">
-              <span class="label">CURRENT ACCOUNT NUMBER</span>
-              <span class="value" style="font-size: 1.25rem; color: var(--emerald-neon); letter-spacing: 0.05em;">0088 6000 0033</span>
-              <i class="fa-solid fa-copy bank-copy-icon" onclick="copyAccountInfo('0088 6000 0033', this)" title="Copy Account Number"></i>
-            </div>
-            <div class="bank-detail-item" style="border-left: 3px solid var(--cyan-neon);">
-              <span class="label">SWIFT CODE</span>
-              <span class="value" style="font-size: 1.15rem; color: var(--cyan-neon);">BSAMLKLX</span>
-              <i class="fa-solid fa-copy bank-copy-icon" onclick="copyAccountInfo('BSAMLKLX', this)" title="Copy SWIFT Code"></i>
-            </div>
-            <div class="bank-detail-item">
-              <span class="label">BRANCH CODE / BANK CODE</span>
-              <span class="value" style="font-size: 1.05rem;">7278 / 088</span>
-            </div>
-          </div>
-
-          <div style="background: var(--bg-deep); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.75rem;">
-            <i class="fa-solid fa-circle-check" style="color: var(--emerald-neon); font-size: 1.25rem;"></i>
-            <span>All bank transfers are transparently audited under Sri Lanka National NGO Secretariat regulations.</span>
-          </div>
-
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button onclick="copyAccountInfo('', this)" class="btn btn-glass" style="font-size: 0.95rem; padding: 0.75rem 1.5rem;">
-              <i class="fa-solid fa-copy"></i> Copy All Bank Info
+            <button type="button" class="btn-copy-account" onclick="copyAccountInfo('0088 6000 0033', this)" title="Copy Account Number">
+              <i class="fa-solid fa-copy"></i> <span>Copy No.</span>
             </button>
-            <button onclick="sendDepositSlipWhatsApp()" class="btn btn-neon-glow" style="font-size: 0.95rem; padding: 0.75rem 1.5rem; background: #25d366; border-color: #25d366; color: #ffffff;">
-              <i class="fa-brands fa-whatsapp"></i> Send Slip via WhatsApp (+94 77 730 4152 / +94 77 970 5752)
+          </div>
+
+          <div class="bank-meta-mini-grid">
+            <div class="meta-item">
+              <span class="meta-label">Beneficiary</span>
+              <span class="meta-val">BEST VISION FOUNDATION</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">SWIFT Code</span>
+              <span class="meta-val font-mono" style="color: var(--cyan-neon);">BSAMLKLX</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Branch Code</span>
+              <span class="meta-val font-mono">7278</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Bank Code</span>
+              <span class="meta-val font-mono">088</span>
+            </div>
+          </div>
+
+          <div class="bank-action-row">
+            <button onclick="copyAccountInfo('', this)" class="btn btn-glass">
+              <i class="fa-solid fa-copy"></i> Copy All Info
             </button>
-            <a href="mailto:bvfsrilanka@gmail.com?subject=Bank%20Transfer%20Slip%20Notification%20-%20Best%20Vision%20Foundation" class="btn btn-glass" style="font-size: 0.95rem; padding: 0.75rem 1.5rem;">
+            <button onclick="sendDepositSlipWhatsApp()" class="btn btn-glass" style="color: #25d366; border-color: rgba(37, 211, 102, 0.4);">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Slip (+94 77 730 4152 / +94 77 970 5752)
+            </button>
+            <a href="mailto:bvfsrilanka@gmail.com?subject=Bank%20Transfer%20Slip%20Notification%20-%20Best%20Vision%20Foundation" class="btn btn-glass">
               <i class="fa-solid fa-envelope"></i> Email Deposit Slip
             </a>
           </div>

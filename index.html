@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Main Futuristic Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.0">
 
   <!-- Immediate Theme Restore (Prevents Flash) -->
   <script>
@@ -389,42 +389,56 @@
           </div>
         </div>
 
-        <!-- Official Bank Account Data with Instant Copy -->
-        <div style="background: var(--bg-deep); border: 1px solid var(--border-neon); border-radius: var(--radius-md); padding: 1.75rem; margin-bottom: 2rem;">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem;">
-            <div style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: var(--text-white);">
-              <i class="fa-solid fa-building-columns" style="color: var(--emerald-neon);"></i> SAMPATH BANK &bull; Official NGO Account
+        <!-- Ultra-Compact Digital Bank Card Widget -->
+        <div class="digital-bank-card">
+          <div class="bank-card-header">
+            <div class="bank-brand-title">
+              <i class="fa-solid fa-building-columns bank-brand-icon"></i>
+              <div>
+                <div class="bank-title-text">SAMPATH BANK &bull; NEGOMBO (02)</div>
+                <div class="bank-sub-text">Govt. Reg: L-184510 &bull; Official NGO Account</div>
+              </div>
             </div>
-            <span class="section-badge" style="margin: 0;">Govt. Reg: L-184510</span>
+            <span class="bank-chip-tag"><i class="fa-solid fa-shield-halved"></i> AUDITED NGO</span>
           </div>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; font-size: 0.92rem; margin-bottom: 1.25rem;">
-            <div style="background: var(--bg-card); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-subtle);">
-              <span style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; display: block;">ACCOUNT NAME:</span>
-              <strong style="color: var(--text-white);">BEST VISION FOUNDATION</strong>
+          <div class="bank-account-spotlight">
+            <div class="account-number-block">
+              <span class="account-label">CURRENT ACCOUNT NUMBER</span>
+              <div class="account-digits">0088 6000 0033</div>
             </div>
-            <div style="background: var(--bg-card); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-subtle); border-left: 3px solid var(--emerald-neon);">
-              <span style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; display: block;">ACCOUNT NUMBER:</span>
-              <strong style="color: var(--emerald-neon); font-family: var(--font-mono); font-size: 1.05rem;">0088 6000 0033</strong>
+            <button type="button" class="btn-copy-account" onclick="copyAccountInfo('0088 6000 0033', this)" title="Copy Account Number">
+              <i class="fa-solid fa-copy"></i> <span>Copy No.</span>
+            </button>
+          </div>
+
+          <div class="bank-meta-mini-grid">
+            <div class="meta-item">
+              <span class="meta-label">Beneficiary</span>
+              <span class="meta-val">BEST VISION FOUNDATION</span>
             </div>
-            <div style="background: var(--bg-card); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-subtle);">
-              <span style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; display: block;">BANK &amp; BRANCH:</span>
-              <strong style="color: var(--text-white);">SAMPATH BANK &bull; NEGOMBO (02)</strong>
+            <div class="meta-item">
+              <span class="meta-label">SWIFT Code</span>
+              <span class="meta-val font-mono" style="color: var(--cyan-neon);">BSAMLKLX</span>
             </div>
-            <div style="background: var(--bg-card); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-subtle); border-left: 3px solid var(--cyan-neon);">
-              <span style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; display: block;">SWIFT CODE &amp; CODES:</span>
-              <strong style="color: var(--cyan-neon); font-family: var(--font-mono);">BSAMLKLX (Branch: 7278 | Bank: 088)</strong>
+            <div class="meta-item">
+              <span class="meta-label">Branch Code</span>
+              <span class="meta-val font-mono">7278</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Bank Code</span>
+              <span class="meta-val font-mono">088</span>
             </div>
           </div>
 
-          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <button onclick="copyAccountInfo('', this)" class="btn btn-glass" style="font-size: 0.85rem; padding: 0.6rem 1.25rem;">
-              <i class="fa-solid fa-copy"></i> Copy All Bank Info
+          <div class="bank-action-row">
+            <button onclick="copyAccountInfo('', this)" class="btn btn-glass">
+              <i class="fa-solid fa-copy"></i> Copy All Info
             </button>
-            <button onclick="sendDepositSlipWhatsApp()" class="btn btn-glass" style="font-size: 0.85rem; padding: 0.6rem 1.25rem; color: #25d366; border-color: rgba(37, 211, 102, 0.4);">
-              <i class="fa-brands fa-whatsapp"></i> Send Slip via WhatsApp
+            <button onclick="sendDepositSlipWhatsApp()" class="btn btn-glass" style="color: #25d366; border-color: rgba(37, 211, 102, 0.4);">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Slip
             </button>
-            <button class="btn btn-neon-glow btn-open-donation" style="font-size: 0.85rem; padding: 0.6rem 1.25rem;">
+            <button class="btn btn-neon-glow btn-open-donation">
               <i class="fa-brands fa-paypal"></i> Donate via PayPal / Card
             </button>
           </div>
@@ -496,7 +510,7 @@
       <div class="leader-dispatch-card">
         <div class="leader-dispatch-grid">
           <div style="text-align: center;">
-            <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem auto; border-radius: 50%; box-shadow: 0 0 25px rgba(16, 185, 129, 0.4); border: 2px solid var(--emerald-neon); overflow: hidden; background: #ffffff;">
+            <div class="leader-avatar-wrap">
               <img src="assets/images/bvf-logo-upgraded.png" alt="Best Vision Foundation Emblem" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
             <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-bottom: 0.25rem;">Ms. Kaushalya Chamarasinghe</h3>
@@ -531,7 +545,7 @@
   <!-- "Stay With Us" Community Gateway -->
   <section class="section" style="padding-top: 0;">
     <div class="container">
-      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; flex-wrap: wrap; box-shadow: var(--shadow-card);">
+      <div class="community-gateway-card">
         <div style="display: flex; align-items: center; gap: 1.75rem;">
           <div style="width: 72px; height: 72px; border-radius: 50%; background: #1877f2; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; flex-shrink: 0; box-shadow: 0 0 20px rgba(24, 119, 242, 0.4);">
             <i class="fa-brands fa-facebook-f"></i>
