@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="50%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="40%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="mangroveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#15803d"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="800" height="500" fill="url(#skyGrad)"/>
+  
+  <!-- Sun -->
+  <circle cx="680" cy="110" r="50" fill="#fde047" opacity="0.8"/>
+  <circle cx="680" cy="110" r="65" fill="#fef08a" opacity="0.3"/>
+
+  <!-- Distant Mangrove Islands -->
+  <path d="M 0 300 Q 120 270 240 295 T 500 280 T 800 300 L 800 500 L 0 500 Z" fill="#166534" opacity="0.6"/>
+  <path d="M 0 320 Q 180 290 380 315 T 750 305 L 800 320 L 800 500 L 0 500 Z" fill="url(#mangroveGrad)"/>
+
+  <!-- Water Surface -->
+  <path d="M 0 340 C 200 330 400 350 800 340 L 800 500 L 0 500 Z" fill="url(#waterGrad)"/>
+  
+  <!-- Water Waves / Reflections -->
+  <ellipse cx="280" cy="380" rx="120" ry="6" fill="#7dd3fc" opacity="0.5"/>
+  <ellipse cx="580" cy="420" rx="150" ry="8" fill="#7dd3fc" opacity="0.6"/>
+  <ellipse cx="200" cy="450" rx="100" ry="5" fill="#38bdf8" opacity="0.4"/>
+
+  <!-- Traditional Sri Lankan Canoe / Oruwa -->
+  <g transform="translate(180, 290)">
+    <!-- Hull -->
+    <path d="M 0 55 Q 60 75 160 55 Q 180 50 190 42 Q 130 52 20 42 Z" fill="#78350f"/>
+    <!-- Outrigger arm -->
+    <path d="M 40 45 L 80 85 M 120 45 L 160 85" stroke="#92400e" stroke-width="4" stroke-linecap="round"/>
+    <!-- Float Log -->
+    <path d="M 60 85 Q 120 90 180 85" stroke="#b45309" stroke-width="6" stroke-linecap="round"/>
+    <!-- Fisherman / Volunteer with net/paddle -->
+    <circle cx="95" cy="25" r="10" fill="#fed7aa"/>
+    <path d="M 95 35 L 95 55 M 85 45 L 115 48" stroke="#047857" stroke-width="5" stroke-linecap="round"/>
+    <!-- Paddle -->
+    <line x1="75" y1="20" x2="65" y2="75" stroke="#451a03" stroke-width="3"/>
+  </g>
+
+  <!-- Mangrove Trees in Foreground -->
+  <g transform="translate(480, 240)">
+    <!-- Root cluster -->
+    <path d="M 120 120 Q 90 170 70 200 M 130 120 Q 140 160 160 200 M 125 120 Q 110 165 110 200" stroke="#713f12" stroke-width="6" fill="none"/>
+    <!-- Foliage Canopy -->
+    <circle cx="120" cy="110" r="55" fill="#15803d"/>
+    <circle cx="160" cy="95" r="45" fill="#16a34a"/>
+    <circle cx="85" cy="100" r="40" fill="#22c55e"/>
+    <circle cx="125" cy="70" r="45" fill="#15803d"/>
+  </g>
+
+  <!-- Flying Egrets / Birds -->
+  <g stroke="#0369a1" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M 120 140 Q 130 130 140 140 Q 150 130 160 140"/>
+    <path d="M 155 160 Q 163 152 171 160 Q 179 152 187 160"/>
+    <path d="M 200 130 Q 212 118 224 130 Q 236 118 248 130"/>
+  </g>
+
+  <!-- Clean Water Badge Overlay -->
+  <g transform="translate(50, 40)">
+    <rect width="260" height="48" rx="24" fill="#ffffff" fill-opacity="0.9" stroke="#0284c7" stroke-width="1.5"/>
+    <circle cx="28" cy="24" r="14" fill="#0284c7"/>
+    <path d="M 28 16 Q 34 24 28 30 Q 22 24 28 16 Z" fill="#ffffff"/>
+    <text x="52" y="29" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#0369a1">Negombo Lagoon Action</text>
+  </g>
+</svg>
