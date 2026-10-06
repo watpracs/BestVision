@@ -186,7 +186,8 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Live Impact Heads-Up Display (HUD) -->
   <section class="hud-section">
@@ -491,8 +492,8 @@
   <!-- Holographic Spotlight: President's Message -->
   <section class="section" style="padding-top: 0;">
     <div class="container">
-      <div style="background: var(--bg-card); border: 1px solid var(--border-neon); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-lg);">
-        <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3rem; align-items: center;">
+      <div class="leader-dispatch-card">
+        <div class="leader-dispatch-grid">
           <div style="text-align: center;">
             <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem auto; border-radius: 50%; box-shadow: 0 0 25px rgba(16, 185, 129, 0.4); border: 2px solid var(--emerald-neon); overflow: hidden; background: #ffffff;">
               <img src="assets/images/bvf-logo-upgraded.png" alt="Best Vision Foundation Emblem" style="width: 100%; height: 100%; object-fit: contain;">
@@ -512,7 +513,7 @@
             <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
               Based in Kurana, Katunayake, the Best Vision Foundation is committed to fearless grassroots defense. Every action we take is backed by registered NGO accountability, active volunteer mobilizations, and transparent community trust.
             </p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div class="cta-btn-group">
               <a href="about.html" class="btn btn-cyan-glow" style="font-size: 0.88rem;">
                 Read Full Story &amp; Mandate <i class="fa-solid fa-arrow-right"></i>
               </a>
@@ -593,7 +594,7 @@
       <!-- TAB 1: Instant Gateway & PayPal -->
       <div class="payment-tab-content active" id="modalTabGateway">
         <label class="form-label" style="margin-bottom: 0.5rem;">Select Contribution Tier (USD):</label>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1rem;">
+        <div class="donation-presets-row">
           <button type="button" class="btn btn-glass donation-preset-btn" onclick="selectDonationAmount('25', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700;">$25</button>
           <button type="button" class="btn btn-glass donation-preset-btn active" onclick="selectDonationAmount('50', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700; border-color: var(--emerald-neon); color: var(--emerald-neon);">$50</button>
           <button type="button" class="btn btn-glass donation-preset-btn" onclick="selectDonationAmount('100', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700;">$100</button>

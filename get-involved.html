@@ -106,7 +106,7 @@
         <p class="section-desc">Choose the role that fits your passion, skills, and availability.</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.75rem; margin-bottom: 4rem;">
+      <div class="ways-to-help-grid" style="margin-bottom: 4rem;">
         <!-- Pathway 1 -->
         <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-card); text-align: center;">
           <div style="width: 58px; height: 58px; border-radius: 14px; background: var(--emerald-soft); color: var(--emerald-neon); font-size: 1.5rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem auto;">
@@ -323,7 +323,7 @@
       <!-- TAB 1: Instant Gateway & PayPal -->
       <div class="payment-tab-content active" id="modalTabGateway">
         <label class="form-label" style="margin-bottom: 0.5rem;">Select Contribution Tier (USD):</label>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1rem;">
+        <div class="donation-presets-row">
           <button type="button" class="btn btn-glass donation-preset-btn" onclick="selectDonationAmount('25', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700;">$25</button>
           <button type="button" class="btn btn-glass donation-preset-btn active" onclick="selectDonationAmount('50', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700; border-color: var(--emerald-neon); color: var(--emerald-neon);">$50</button>
           <button type="button" class="btn btn-glass donation-preset-btn" onclick="selectDonationAmount('100', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700;">$100</button>

@@ -85,7 +85,7 @@
   <!-- Hero Banner: Urgent Elephant & Pending Projects Campaign -->
   <section style="background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(16, 185, 129, 0.08) 50%, var(--cyan-soft) 100%); border-bottom: 1px solid var(--border-subtle); padding: 4.5rem 0 3.5rem;">
     <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: center;">
+      <div class="pending-hero-grid">
         
         <!-- Left: Compelling Appeal Text -->
         <div>
@@ -115,7 +115,7 @@
           </div>
 
           <!-- Quick Action Buttons -->
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+          <div class="cta-btn-group" style="margin-bottom: 1.5rem;">
             <button class="btn btn-neon-glow btn-open-donation" style="padding: 0.85rem 1.75rem; font-size: 1rem;">
               <i class="fa-solid fa-hand-holding-dollar"></i> Donate to Start Projects Early
             </button>
@@ -128,7 +128,7 @@
           </div>
 
           <!-- Micro Highlights -->
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; text-align: center;">
+          <div class="hero-stats-row">
             <div style="background: var(--bg-deep); padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-subtle);">
               <span style="font-family: var(--font-mono); font-size: 1.4rem; font-weight: 800; color: #ef4444; display: block;">350-400</span>
               <span style="font-size: 0.75rem; color: var(--text-muted);">Calves &amp; Mothers at Risk Annually</span>
@@ -189,11 +189,11 @@
 
       <!-- Tab 1: Card & PayPal Gateway -->
       <div class="payment-tab-content active" id="pageTabGateway">
-        <div style="background: var(--bg-card); border: 1px solid var(--border-neon); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-card);">
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; align-items: center;">
+        <div class="leader-dispatch-card">
+          <div class="payment-dual-grid">
             
             <!-- PayPal Quick Checkout -->
-            <div style="text-align: center; border-right: 1px solid var(--border-subtle); padding-right: 1.5rem;">
+            <div style="text-align: center; padding: 0 0.5rem;">
               <span class="section-badge" style="margin-bottom: 1rem;"><i class="fa-brands fa-paypal"></i> Instant Online Portal</span>
               <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--text-white); margin-bottom: 0.75rem;">
                 Donate via PayPal
@@ -203,7 +203,7 @@
               </p>
 
               <!-- Amount Presets -->
-              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1rem;">
+              <div class="donation-presets-row">
                 <button type="button" class="btn btn-glass donation-preset-btn" onclick="selectDonationAmount('25', this)">$25</button>
                 <button type="button" class="btn btn-glass donation-preset-btn active" onclick="selectDonationAmount('50', this)" style="border-color: var(--emerald-neon); color: var(--emerald-neon);">$50</button>
                 <button type="button" class="btn btn-glass donation-preset-btn" onclick="selectDonationAmount('100', this)">$100</button>
@@ -268,7 +268,7 @@
 
       <!-- Tab 2: Sampath Bank Wire -->
       <div class="payment-tab-content" id="pageTabBank">
-        <div style="background: var(--bg-card); border: 1px solid var(--border-neon); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-card);">
+        <div class="leader-dispatch-card">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem;">
             <div>
               <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--emerald-neon); font-weight: 700; display: block;">
@@ -281,7 +281,7 @@
             </span>
           </div>
 
-          <div class="bank-detail-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+          <div class="bank-detail-grid">
             <div class="bank-detail-item">
               <span class="label">ACCOUNT NAME</span>
               <span class="value" style="font-size: 1.05rem;">BEST VISION FOUNDATION</span>
@@ -776,8 +776,8 @@
   <!-- Official Contact & Transparency Section -->
   <section class="section" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 4rem 0;">
     <div class="container">
-      <div style="background: var(--bg-card); border: 1px solid var(--border-neon); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-lg);">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; align-items: center;">
+      <div class="leader-dispatch-card">
+        <div class="payment-dual-grid">
           
           <div>
             <span class="section-badge"><i class="fa-solid fa-id-card"></i> Direct Line to Leadership</span>
@@ -788,7 +788,7 @@
               We welcome corporate CSR partnerships, international philanthropic trusts, and individual benefactors. Reach out directly to receive project concept notes, bill of quantities (BOQ), and progress timelines.
             </p>
 
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div class="cta-btn-group">
               <a href="tel:+94777304152" class="btn btn-neon-glow" style="padding: 0.75rem 1.5rem;">
                 <i class="fa-solid fa-phone"></i> Call: 0777304152
               </a>
@@ -895,7 +895,7 @@
       <!-- TAB 1: Instant Gateway & PayPal -->
       <div class="payment-tab-content active" id="modalTabGateway">
         <label class="form-label" style="margin-bottom: 0.5rem;">Select Contribution Tier (USD):</label>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1rem;">
+        <div class="donation-presets-row">
           <button type="button" class="btn btn-glass donation-preset-btn" onclick="selectDonationAmount('25', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700;">$25</button>
           <button type="button" class="btn btn-glass donation-preset-btn active" onclick="selectDonationAmount('50', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700; border-color: var(--emerald-neon); color: var(--emerald-neon);">$50</button>
           <button type="button" class="btn btn-glass donation-preset-btn" onclick="selectDonationAmount('100', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700;">$100</button>
