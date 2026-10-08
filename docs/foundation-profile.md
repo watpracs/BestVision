@@ -9,7 +9,7 @@
 
 ## 2. Key Leadership & Secretariat Contacts
 * **Founder & President:** Ms. Kaushalya Chamarasinghe
-* **Vice President:** S.A.D.R.S. Shenal Samarasinghe
+* **Vice President:** S.A.D.R.S. Shenol Samarasinghe
 * **Secretary:** T. Anusha L. Peiris
 * **Treasurer:** D.W.M. Perera
 * **Director - Welfare:** Nishantha Fernando

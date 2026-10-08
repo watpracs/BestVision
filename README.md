@@ -4,7 +4,7 @@
 
 * **Facebook Page:** [facebook.com/profile.php?id=100095383907228](https://www.facebook.com/profile.php?id=100095383907228)
 * **Founder & President:** Ms. Kaushalya Chamarasinghe
-* **Vice President:** S.A.D.R.S. Shenal Samarasinghe
+* **Vice President:** S.A.D.R.S. Shenol Samarasinghe
 * **Secretary:** T. Anusha L. Peiris
 * **Treasurer:** D.W.M. Perera
 * **Director - Welfare:** Nishantha Fernando
