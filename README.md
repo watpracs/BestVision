@@ -3,7 +3,12 @@
 **Best Vision Foundation** is a legally registered non-governmental organization (NGO) under the NGO Secretariat of Sri Lanka (Registration No: **L-184510**), headquarted in Negombo.
 
 * **Facebook Page:** [facebook.com/profile.php?id=100095383907228](https://www.facebook.com/profile.php?id=100095383907228)
-* **President:** Ms. Kaushalya Chamarasinghe
+* **Founder & President:** Ms. Kaushalya Chamarasinghe
+* **Vice President:** S.A.D.R.S. Shenal Samarasinghe
+* **Secretary:** T. Anusha L. Peiris
+* **Treasurer:** D.W.M. Perera
+* **Director - Welfare:** Nishantha Fernando
+* **Project Coordinator:** Thisari Perera
 * **Registered Address:** No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake - Sri Lanka
 * **Email:** bvfsrilanka@gmail.com
 * **Contact Numbers:** +94 77 730 4152 / +94 77 970 5752

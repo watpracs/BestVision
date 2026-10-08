@@ -8,7 +8,12 @@
 * **Official Facebook Page:** [Best Vision Foundation](https://www.facebook.com/profile.php?id=100095383907228)
 
 ## 2. Key Leadership & Secretariat Contacts
-* **President / Key Representative:** Ms. Kaushalya Chamarasinghe
+* **Founder & President:** Ms. Kaushalya Chamarasinghe
+* **Vice President:** S.A.D.R.S. Shenal Samarasinghe
+* **Secretary:** T. Anusha L. Peiris
+* **Treasurer:** D.W.M. Perera
+* **Director - Welfare:** Nishantha Fernando
+* **Project Coordinator:** Thisari Perera
 * **Registered Address:** No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake, Western Province, Sri Lanka
 * **Official Email:** [bvfsrilanka@gmail.com](mailto:bvfsrilanka@gmail.com)
 * **Contact Numbers:**

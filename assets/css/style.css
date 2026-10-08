@@ -1779,6 +1779,90 @@ textarea.form-control {
   background: #ffffff;
 }
 
+/* Executive Leadership & Board Grid */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.leader-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.85rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.leader-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-neon);
+  box-shadow: 0 16px 36px rgba(5, 41, 29, 0.12), var(--glow-emerald);
+}
+
+.leader-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1.15rem;
+}
+
+.leader-card-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--emerald-soft);
+  border: 1.5px solid var(--border-neon);
+  color: var(--emerald-neon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px var(--emerald-glow);
+}
+
+.leader-card-info h4 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-white);
+  margin-bottom: 0.25rem;
+  line-height: 1.25;
+}
+
+.leader-card-role {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--emerald-neon);
+  font-family: var(--font-mono);
+}
+
+.leader-card-bio {
+  font-size: 0.92rem;
+  color: var(--text-slate);
+  line-height: 1.65;
+  flex-grow: 1;
+}
+
+.leader-card-bio p {
+  margin-bottom: 0.75rem;
+}
+
+.leader-card-bio p:last-child {
+  margin-bottom: 0;
+}
+
 /* Bank Account Wire Box (Legacy fallback) */
 .bank-wire-box {
   background: var(--bg-deep);
@@ -2626,6 +2710,36 @@ textarea.form-control {
 
   .leader-dispatch-grid p {
     font-size: 0.95rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .leadership-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .leader-card {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .leader-card-header {
+    margin-bottom: 0.85rem !important;
+    padding-bottom: 0.75rem !important;
+    gap: 0.85rem !important;
+  }
+
+  .leader-card-icon {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.15rem !important;
+  }
+
+  .leader-card-info h4 {
+    font-size: 1.05rem !important;
+  }
+
+  .leader-card-bio {
+    font-size: 0.85rem !important;
     line-height: 1.55 !important;
   }
 
