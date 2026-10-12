@@ -348,6 +348,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  window.openDogRescuePoster = () => {
+    const modal = document.getElementById('dogRescuePosterModal');
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
   window.closeBvfModal = (modalId) => {
     const modal = document.getElementById(modalId);
     if (modal) {

@@ -3420,3 +3420,232 @@ textarea.form-control {
   }
 }
 
+/* ==========================================================
+   URGENT APPEAL: STRAY DOG RESCUE PROJECT IN SRI LANKA
+   ========================================================== */
+
+.dog-rescue-section {
+  padding: 3.5rem 0;
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.04) 0%, rgba(16, 185, 129, 0.06) 100%);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dog-rescue-banner {
+  background: var(--bg-card);
+  border: 2px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(245, 158, 11, 0.12);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 0;
+}
+
+.dog-poster-pane {
+  background: #08110e;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  cursor: pointer;
+}
+
+.dog-poster-pane img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  transition: transform 0.4s ease;
+}
+
+.dog-poster-pane:hover img {
+  transform: scale(1.02);
+}
+
+.dog-poster-hint {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(6, 54, 40, 0.88);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  pointer-events: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.dog-content-pane {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dog-appeal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #b45309;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.dog-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  color: var(--text-heading);
+  line-height: 1.25;
+  font-weight: 800;
+  margin-bottom: 0.65rem;
+}
+
+.dog-subtitle {
+  color: var(--emerald-neon);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+}
+
+/* Before & After Comparison Strip */
+.before-after-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.ba-card {
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+}
+
+.ba-card.ba-before {
+  background: rgba(220, 38, 38, 0.06);
+  border-left: 3px solid #dc2626;
+}
+
+.ba-card.ba-after {
+  background: rgba(16, 185, 129, 0.07);
+  border-left: 3px solid var(--emerald-neon);
+}
+
+.ba-heading {
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ba-before .ba-heading { color: #dc2626; }
+.ba-after .ba-heading { color: var(--emerald-vibrant); }
+
+.ba-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.ba-tag {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.ba-before .ba-tag { color: #991b1b; }
+.ba-after .ba-tag { color: var(--forest-dark); }
+
+/* 3 Pillars of Dog Rescue */
+.dog-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.dog-pillar-card {
+  background: var(--bg-subtle-green);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  text-align: center;
+}
+
+.dog-pillar-icon {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.pillar-icon-medical { background: rgba(220, 38, 38, 0.12); color: #dc2626; }
+.pillar-icon-vaccine { background: rgba(2, 132, 199, 0.12); color: var(--cyan-neon); }
+.pillar-icon-shelter { background: rgba(16, 185, 129, 0.15); color: var(--emerald-vibrant); }
+
+.dog-pillar-card h5 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--forest-deep);
+  margin-bottom: 0.25rem;
+}
+
+.dog-pillar-card p {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .dog-rescue-banner {
+    grid-template-columns: 1fr;
+  }
+  .dog-poster-pane {
+    max-height: 380px;
+    padding: 1rem;
+  }
+  .dog-content-pane {
+    padding: 1.5rem;
+  }
+  .dog-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .before-after-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+

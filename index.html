@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Main Futuristic Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3.4">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.5">
 
   <!-- Immediate Theme Restore (Prevents Flash) -->
   <script>
@@ -534,6 +534,103 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- 🐶 URGENT APPEAL: STRAY DOG RESCUE PROJECT IN SRI LANKA -->
+  <section class="dog-rescue-section" id="stray-dogs">
+    <div class="container">
+      <div class="dog-rescue-banner">
+        
+        <!-- Left: Official Campaign Poster Preview with Click to Zoom -->
+        <div class="dog-poster-pane" onclick="openDogRescuePoster()" title="Click to view full appeal poster">
+          <img src="assets/images/stray-dog-rescue-appeal.jpg" alt="Urgent Appeal - Stray Dog Rescue Project in Sri Lanka">
+          <div class="dog-poster-hint">
+            <i class="fa-solid fa-magnifying-glass-plus"></i> Tap to View Full Poster
+          </div>
+        </div>
+
+        <!-- Right: Urgent Crisis & Action Information -->
+        <div class="dog-content-pane">
+          <div>
+            <div class="dog-appeal-badge">
+              <i class="fa-solid fa-triangle-exclamation"></i> 🐶 Urgent Animal Welfare Appeal
+            </div>
+            <h2 class="dog-title">
+              Stray Dog Rescue Project in Sri Lanka
+            </h2>
+            <div class="dog-subtitle">
+              <i class="fa-solid fa-heart-pulse"></i> Help Us Rescue &bull; Heal &bull; Protect Stray Dogs
+            </div>
+
+            <p style="font-size: 0.92rem; color: var(--text-slate); line-height: 1.65; margin-bottom: 1.25rem;">
+              <strong>Hundreds of stray dogs in towns and surrounding areas are suffering</strong> from dangerous diseases, severe skin infections, starvation, and crippling parasites &mdash; lice, ticks, and fleas. Many are severely injured by vehicle accidents and struggling in the rain without shelter. Best Vision Foundation is delivering rapid veterinary rescue and compassionate care across the island.
+            </p>
+
+            <!-- Before vs. After Crisis Strip -->
+            <div class="before-after-strip">
+              <div class="ba-card ba-before">
+                <div class="ba-heading"><i class="fa-solid fa-cloud-showers-heavy"></i> The Crisis Before</div>
+                <div class="ba-tags">
+                  <span class="ba-tag">Abandoned</span>
+                  <span class="ba-tag">Injured</span>
+                  <span class="ba-tag">Suffering in Rain</span>
+                  <span class="ba-tag">Tick &amp; Flea Infestations</span>
+                </div>
+              </div>
+              <div class="ba-card ba-after">
+                <div class="ba-heading"><i class="fa-solid fa-shield-dog"></i> Our Response After</div>
+                <div class="ba-tags">
+                  <span class="ba-tag">Rescued</span>
+                  <span class="ba-tag">Treated &amp; Healed</span>
+                  <span class="ba-tag">Loved &amp; Cared For</span>
+                  <span class="ba-tag">Safe Shelter</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3 Pillars of Action -->
+            <div class="dog-pillars-grid">
+              <div class="dog-pillar-card">
+                <div class="dog-pillar-icon pillar-icon-medical"><i class="fa-solid fa-stethoscope"></i></div>
+                <h5>Emergency Medical Care</h5>
+                <p>Injured dog trauma treatment, surgical antiseptic dressing, and pain relief.</p>
+              </div>
+              <div class="dog-pillar-card">
+                <div class="dog-pillar-icon pillar-icon-vaccine"><i class="fa-solid fa-syringe"></i></div>
+                <h5>Vaccination &amp; De-worming</h5>
+                <p>Rabies vaccines, internal de-worming, and tick/flea parasite treatments.</p>
+              </div>
+              <div class="dog-pillar-card">
+                <div class="dog-pillar-icon pillar-icon-shelter"><i class="fa-solid fa-house-chimney-medical"></i></div>
+                <h5>Safe Shelter &amp; Rehabilitation</h5>
+                <p>Clean dry bedding, nutritious daily food, foster rehabilitation, and care.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div>
+            <div style="background: rgba(16, 185, 129, 0.08); border: 1px dashed var(--border-neon); border-radius: var(--radius-sm); padding: 0.65rem 0.9rem; margin-bottom: 1.25rem; font-size: 0.8rem; color: var(--text-slate); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+              <span><i class="fa-solid fa-certificate" style="color: var(--emerald-neon);"></i> <strong>100% of donations</strong> go directly to animal rescue, medical treatment &amp; food.</span>
+              <span style="font-family: var(--font-mono); font-weight: 700; color: var(--forest-deep);">BVF Reg: L-184510</span>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <button type="button" class="btn btn-neon-glow btn-open-donation" style="flex: 1.3; padding: 0.85rem 1.25rem; font-size: 0.95rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+                <i class="fa-solid fa-heart"></i> Donate Now &mdash; Save a Stray Dog
+              </button>
+              <button type="button" onclick="openDogRescuePoster()" class="btn btn-glass" style="flex: 1; padding: 0.85rem 1rem; font-size: 0.9rem;">
+                <i class="fa-solid fa-file-image"></i> View Campaign Poster
+              </button>
+              <a href="https://wa.me/94779705752?text=Hello%20Best%20Vision%20Foundation%2C%20I%20would%20like%20to%20support%20the%20Stray%20Dog%20Rescue%20Project%20in%20Sri%20Lanka." target="_blank" rel="noopener noreferrer" class="btn btn-glass" style="color: #25d366; border-color: rgba(37, 211, 102, 0.4); padding: 0.85rem 1.1rem; font-size: 0.9rem;">
+                <i class="fa-brands fa-whatsapp"></i> Chat (+94 77 970 5752)
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -1143,6 +1240,37 @@
     </div>
   </div>
 
+  <!-- Stray Dog Rescue Poster Lightbox Modal -->
+  <div class="modal-overlay" id="dogRescuePosterModal">
+    <div class="modal-dialog" style="max-width: 680px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('dogRescuePosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="dog-appeal-badge">
+          <i class="fa-solid fa-dog"></i> Official Animal Welfare Appeal
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--text-white); margin-top: 0.35rem;">
+          Urgent Appeal: Stray Dog Rescue Project in Sri Lanka
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">
+          Help us rescue, heal, and shelter suffering stray dogs across towns and rural areas.
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/stray-dog-rescue-appeal.jpg" alt="Urgent Appeal - Stray Dog Rescue Project Official Poster" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
+        <button type="button" class="btn btn-neon-glow btn-open-donation" onclick="closeBvfModal('dogRescuePosterModal');" style="flex: 1; min-width: 200px; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+          <i class="fa-solid fa-hand-holding-dollar"></i> Donate to Stray Dog Rescue
+        </button>
+        <a href="assets/images/stray-dog-rescue-appeal.jpg" download="BVF-Stray-Dog-Rescue-Appeal.jpg" class="btn btn-glass" style="flex: 1; min-width: 200px;">
+          <i class="fa-solid fa-download"></i> Download Campaign Poster
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- Futuristic Footer -->
   <footer class="site-footer">
     <div class="container">
@@ -1233,6 +1361,6 @@
   </footer>
 
   <!-- Main JavaScript Engine -->
-  <script src="assets/js/main.js?v=3.4"></script>
+  <script src="assets/js/main.js?v=3.5"></script>
 </body>
 </html>

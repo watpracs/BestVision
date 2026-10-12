@@ -7,7 +7,7 @@
   <meta name="description" content="Safeguard Sri Lankan elephants in danger zones and support community development. Explore 20 pending and proposed projects by Best Vision Foundation seeking donations to start early.">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=3.4">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.5">
 
   <!-- Immediate Theme Restore (Prevents Flash) -->
   <script>
@@ -808,22 +808,32 @@
         </div>
 
         <!-- Project 14 -->
-        <div class="pending-card" data-category="wildlife">
+        <div class="pending-card" data-category="wildlife" style="border: 2px solid rgba(245, 158, 11, 0.4); background: linear-gradient(180deg, #ffffff 0%, rgba(245, 158, 11, 0.04) 100%);">
           <div class="pending-card-num">
-            <span>#14</span>
-            <span class="pending-card-badge badge-proposed">New Proposed</span>
+            <span style="color: #b45309; font-weight: 900;">#14</span>
+            <span class="pending-card-badge badge-urgent" style="background: rgba(245, 158, 11, 0.2); color: #b45309; font-weight: 800;">🐶 Urgent Appeal</span>
           </div>
-          <h3 class="pending-card-title">Stray Animal Sterilization &amp; Rabies Vaccination Program</h3>
+          <h3 class="pending-card-title">Urgent Appeal: Stray Dog Rescue, Treatment &amp; Shelter Project</h3>
           <p class="pending-card-desc">
-            Mobile humane veterinary clinics administering CNVR (Catch, Neuter, Vaccinate, Release) across municipal and coastal areas to compassionately control the stray dog population and eradicate rabies.
+            Providing emergency medical care, wound surgery, rabies vaccination, de-worming, tick/flea parasite removal, and safe shelter to hundreds of injured, starving, and sick stray dogs suffering in danger across Sri Lanka.
           </p>
+          <div style="margin-bottom: 0.85rem; display: flex; gap: 0.4rem; flex-wrap: wrap;">
+            <span class="feature-pill" style="color: var(--forest-deep); border-color: rgba(245, 158, 11, 0.35);"><i class="fa-solid fa-stethoscope"></i> Emergency Medical Care</span>
+            <span class="feature-pill" style="color: var(--forest-deep); border-color: rgba(245, 158, 11, 0.35);"><i class="fa-solid fa-syringe"></i> Vaccines &amp; De-worming</span>
+            <span class="feature-pill" style="color: var(--forest-deep); border-color: rgba(245, 158, 11, 0.35);"><i class="fa-solid fa-house-chimney-medical"></i> Safe Shelter &amp; Food</span>
+          </div>
           <div class="pending-card-footer">
-            <span style="font-size: 0.8rem; color: var(--amber-solar); font-weight: 700;">
-              <i class="fa-solid fa-syringe"></i> Animal Welfare
+            <span style="font-size: 0.8rem; color: #b45309; font-weight: 700;">
+              <i class="fa-solid fa-dog"></i> Island-Wide Stray Dog Care
             </span>
-            <button class="btn btn-glass btn-open-donation" style="padding: 0.4rem 0.9rem; font-size: 0.82rem;">
-              Sponsor #14
-            </button>
+            <div style="display: flex; gap: 0.4rem;">
+              <button class="btn btn-neon-glow btn-open-donation" style="padding: 0.4rem 0.75rem; font-size: 0.8rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+                <i class="fa-solid fa-heart"></i> Donate Now
+              </button>
+              <button class="btn btn-glass" onclick="openDogRescuePoster()" style="padding: 0.4rem 0.75rem; font-size: 0.8rem;">
+                <i class="fa-solid fa-file-image"></i> Poster
+              </button>
+            </div>
           </div>
         </div>
 
@@ -1362,6 +1372,37 @@
     </div>
   </div>
 
+  <!-- Stray Dog Rescue Poster Lightbox Modal -->
+  <div class="modal-overlay" id="dogRescuePosterModal">
+    <div class="modal-dialog" style="max-width: 680px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('dogRescuePosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="dog-appeal-badge">
+          <i class="fa-solid fa-dog"></i> Official Animal Welfare Appeal
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--text-white); margin-top: 0.35rem;">
+          Urgent Appeal: Stray Dog Rescue Project in Sri Lanka
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">
+          Help us rescue, heal, and shelter suffering stray dogs across towns and rural areas.
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/stray-dog-rescue-appeal.jpg" alt="Urgent Appeal - Stray Dog Rescue Project Official Poster" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
+        <button type="button" class="btn btn-neon-glow btn-open-donation" onclick="closeBvfModal('dogRescuePosterModal');" style="flex: 1; min-width: 200px; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+          <i class="fa-solid fa-hand-holding-dollar"></i> Donate to Stray Dog Rescue
+        </button>
+        <a href="assets/images/stray-dog-rescue-appeal.jpg" download="BVF-Stray-Dog-Rescue-Appeal.jpg" class="btn btn-glass" style="flex: 1; min-width: 200px;">
+          <i class="fa-solid fa-download"></i> Download Campaign Poster
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- Futuristic Footer -->
   <footer class="site-footer">
     <div class="container">
@@ -1452,6 +1493,6 @@
   </footer>
 
   <!-- Main JavaScript Engine -->
-  <script src="assets/js/main.js?v=3.4"></script>
+  <script src="assets/js/main.js?v=3.5"></script>
 </body>
 </html>
