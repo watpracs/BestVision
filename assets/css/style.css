@@ -2931,4 +2931,492 @@ textarea.form-control {
   }
 }
 
-/* Deploy Trigger 20261006-181359 */
+/* ==========================================================
+   TOP PRIORITY PROJECT: ELEPHANT HOSPITAL & RESCUE CENTER
+   Habarana / Minneriya / Anuradhapura • North Central Province
+   ========================================================== */
+
+.hospital-priority-section {
+  position: relative;
+  background: linear-gradient(180deg, rgba(6, 54, 40, 0.04) 0%, rgba(16, 185, 129, 0.07) 50%, rgba(6, 54, 40, 0.03) 100%);
+  border-top: 2px solid var(--border-neon);
+  border-bottom: 2px solid var(--border-neon);
+  padding: 3.5rem 0;
+  overflow: hidden;
+}
+
+.hospital-hero-banner {
+  background: var(--bg-card);
+  border: 1px solid var(--border-neon);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), 0 0 35px rgba(16, 185, 129, 0.12);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.hospital-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: stretch;
+}
+
+.hospital-visual-pane {
+  position: relative;
+  background: #021a12;
+  min-height: 380px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hospital-visual-pane img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hospital-visual-pane:hover img {
+  transform: scale(1.03);
+}
+
+.hospital-render-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(6, 54, 40, 0.88);
+  backdrop-filter: blur(10px);
+  color: var(--mint-bright);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.hospital-feature-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(2, 26, 18, 0.95) 90%);
+  padding: 1.25rem 1.25rem 1rem;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.feature-pill {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hospital-content-pane {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.crisis-badge-urgent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(220, 38, 38, 0.35);
+  color: #dc2626;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.15);
+}
+
+.crisis-beacon-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #dc2626;
+  box-shadow: 0 0 10px #dc2626;
+  animation: pulseCrisis 1.5s infinite;
+}
+
+@keyframes pulseCrisis {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.hospital-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.45rem, 2.8vw, 1.95rem);
+  color: var(--text-heading);
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+  font-weight: 800;
+}
+
+.hospital-meta-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hospital-crisis-callout {
+  background: rgba(220, 38, 38, 0.06);
+  border-left: 3px solid #dc2626;
+  padding: 0.85rem 1rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-bottom: 1.25rem;
+}
+
+.hospital-crisis-callout p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-slate);
+  margin-bottom: 0;
+}
+
+.hospital-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.h-stat-card {
+  background: var(--bg-subtle-green);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+}
+
+.h-stat-num {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--forest-deep);
+  display: block;
+  line-height: 1.2;
+}
+
+.h-stat-lbl {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+/* 2 Help Options Layout */
+.help-options-section-title {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.help-options-section-title h3 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--text-heading);
+  font-weight: 800;
+}
+
+.help-options-section-title p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  max-width: 620px;
+  margin: 0.35rem auto 0;
+}
+
+.help-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.option-box {
+  background: var(--bg-card);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.option-box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.option-box.opt-tourist {
+  border-color: rgba(245, 158, 11, 0.45);
+  background: linear-gradient(180deg, #ffffff 0%, rgba(245, 158, 11, 0.03) 100%);
+}
+
+.option-box.opt-tourist:hover {
+  border-color: var(--amber-warm);
+  box-shadow: var(--shadow-lg), 0 0 25px rgba(245, 158, 11, 0.18);
+}
+
+.option-box.opt-direct {
+  border-color: rgba(16, 185, 129, 0.45);
+  background: linear-gradient(180deg, #ffffff 0%, rgba(16, 185, 129, 0.03) 100%);
+}
+
+.option-box.opt-direct:hover {
+  border-color: var(--emerald-neon);
+  box-shadow: var(--shadow-lg), 0 0 25px rgba(16, 185, 129, 0.18);
+}
+
+.opt-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  width: fit-content;
+}
+
+.opt-badge-gold {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.opt-badge-emerald {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--forest-dark);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.opt-heading {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 0.65rem;
+}
+
+.opt-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-slate);
+  margin-bottom: 1.25rem;
+}
+
+/* Poster Preview & QR within Option 1 */
+.poster-preview-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  background: var(--bg-subtle-green);
+  border: 1px solid var(--border-neon);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  margin-bottom: 1.25rem;
+  align-items: center;
+}
+
+.poster-thumb-wrap {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+.poster-thumb-wrap img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.poster-thumb-wrap:hover img {
+  transform: scale(1.05);
+}
+
+.poster-zoom-hint {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 54, 40, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.poster-thumb-wrap:hover .poster-zoom-hint {
+  opacity: 1;
+}
+
+.poster-info-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.poster-title-micro {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--forest-deep);
+}
+
+.poster-desc-micro {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* Itemized Sponsor Chips within Option 2 */
+.sponsor-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.sponsor-chip-item {
+  background: var(--bg-subtle-green);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--forest-deep);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+}
+
+.sponsor-chip-item:hover {
+  background: #ffffff;
+  border-color: var(--emerald-neon);
+  transform: translateY(-1px);
+}
+
+.sponsor-chip-item i {
+  color: var(--emerald-vibrant);
+  font-size: 0.85rem;
+}
+
+.audit-guarantee-pill {
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px dashed rgba(2, 132, 199, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.78rem;
+  color: var(--text-slate);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.audit-guarantee-pill strong {
+  color: var(--cyan-neon);
+}
+
+.treasurer-contact-card {
+  background: #ffffff;
+  border: 1px solid var(--border-neon);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.treasurer-info h5 {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--forest-deep);
+  margin-bottom: 0.15rem;
+}
+
+.treasurer-info p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+/* Mobile adjustments for Elephant Hospital */
+@media (max-width: 900px) {
+  .hospital-grid {
+    grid-template-columns: 1fr;
+  }
+  .hospital-visual-pane {
+    min-height: 260px;
+  }
+  .help-options-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .hospital-content-pane {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .poster-preview-card {
+    grid-template-columns: 90px 1fr;
+    gap: 0.75rem;
+  }
+  .poster-thumb-wrap img {
+    height: 120px;
+  }
+  .sponsor-chips-grid {
+    grid-template-columns: 1fr;
+  }
+  .treasurer-contact-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .h-stat-num {
+    font-size: 1.1rem;
+  }
+}
+

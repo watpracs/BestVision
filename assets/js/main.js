@@ -65,9 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
       { amount: 25000, label: 'Rs. 25,000', impactTitle: 'Lagoon Boat Clearance Sweep', impactDesc: 'Sponsors a full-day fuel and logistics sweep for artisanal boats clearing plastic debris.' }
     ],
     USD: [
+      { amount: 1, label: '$1 USD', impactTitle: 'Elephant Hospital Fund (Tourist Program)', impactDesc: 'Contributes directly to starting construction on the First Emergency Elephant Hospital in Habarana / Minneriya.' },
       { amount: 10, label: '$10 USD', impactTitle: 'Mangrove & Cleaner Waters', impactDesc: 'Supplies 1 Mangrove Sapling Restoration Kit & protective gear for lagoon volunteers.' },
-      { amount: 20, label: '$20 USD', impactTitle: 'Anti-Snare & Wildlife Patrol', impactDesc: 'Funds an emergency snare removal and first-aid medical patrol in elephant buffer zones.' },
-      { amount: 40, label: '$40 USD', impactTitle: 'Youth Digital Safety & Eco-Education', impactDesc: 'Equips 5 coastal children with educational tools and safe social media workshops.' },
+      { amount: 25, label: '$25 USD', impactTitle: 'Anti-Snare & Wildlife Patrol', impactDesc: 'Funds an emergency snare removal and first-aid medical patrol in elephant buffer zones.' },
       { amount: 100, label: '$100 USD', impactTitle: 'Lagoon Boat Clearance Sweep', impactDesc: 'Sponsors a full-day fuel and logistics sweep for artisanal boats clearing plastic debris.' }
     ]
   };
@@ -285,8 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
   closeModals.forEach(btn => {
     btn.addEventListener('click', (e) => {
       if (e.target === btn || btn.classList.contains('modal-close')) {
-        closeModal(donationModal);
-        closeModal(volunteerModal);
+        document.querySelectorAll('.modal-overlay').forEach(m => closeModal(m));
       }
     });
   });
@@ -315,9 +314,51 @@ document.addEventListener('DOMContentLoaded', () => {
     customInputs.forEach(inp => { inp.value = amount; });
   };
 
+  window.openDonationModalWithAmount = (amount) => {
+    const modal = document.getElementById('donationModal');
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      const customInputs = document.querySelectorAll('.custom-donation-input');
+      customInputs.forEach(inp => { inp.value = amount; });
+      const amountBtns = document.querySelectorAll('.donation-preset-btn');
+      amountBtns.forEach(b => {
+        if (b.innerText.trim().startsWith(`$${amount}`)) {
+          b.classList.add('active');
+        } else {
+          b.classList.remove('active');
+        }
+      });
+    }
+  };
+
+  window.openPosterLightbox = () => {
+    const modal = document.getElementById('posterLightboxModal');
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  window.openProjectReportModal = () => {
+    const modal = document.getElementById('projectReportModal');
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  window.closeBvfModal = (modalId) => {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+
   window.triggerPayPal = (customAmtId) => {
     const input = document.getElementById(customAmtId || 'customDonationAmount');
-    const amount = input && input.value ? input.value : '50';
+    const amount = input && input.value ? input.value : '1';
     showToast(`Opening PayPal secure donation portal for $${amount}...`);
     setTimeout(() => {
       window.open(`https://www.paypal.com/donate?business=bvfsrilanka@gmail.com&currency_code=USD&amount=${amount}`, '_blank');
