@@ -1,7 +1,62 @@
-/**
- * Best Vision Foundation (BVF) - Next-Gen Interactive Engine
- * NGO Reg: L-184510 | Negombo, Sri Lanka
- */
+// ==========================================
+// Global Instant Modal & Lightbox Handlers
+// ==========================================
+window.openPosterLightbox = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const modal = document.getElementById('posterLightboxModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  } else {
+    window.open('assets/images/elephant-hospital-tourist-poster.jpg', '_blank');
+  }
+};
+
+window.openDogRescuePoster = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const modal = document.getElementById('dogRescuePosterModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  } else {
+    window.open('assets/images/stray-dog-rescue-appeal.jpg', '_blank');
+  }
+};
+
+window.openProjectReportModal = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const modal = document.getElementById('projectReportModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+};
+
+window.closeBvfModal = function(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+};
+
+window.openDonationModalWithAmount = function(amount) {
+  const modal = document.getElementById('donationModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    const customInputs = document.querySelectorAll('.custom-donation-input');
+    customInputs.forEach(inp => { inp.value = amount; });
+    const amountBtns = document.querySelectorAll('.donation-preset-btn');
+    amountBtns.forEach(b => {
+      if (b.innerText.trim().startsWith(`$${amount}`)) {
+        b.classList.add('active');
+      } else {
+        b.classList.remove('active');
+      }
+    });
+  }
+};
 
 document.addEventListener('DOMContentLoaded', () => {
 

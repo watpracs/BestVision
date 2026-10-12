@@ -1276,10 +1276,10 @@ img, svg {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(15, 23, 42, 0.65);
+  background-color: rgba(6, 26, 18, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  z-index: 2000;
+  z-index: 100000 !important;
   display: none;
   align-items: center;
   justify-content: center;
@@ -1287,7 +1287,7 @@ img, svg {
 }
 
 .modal-overlay.active {
-  display: flex;
+  display: flex !important;
 }
 
 .modal-dialog {
@@ -3257,6 +3257,8 @@ textarea.form-control {
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   cursor: pointer;
+  display: block;
+  text-decoration: none;
 }
 
 .poster-thumb-wrap img {
@@ -3273,21 +3275,30 @@ textarea.form-control {
 
 .poster-zoom-hint {
   position: absolute;
-  inset: 0;
-  background: rgba(6, 54, 40, 0.55);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(6, 54, 40, 0.90);
+  backdrop-filter: blur(6px);
   color: #ffffff;
   font-size: 0.72rem;
   font-weight: 700;
-  opacity: 0;
-  transition: opacity 0.2s ease;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+  pointer-events: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+  opacity: 1;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .poster-thumb-wrap:hover .poster-zoom-hint {
-  opacity: 1;
+  transform: translateX(-50%) scale(1.05);
+  background: var(--forest-dark);
 }
 
 .poster-info-wrap {
@@ -3450,6 +3461,7 @@ textarea.form-control {
   justify-content: center;
   padding: 1.25rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .dog-poster-pane img {
