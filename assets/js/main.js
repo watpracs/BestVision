@@ -58,6 +58,28 @@ window.openDonationModalWithAmount = function(amount) {
   }
 };
 
+window.triggerPayPal = function(customAmtId, explicitAmt) {
+  let amount = '1';
+  if (explicitAmt !== undefined && explicitAmt !== null && explicitAmt !== '') {
+    amount = String(explicitAmt);
+  } else if (customAmtId) {
+    const input = document.getElementById(customAmtId);
+    if (input && input.value) amount = input.value;
+  } else {
+    const input = document.getElementById('customDonationAmount') || document.getElementById('pageCustomAmt');
+    if (input && input.value) amount = input.value;
+  }
+
+  if (window.showToast) {
+    window.showToast(`Opening PayPal secure donation portal for $${amount}...`);
+  }
+  
+  setTimeout(function() {
+    const paypalUrl = `https://www.paypal.com/donate?business=dwm.perera@yahoo.com&currency_code=USD&amount=${encodeURIComponent(amount)}&item_name=Best+Vision+Foundation+Donation`;
+    window.open(paypalUrl, '_blank');
+  }, 400);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
@@ -419,15 +441,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  window.triggerPayPal = (customAmtId) => {
-    const input = document.getElementById(customAmtId || 'customDonationAmount');
-    const amount = input && input.value ? input.value : '1';
-    showToast(`Opening PayPal secure donation portal for $${amount}...`);
-    setTimeout(() => {
-      window.open(`https://www.paypal.com/donate?business=bvfsrilanka@gmail.com&currency_code=USD&amount=${amount}`, '_blank');
-    }, 600);
-  };
-
   window.processCardPayment = (e) => {
     if (e) e.preventDefault();
     const btn = document.getElementById('cardSubmitBtn');
@@ -459,10 +472,17 @@ NGO REG NO : L-184510
 Email: bvfsrilanka@gmail.com | Phone: +94 77 730 4152 / +94 77 970 5752
 Address: No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake - Sri Lanka`;
 
-    const copyText = text && text.trim().length > 0 ? text : officialDetails;
+    const isCustomText = text && text.trim().length > 0;
+    const copyText = isCustomText ? text.trim() : officialDetails;
 
     navigator.clipboard.writeText(copyText).then(() => {
-      showToast('Official Sampath Bank details copied to clipboard!');
+      if (copyText.includes('@')) {
+        showToast(`Copied PayPal address (${copyText}) to clipboard!`);
+      } else if (isCustomText) {
+        showToast('Copied to clipboard!');
+      } else {
+        showToast('Official Sampath Bank details copied to clipboard!');
+      }
       if (element) {
         const originalText = element.innerHTML;
         element.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
