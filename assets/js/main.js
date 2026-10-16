@@ -1,6 +1,94 @@
 // ==========================================
-// Global Instant Modal & Lightbox Handlers
+// Global Instant Modal, Lightbox & Donation Engine
 // ==========================================
+window.activeDonationProject = 'Elephant Hospital Project Fund';
+
+window.getProjectRefCode = function(proj) {
+  if (!proj) return 'BVF-ELEPHANT-HOSPITAL';
+  const p = proj.toLowerCase();
+  if (p.includes('elephant')) return 'BVF-ELEPHANT-HOSPITAL';
+  if (p.includes('dog')) return 'BVF-STRAY-DOG-RESCUE';
+  if (p.includes('lagoon')) return 'BVF-NEGOMBO-LAGOON';
+  return 'BVF-DIRECT';
+};
+
+window.onDonationProjectChanged = function(projectName) {
+  window.activeDonationProject = projectName || 'Elephant Hospital Project Fund';
+  const refCode = window.getProjectRefCode(window.activeDonationProject);
+  
+  const refElements = document.querySelectorAll('.modal-bank-project-ref');
+  refElements.forEach(el => { el.innerText = refCode; });
+  
+  const badgeElements = document.querySelectorAll('.modal-designated-badge');
+  badgeElements.forEach(el => {
+    el.innerHTML = `<i class="fa-solid fa-bullseye"></i> Designated: <strong>${window.activeDonationProject}</strong>`;
+  });
+};
+
+window.openDonationModal = function(projectName, amount) {
+  const modal = document.getElementById('donationModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    if (projectName) {
+      window.activeDonationProject = projectName;
+      const selects = document.querySelectorAll('.donation-project-select');
+      selects.forEach(s => { s.value = projectName; });
+      window.onDonationProjectChanged(projectName);
+    }
+
+    if (amount) {
+      const customInputs = document.querySelectorAll('.custom-donation-input');
+      customInputs.forEach(inp => { inp.value = amount; });
+      const amountBtns = document.querySelectorAll('.donation-preset-btn');
+      amountBtns.forEach(b => {
+        if (b.innerText.trim().startsWith(`$${amount}`)) {
+          b.classList.add('active');
+        } else {
+          b.classList.remove('active');
+        }
+      });
+    }
+  }
+};
+
+window.openDonationModalWithAmount = function(amount, projectName) {
+  window.openDonationModal(projectName || window.activeDonationProject, amount);
+};
+
+window.triggerPayPal = function(customAmtId, explicitAmt, explicitProject) {
+  let amount = '1';
+  if (explicitAmt !== undefined && explicitAmt !== null && explicitAmt !== '') {
+    amount = String(explicitAmt);
+  } else if (customAmtId) {
+    const input = document.getElementById(customAmtId);
+    if (input && input.value) amount = input.value;
+  } else {
+    const input = document.getElementById('customDonationAmount') || document.getElementById('pageCustomAmt');
+    if (input && input.value) amount = input.value;
+  }
+
+  const selectElem = document.getElementById('donationProjectSelect') || document.getElementById('pageProjectSelect');
+  let projectName = explicitProject;
+  if (!projectName && selectElem && selectElem.value) {
+    projectName = selectElem.value;
+  }
+  if (!projectName) {
+    projectName = window.activeDonationProject || 'Elephant Hospital Project Fund';
+  }
+
+  if (window.showToast) {
+    window.showToast(`Opening PayPal ($${amount}) for ${projectName}...`);
+  }
+  
+  setTimeout(function() {
+    const paypalUrl = `https://www.paypal.com/donate?business=dwm.perera@yahoo.com&currency_code=USD&amount=${encodeURIComponent(amount)}&item_name=${encodeURIComponent('BVF: ' + projectName)}`;
+    window.open(paypalUrl, '_blank');
+  }, 400);
+};
+
+// Poster Lightboxes
 window.openPosterLightbox = function(e) {
   if (e && e.preventDefault) e.preventDefault();
   const modal = document.getElementById('posterLightboxModal');
@@ -12,6 +100,17 @@ window.openPosterLightbox = function(e) {
   }
 };
 
+window.openElephantCampaignPoster = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const modal = document.getElementById('elephantCampaignPosterModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  } else {
+    window.open('assets/images/elephant-hospital-campaign-poster.jpg', '_blank');
+  }
+};
+
 window.openDogRescuePoster = function(e) {
   if (e && e.preventDefault) e.preventDefault();
   const modal = document.getElementById('dogRescuePosterModal');
@@ -19,13 +118,54 @@ window.openDogRescuePoster = function(e) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
   } else {
-    window.open('assets/images/stray-dog-rescue-appeal.jpg', '_blank');
+    window.open('assets/images/stray-dog-rescue-tiers-poster.jpg', '_blank');
   }
 };
 
+window.openDogAppealPoster = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const modal = document.getElementById('dogAppealPosterModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  } else {
+    window.open('assets/images/stray-dog-rescue-appeal-poster.jpg', '_blank');
+  }
+};
+
+window.openLagoonPoster = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const modal = document.getElementById('lagoonPosterModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  } else {
+    window.open('assets/images/negombo-lagoon-cleanup-poster.jpg', '_blank');
+  }
+};
+
+// Dossier Modals
 window.openProjectReportModal = function(e) {
   if (e && e.preventDefault) e.preventDefault();
   const modal = document.getElementById('projectReportModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+};
+
+window.openDogReportModal = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const modal = document.getElementById('dogReportModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+};
+
+window.openLagoonReportModal = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const modal = document.getElementById('lagoonReportModal');
   if (modal) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -38,46 +178,6 @@ window.closeBvfModal = function(modalId) {
     modal.classList.remove('active');
     document.body.style.overflow = '';
   }
-};
-
-window.openDonationModalWithAmount = function(amount) {
-  const modal = document.getElementById('donationModal');
-  if (modal) {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    const customInputs = document.querySelectorAll('.custom-donation-input');
-    customInputs.forEach(inp => { inp.value = amount; });
-    const amountBtns = document.querySelectorAll('.donation-preset-btn');
-    amountBtns.forEach(b => {
-      if (b.innerText.trim().startsWith(`$${amount}`)) {
-        b.classList.add('active');
-      } else {
-        b.classList.remove('active');
-      }
-    });
-  }
-};
-
-window.triggerPayPal = function(customAmtId, explicitAmt) {
-  let amount = '1';
-  if (explicitAmt !== undefined && explicitAmt !== null && explicitAmt !== '') {
-    amount = String(explicitAmt);
-  } else if (customAmtId) {
-    const input = document.getElementById(customAmtId);
-    if (input && input.value) amount = input.value;
-  } else {
-    const input = document.getElementById('customDonationAmount') || document.getElementById('pageCustomAmt');
-    if (input && input.value) amount = input.value;
-  }
-
-  if (window.showToast) {
-    window.showToast(`Opening PayPal secure donation portal for $${amount}...`);
-  }
-  
-  setTimeout(function() {
-    const paypalUrl = `https://www.paypal.com/donate?business=dwm.perera@yahoo.com&currency_code=USD&amount=${encodeURIComponent(amount)}&item_name=Best+Vision+Foundation+Donation`;
-    window.open(paypalUrl, '_blank');
-  }, 400);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -333,7 +433,9 @@ document.addEventListener('DOMContentLoaded', () => {
   openDonationBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      openModal(donationModal);
+      const proj = btn.getAttribute('data-project') || window.activeDonationProject;
+      const amt = btn.getAttribute('data-amount') || '';
+      window.openDonationModal(proj, amt);
     });
   });
 
@@ -391,55 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
     customInputs.forEach(inp => { inp.value = amount; });
   };
 
-  window.openDonationModalWithAmount = (amount) => {
-    const modal = document.getElementById('donationModal');
-    if (modal) {
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      const customInputs = document.querySelectorAll('.custom-donation-input');
-      customInputs.forEach(inp => { inp.value = amount; });
-      const amountBtns = document.querySelectorAll('.donation-preset-btn');
-      amountBtns.forEach(b => {
-        if (b.innerText.trim().startsWith(`$${amount}`)) {
-          b.classList.add('active');
-        } else {
-          b.classList.remove('active');
-        }
-      });
-    }
-  };
 
-  window.openPosterLightbox = () => {
-    const modal = document.getElementById('posterLightboxModal');
-    if (modal) {
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-  };
-
-  window.openProjectReportModal = () => {
-    const modal = document.getElementById('projectReportModal');
-    if (modal) {
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-  };
-
-  window.openDogRescuePoster = () => {
-    const modal = document.getElementById('dogRescuePosterModal');
-    if (modal) {
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-  };
-
-  window.closeBvfModal = (modalId) => {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  };
 
   window.processCardPayment = (e) => {
     if (e) e.preventDefault();
@@ -496,13 +550,18 @@ Address: No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake - Sri Lanka`;
   };
 
   window.sendDepositSlipWhatsApp = () => {
+    const proj = window.activeDonationProject || 'Elephant Hospital Project Fund';
+    const ref = (window.getProjectRefCode) ? window.getProjectRefCode(proj) : 'BVF-DIRECT';
     const msg = `*Best Vision Foundation (BVF) - Bank Deposit Notification*\n\n` +
-      `Hello, I have initiated a donation to your Sampath Bank account:\n` +
+      `Hello Treasurer D.W.M. Perera,\n` +
+      `I have initiated a donation to your Sampath Bank account for:\n` +
+      `• *Designated Project:* ${proj}\n` +
+      `• *Deposit Reference:* ${ref}\n` +
       `• *Bank:* SAMPATH BANK (Branch: NEGOMBO 02)\n` +
       `• *Account Name:* BEST VISION FOUNDATION\n` +
       `• *Account Number:* 0088 6000 0033\n` +
       `• *SWIFT Code:* BSAMLKLX\n\n` +
-      `I am attaching my transfer confirmation / receipt photo. Please acknowledge and share the project progress update. Thank you!`;
+      `I am attaching my transfer confirmation / receipt photo. Please issue my official audited receipt and keep me updated. Thank you!`;
     const encoded = encodeURIComponent(msg);
     window.open(`https://wa.me/94777304152?text=${encoded}`, '_blank');
   };
