@@ -8,7 +8,7 @@
 * **Secretary:** T. Anusha L. Peiris
 * **Treasurer:** D.W.M. Perera
 * **Director - Welfare:** Nishantha Fernando
-* **Project Coordinator:** Thisari Perera
+* **Project Coordinator:** Ms. Rooth Lideesha Dewthilini Blackett
 * **Registered Address:** No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake - Sri Lanka
 * **Email:** bvfsrilanka@gmail.com
 * **Contact Numbers:** +94 77 730 4152 / +94 77 970 5752

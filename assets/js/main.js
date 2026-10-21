@@ -1,7 +1,7 @@
 // ==========================================
 // Global Instant Modal, Lightbox & Donation Engine
 // ==========================================
-window.activeDonationProject = 'Elephant Hospital Project Fund';
+window.activeDonationProject = 'Elephant Hospital & Orphanage (Habarana / Minneriya / Anuradhapura)';
 
 window.getProjectRefCode = function(proj) {
   if (!proj) return 'BVF-ELEPHANT-HOSPITAL';
@@ -13,12 +13,15 @@ window.getProjectRefCode = function(proj) {
 };
 
 window.onDonationProjectChanged = function(projectName) {
-  window.activeDonationProject = projectName || 'Elephant Hospital Project Fund';
+  window.activeDonationProject = projectName || 'Elephant Hospital & Orphanage (Habarana / Minneriya / Anuradhapura)';
   const refCode = window.getProjectRefCode(window.activeDonationProject);
   
   const refElements = document.querySelectorAll('.modal-bank-project-ref');
   refElements.forEach(el => { el.innerText = refCode; });
   
+  const targetElements = document.querySelectorAll('.modal-target-project-name');
+  targetElements.forEach(el => { el.innerText = window.activeDonationProject; });
+
   const badgeElements = document.querySelectorAll('.modal-designated-badge');
   badgeElements.forEach(el => {
     el.innerHTML = `<i class="fa-solid fa-bullseye"></i> Designated: <strong>${window.activeDonationProject}</strong>`;
@@ -33,9 +36,19 @@ window.openDonationModal = function(projectName, amount) {
 
     if (projectName) {
       window.activeDonationProject = projectName;
-      const selects = document.querySelectorAll('.donation-project-select');
-      selects.forEach(s => { s.value = projectName; });
-      window.onDonationProjectChanged(projectName);
+      const selects = document.querySelectorAll('.donation-project-select, #donationProjectSelect, #pageDonationProjectSelect');
+      selects.forEach(s => {
+        let matched = false;
+        for (let opt of s.options) {
+          if (opt.value === projectName || (projectName.toLowerCase().includes('elephant') && opt.value.toLowerCase().includes('elephant'))) {
+            s.value = opt.value;
+            window.activeDonationProject = opt.value;
+            matched = true;
+            break;
+          }
+        }
+      });
+      window.onDonationProjectChanged(window.activeDonationProject);
     }
 
     if (amount) {
@@ -242,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { amount: 25000, label: 'Rs. 25,000', impactTitle: 'Lagoon Boat Clearance Sweep', impactDesc: 'Sponsors a full-day fuel and logistics sweep for artisanal boats clearing plastic debris.' }
     ],
     USD: [
-      { amount: 1, label: '$1 USD', impactTitle: 'Elephant Hospital Fund (Tourist Program)', impactDesc: 'Contributes directly to starting construction on the First Emergency Elephant Hospital in Habarana / Minneriya.' },
+      { amount: 1, label: '$1 USD', impactTitle: 'Elephant Hospital Fund (Tourist Program)', impactDesc: 'Contributes directly to starting construction on the First Emergency Elephant Hospital in Habarana / Minneriya / Anuradhapura.' },
       { amount: 10, label: '$10 USD', impactTitle: 'Mangrove & Cleaner Waters', impactDesc: 'Supplies 1 Mangrove Sapling Restoration Kit & protective gear for lagoon volunteers.' },
       { amount: 25, label: '$25 USD', impactTitle: 'Anti-Snare & Wildlife Patrol', impactDesc: 'Funds an emergency snare removal and first-aid medical patrol in elephant buffer zones.' },
       { amount: 100, label: '$100 USD', impactTitle: 'Lagoon Boat Clearance Sweep', impactDesc: 'Sponsors a full-day fuel and logistics sweep for artisanal boats clearing plastic debris.' }

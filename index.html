@@ -344,11 +344,11 @@
           </div>
 
           <div style="display: flex; flex-direction: column; gap: 0.65rem;">
-            <button type="button" class="btn btn-neon-glow" onclick="openDonationModal('Elephant Hospital &amp; Orphanage (Habarana)', 1)" style="width: 100%; padding: 0.85rem; font-size: 1rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+            <button type="button" class="btn btn-neon-glow" onclick="openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1)" style="width: 100%; padding: 0.85rem; font-size: 1rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
               <i class="fa-solid fa-hand-holding-dollar"></i> DONATE $1 NOW TO START FUND
             </button>
             <div style="display: flex; gap: 0.5rem;">
-              <button type="button" class="btn btn-glass" onclick="triggerPayPal('', '1', 'Elephant Hospital &amp; Orphanage (Habarana)')" style="flex: 1; padding: 0.55rem; font-size: 0.82rem;">
+              <button type="button" class="btn btn-glass" onclick="triggerPayPal('', '1', 'Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)')" style="flex: 1; padding: 0.55rem; font-size: 0.82rem;">
                 <i class="fa-brands fa-paypal" style="color: #0070ba;"></i> Instant PayPal $1
               </button>
               <a href="assets/images/elephant-hospital-tourist-poster.jpg" download="BVF-Elephant-Hospital-1Dollar-Poster.jpg" class="btn btn-glass" style="flex: 1; padding: 0.55rem; font-size: 0.82rem; text-align: center;">
@@ -436,7 +436,9 @@
         <!-- Bento 1: Negombo Lagoon (Span 7) -->
         <div class="bento-card bento-col-7">
           <div class="bento-media">
-            <img src="assets/images/negombo-lagoon.jpg" alt="Lagoon Conservation">
+            <a href="assets/images/negombo-lagoon-cleanup-poster.jpg" target="_blank" rel="noopener" onclick="openLagoonPoster(event)" style="display: block; width: 100%; height: 100%; cursor: pointer;" title="Tap to view formal Negombo Lagoon project banner &amp; proposal poster">
+              <img src="assets/images/negombo-lagoon-cleanup-poster.jpg" alt="Negombo Lagoon Project Proposal Poster - Recovery of Sunken Vessels and Debris" style="object-fit: cover;">
+            </a>
             <span class="bento-badge-overlay"><i class="fa-solid fa-leaf"></i> Project Blue-Green &bull; $97,000 USD Proposal</span>
           </div>
           <div class="bento-content">
@@ -928,13 +930,13 @@
           <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Earmarked Fund</span>
         </label>
         <select id="donationProjectSelect" class="form-control donation-project-select" onchange="onDonationProjectChanged(this.value)" style="font-weight: 700; font-size: 0.92rem; border-color: var(--emerald-neon); background: var(--bg-card); color: var(--text-white);">
-          <option value="Elephant Hospital & Orphanage (Habarana)">🔴 Elephant Hospital &amp; Orphanage (Habarana / Minneriya)</option>
+          <option value="Elephant Hospital & Orphanage (Habarana / Minneriya / Anuradhapura)">🔴 Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)</option>
           <option value="Island-Wide Stray Dog Rescue & Shelter">🐶 Island-Wide Stray Dog Rescue, Treatment &amp; Safe Shelter</option>
           <option value="Negombo Lagoon Sunken Vessels & Debris Recovery">🌊 Negombo Lagoon Sunken Vessels, Ghost Nets &amp; Debris Recovery</option>
           <option value="General Conservation & Welfare Fund">🌿 General Wildlife &amp; Community Welfare Fund</option>
         </select>
         <div style="font-size: 0.75rem; color: var(--text-slate); margin-top: 0.4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.35rem;">
-          <span>Designated: <strong class="modal-target-project-name" style="color: var(--emerald-neon);">Elephant Hospital &amp; Orphanage (Habarana)</strong></span>
+          <span>Designated: <strong class="modal-target-project-name" style="color: var(--emerald-neon);">Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)</strong></span>
           <span>Bank Reference: <strong class="modal-bank-project-ref font-mono" style="color: var(--cyan-neon);">BVF-ELEPHANT-HOSPITAL</strong></span>
         </div>
       </div>
@@ -1335,7 +1337,7 @@
       </div>
 
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
-        <button type="button" class="btn btn-neon-glow" onclick="closeBvfModal('elephantCampaignPosterModal'); openDonationModal('Elephant Hospital &amp; Orphanage (Habarana)');" style="flex: 1; min-width: 200px; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+        <button type="button" class="btn btn-neon-glow" onclick="closeBvfModal('elephantCampaignPosterModal'); openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)');" style="flex: 1; min-width: 200px; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
           <i class="fa-solid fa-hand-holding-dollar"></i> Donate to Elephant Hospital
         </button>
         <button type="button" class="btn btn-glass" onclick="closeBvfModal('elephantCampaignPosterModal'); openProjectReportModal();" style="flex: 1; min-width: 180px;">
@@ -1777,6 +1779,6 @@
   </footer>
 
   <!-- Main JavaScript Engine -->
-  <script src="assets/js/main.js?v=3.8"></script>
+  <script src="assets/js/main.js?v=3.9"></script>
 </body>
 </html>
