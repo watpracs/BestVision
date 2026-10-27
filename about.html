@@ -416,100 +416,17 @@
         </div>
       </div>
 
-      <!-- Segmented Tabs for Dual Mode -->
-      <div class="payment-tabs">
-        <button class="payment-tab-btn active" onclick="switchPaymentTab('modalTabGateway', this)">
-          <i class="fa-solid fa-credit-card"></i> Card &amp; PayPal Gateway
-        </button>
-        <button class="payment-tab-btn" onclick="switchPaymentTab('modalTabBankWire', this)">
-          <i class="fa-solid fa-building-columns"></i> Sampath Bank Wire
-        </button>
-      </div>
-
-      <!-- TAB 1: Instant Gateway & PayPal -->
-      <div class="payment-tab-content active" id="modalTabGateway">
-        <label class="form-label" style="margin-bottom: 0.5rem;">Select Contribution Tier (USD):</label>
-        <div class="donation-presets-row">
-          <button type="button" class="btn btn-glass donation-preset-btn" onclick="selectDonationAmount('25', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700;">$25</button>
-          <button type="button" class="btn btn-glass donation-preset-btn active" onclick="selectDonationAmount('50', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700; border-color: var(--emerald-neon); color: var(--emerald-neon);">$50</button>
-          <button type="button" class="btn btn-glass donation-preset-btn" onclick="selectDonationAmount('100', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700;">$100</button>
-          <button type="button" class="btn btn-glass donation-preset-btn" onclick="selectDonationAmount('250', this)" style="padding: 0.55rem; font-size: 0.9rem; font-weight: 700;">$250</button>
+            <!-- Direct Official Bank Transfer & $1 QR Code -->
+      <div class="bank-wire-box" style="margin-bottom: 1.25rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span style="font-weight: 800; color: var(--emerald-neon); font-size: 1rem;">
+            <i class="fa-solid fa-building-columns"></i> SAMPATH BANK SRI LANKA
+          </span>
+          <span class="section-badge" style="margin: 0; font-size: 0.75rem;">Official NGO Reg: L-184510</span>
         </div>
 
-        <div class="form-group">
-          <label class="form-label">Or Custom Amount ($ USD):</label>
-          <div style="position: relative;">
-            <span style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); font-weight: 700; color: var(--emerald-neon);">$</span>
-            <input type="number" class="form-control custom-donation-input" id="customDonationAmount" value="50" min="5" style="padding-left: 2.2rem; font-size: 1.1rem; font-weight: 700;">
-          </div>
-        </div>
-
-        <div style="margin-bottom: 1.25rem;">
-          <button type="button" class="btn-paypal" onclick="triggerPayPal('customDonationAmount')">
-            <i class="fa-brands fa-paypal" style="font-size: 1.3rem;"></i> Donate with PayPal
-          </button>
-          <div class="paypal-badge-row">
-            <span><i class="fa-solid fa-shield-halved"></i> 256-Bit SSL Encrypted</span> &bull; 
-            <span>Instant PayPal &amp; Major Cards</span>
-          </div>
-          <div class="paypal-direct-account-box">
-            <div class="paypal-direct-info">
-              <span style="font-weight: 700; color: #0070ba;"><i class="fa-brands fa-paypal"></i> PayPal Account:</span>
-              <span class="paypal-direct-email">dwm.perera@yahoo.com</span>
-              <span class="paypal-direct-sub">Official Recipient: D.W.M. Perera (Treasurer, BVF)</span>
-            </div>
-            <button type="button" class="btn btn-glass" onclick="copyAccountInfo('dwm.perera@yahoo.com', this)" style="padding: 0.25rem 0.6rem; font-size: 0.75rem; width: fit-content;">
-              <i class="fa-solid fa-copy"></i> Copy Email
-            </button>
-          </div>
-        </div>
-
-        <div style="position: relative; text-align: center; margin: 1.25rem 0;">
-          <div style="border-top: 1px solid var(--border-subtle);"></div>
-          <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--bg-surface); padding: 0 0.75rem; font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Or Pay via Credit / Debit Card</span>
-        </div>
-
-        <form id="cardPaymentForm" onsubmit="processCardPayment(event)">
-          <div class="form-group">
-            <label class="form-label">Card Number</label>
-            <div style="position: relative;">
-              <input type="text" class="form-control" placeholder="4000 1234 5678 9010" required maxlength="19" style="letter-spacing: 0.08em; font-family: var(--font-mono);">
-              <span style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); display: flex; gap: 0.4rem; font-size: 1.1rem;">
-                <i class="fa-brands fa-cc-visa"></i>
-                <i class="fa-brands fa-cc-mastercard"></i>
-                <i class="fa-brands fa-cc-amex"></i>
-              </span>
-            </div>
-          </div>
-
-          <div class="form-row-2">
-            <div class="form-group">
-              <label class="form-label">Expiry (MM/YY)</label>
-              <input type="text" class="form-control" placeholder="12/28" required maxlength="5">
-            </div>
-            <div class="form-group">
-              <label class="form-label">CVC / CVV</label>
-              <input type="password" class="form-control" placeholder="123" required maxlength="4">
-            </div>
-          </div>
-
-          <button type="submit" id="cardSubmitBtn" class="btn btn-neon-glow" style="width: 100%; font-size: 0.95rem;">
-            <i class="fa-solid fa-lock"></i> Process Secure Contribution
-          </button>
-        </form>
-      </div>
-
-      <!-- TAB 2: Direct Sampath Bank Wire -->
-      <div class="payment-tab-content" id="modalTabBankWire">
-        <div class="bank-wire-box">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-            <span style="font-weight: 800; color: var(--emerald-neon); font-size: 0.95rem;">
-              <i class="fa-solid fa-building-columns"></i> SAMPATH BANK SRI LANKA
-            </span>
-            <span class="section-badge" style="margin: 0; font-size: 0.75rem;">Reg No: L-184510</span>
-          </div>
-
-          <div class="bank-detail-grid">
+        <div class="bank-transfer-qr-layout">
+          <div class="bank-detail-grid" style="margin-bottom: 0;">
             <div class="bank-detail-item">
               <span class="label">ACCOUNT NAME</span>
               <span class="value" style="font-size: 0.9rem;">BEST VISION FOUNDATION</span>
@@ -524,11 +441,11 @@
             </div>
             <div class="bank-detail-item">
               <span class="label">CURRENT ACCOUNT NUMBER</span>
-              <span class="value" style="color: var(--emerald-neon); letter-spacing: 0.05em;">0088 6000 0033</span>
+              <span class="value" style="color: var(--emerald-neon); letter-spacing: 0.05em; font-size: 1.15rem;">0088 6000 0033</span>
               <i class="fa-solid fa-copy bank-copy-icon" onclick="copyAccountInfo('0088 6000 0033', this)" title="Copy Account Number"></i>
             </div>
             <div class="bank-detail-item">
-              <span class="label">SWIFT CODE</span>
+              <span class="label">SWIFT CODE (INTERNATIONAL)</span>
               <span class="value" style="color: var(--cyan-neon);">BSAMLKLX</span>
               <i class="fa-solid fa-copy bank-copy-icon" onclick="copyAccountInfo('BSAMLKLX', this)" title="Copy SWIFT Code"></i>
             </div>
@@ -536,26 +453,46 @@
               <span class="label">BRANCH CODE / BANK CODE</span>
               <span class="value">7278 / 088</span>
             </div>
-            <div class="bank-detail-item" style="grid-column: 1 / -1; background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--emerald-neon);">
-              <span class="label" style="color: var(--emerald-neon);">DEPOSIT REFERENCE / BENEFICIARY NOTE</span>
-              <span class="value" id="bankDepositRef" style="color: #ffffff; font-family: var(--font-mono); font-weight: 800;">BVF-GENERAL-FUND</span>
-              <i class="fa-solid fa-copy bank-copy-icon" onclick="copyAccountInfo(document.getElementById('bankDepositRef').innerText, this)" title="Copy Reference Code"></i>
-            </div>
           </div>
 
-          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
-            <i class="fa-solid fa-circle-info" style="color: var(--cyan-neon);"></i> Applicable for local CEFT, SLIPS, online banking, and international SWIFT wire transfers.
-          </p>
+          <!-- $1 QR Scan Card -->
+          <div class="bank-qr-card">
+            <span style="font-size: 0.72rem; font-weight: 800; color: var(--amber-solar); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem; display: block;">
+              <i class="fa-solid fa-qrcode"></i> Donate $1
+            </span>
+            <div style="background: #ffffff; padding: 6px; border-radius: 6px; display: inline-block; box-shadow: 0 2px 8px rgba(0,0,0,0.15); line-height: 0;">
+              <img src="assets/images/bvf-donation-qr.svg" alt="Scan QR to Donate $1" style="width: 110px; height: 110px; display: block;" />
+            </div>
+            <span style="font-size: 0.68rem; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.25; display: block;">
+              Scan on mobile to view bank info &amp; donate $1
+            </span>
+          </div>
         </div>
 
-        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-          <button type="button" onclick="copyAccountInfo('', this)" class="btn btn-glass" style="flex: 1; font-size: 0.88rem;">
-            <i class="fa-solid fa-copy"></i> Copy All Bank Details
-          </button>
-          <button type="button" onclick="sendDepositSlipWhatsApp()" class="btn btn-neon-glow" style="flex: 1; font-size: 0.88rem; background: #25d366; border-color: #25d366; color: #ffffff;">
-            <i class="fa-brands fa-whatsapp"></i> Send Slip via WhatsApp
-          </button>
+        <!-- Mandatory Deposit Reference Narration -->
+        <div class="bank-detail-item" style="margin-top: 0.85rem; background: rgba(16, 185, 129, 0.12); border: 1px solid var(--border-neon); border-radius: 6px; padding: 0.65rem 0.85rem;">
+          <span class="label" style="color: var(--emerald-neon); font-weight: 800;">MANDATORY DEPOSIT REFERENCE (REMARKS / NARRATION)</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.25rem;">
+            <span class="value modal-bank-project-ref font-mono" style="font-size: 1.05rem; color: var(--emerald-vibrant); font-weight: 800; letter-spacing: 0.05em;">BVF-ELEPHANT-HOSPITAL</span>
+            <i class="fa-solid fa-copy bank-copy-icon" onclick="copyAccountInfo(document.querySelector('.modal-bank-project-ref').textContent, this)" title="Copy Deposit Reference Code"></i>
+          </div>
+          <span style="font-size: 0.74rem; color: var(--text-muted); display: block; margin-top: 0.25rem;">
+            Type this reference code in your transfer description so funds are strictly credited to your chosen project.
+          </span>
         </div>
+
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0.75rem 0 0 0;">
+          <i class="fa-solid fa-circle-info" style="color: var(--cyan-neon);"></i> Applicable for local CEFT, SLIPS, online banking, and international SWIFT wire transfers.
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <button type="button" onclick="copyAccountInfo('', this)" class="btn btn-glass" style="flex: 1; font-size: 0.88rem; justify-content: center;">
+          <i class="fa-solid fa-copy"></i> Copy All Bank Details
+        </button>
+        <button type="button" onclick="sendDepositSlipWhatsApp()" class="btn btn-neon-glow" style="flex: 1; font-size: 0.88rem; background: #25d366; border-color: #25d366; color: #ffffff; justify-content: center;">
+          <i class="fa-brands fa-whatsapp"></i> Send Slip via WhatsApp
+        </button>
       </div>
 
     </div>
@@ -700,6 +637,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=3.9"></script>
+  <script src="assets/js/main.js?v=4.0"></script>
 </body>
 </html>

@@ -71,34 +71,17 @@ window.openDonationModalWithAmount = function(amount, projectName) {
 };
 
 window.triggerPayPal = function(customAmtId, explicitAmt, explicitProject) {
-  let amount = '1';
-  if (explicitAmt !== undefined && explicitAmt !== null && explicitAmt !== '') {
-    amount = String(explicitAmt);
-  } else if (customAmtId) {
+  let amount = explicitAmt || 1;
+  if (!explicitAmt && customAmtId) {
     const input = document.getElementById(customAmtId);
     if (input && input.value) amount = input.value;
-  } else {
-    const input = document.getElementById('customDonationAmount') || document.getElementById('pageCustomAmt');
-    if (input && input.value) amount = input.value;
   }
-
-  const selectElem = document.getElementById('donationProjectSelect') || document.getElementById('pageProjectSelect');
   let projectName = explicitProject;
-  if (!projectName && selectElem && selectElem.value) {
-    projectName = selectElem.value;
-  }
   if (!projectName) {
-    projectName = window.activeDonationProject || 'Elephant Hospital Project Fund';
+    const selectElem = document.getElementById('donationProjectSelect') || document.getElementById('pageDonationProjectSelect');
+    if (selectElem && selectElem.value) projectName = selectElem.value;
   }
-
-  if (window.showToast) {
-    window.showToast(`Opening PayPal ($${amount}) for ${projectName}...`);
-  }
-  
-  setTimeout(function() {
-    const paypalUrl = `https://www.paypal.com/donate?business=dwm.perera@yahoo.com&currency_code=USD&amount=${encodeURIComponent(amount)}&item_name=${encodeURIComponent('BVF: ' + projectName)}`;
-    window.open(paypalUrl, '_blank');
-  }, 400);
+  window.openDonationModal(projectName || window.activeDonationProject, amount);
 };
 
 // Poster Lightboxes
@@ -543,10 +526,8 @@ Address: No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake - Sri Lanka`;
     const copyText = isCustomText ? text.trim() : officialDetails;
 
     navigator.clipboard.writeText(copyText).then(() => {
-      if (copyText.includes('@')) {
-        showToast(`Copied PayPal address (${copyText}) to clipboard!`);
-      } else if (isCustomText) {
-        showToast('Copied to clipboard!');
+      if (isCustomText) {
+        showToast(`Copied ${copyText} to clipboard!`);
       } else {
         showToast('Official Sampath Bank details copied to clipboard!');
       }

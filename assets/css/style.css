@@ -1964,6 +1964,37 @@ textarea.form-control {
   opacity: 1;
 }
 
+/* Bank Transfer & QR Layout */
+.bank-transfer-qr-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.bank-qr-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-neon);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  text-align: center;
+  width: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .bank-transfer-qr-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .bank-qr-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 /* Pending Projects Presentation */
 .project-filter-bar {
   display: flex;
