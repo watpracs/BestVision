@@ -72,6 +72,10 @@
       </nav>
 
       <div class="nav-actions">
+        <button type="button" class="btn qr-nav-pill" onclick="openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1)" title="Scan or Click to Donate $1 via Bank Transfer">
+          <i class="fa-solid fa-qrcode"></i>
+          <span>$1 QR Fund</span>
+        </button>
         <button class="btn btn-header-donate btn-open-donation">
           <i class="fa-solid fa-heart"></i>
           <span>Donate Now</span>
@@ -651,6 +655,77 @@
         <img src="assets/images/elephant-hospital-campaign-poster.jpg" alt="Elephant Hospital Campaign Poster - $757,500 USD" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
       </div>
 
+      <!-- Direct QR Scan & Instant Bank Details Trigger in Poster Lightbox -->
+      <div class="poster-qr-strip" id="elephantCampaignPosterModalQrStrip">
+        <div style="flex-shrink: 0; text-align: center; cursor: pointer;" onclick="closeBvfModal('elephantCampaignPosterModal'); openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1);" title="Click to pop up bank details">
+          <div style="background: #ffffff; padding: 6px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.4); line-height: 0;">
+            <img src="assets/images/bvf-donation-qr.png" alt="Scan QR Code to Donate <div class="modal-overlay" id="elephantCampaignPosterModal" onclick="if(event.target===this) closeBvfModal('elephantCampaignPosterModal')">
+    <div class="modal-dialog" style="max-width: 720px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('elephantCampaignPosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="crisis-badge-urgent">
+          <i class="fa-solid fa-hospital"></i> Priority Blueprint &bull; $757,500 USD
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-top: 0.35rem;">
+          Establishment of the First Elephant Hospital &amp; Orphanage
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          Habarana / Minneriya / Anuradhapura &bull; Eliminating the 250 km Emergency Gap
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/elephant-hospital-campaign-poster.jpg" alt="Elephant Hospital Campaign Poster - $757,500 USD" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div>" style="width: 105px; height: 105px; display: block;" />
+          </div>
+          <span style="font-size: 0.68rem; font-weight: 800; color: var(--amber-solar); display: block; margin-top: 0.3rem;"><i class="fa-solid fa-camera"></i> SCAN TO POP UP</span>
+        </div>
+        <div style="flex: 1; min-width: 240px;">
+          <span style="font-size: 0.72rem; font-weight: 800; color: var(--amber-solar); text-transform: uppercase; letter-spacing: 0.05em;"><i class="fa-solid fa-qrcode"></i> Scan to Donate <div class="modal-overlay" id="elephantCampaignPosterModal" onclick="if(event.target===this) closeBvfModal('elephantCampaignPosterModal')">
+    <div class="modal-dialog" style="max-width: 720px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('elephantCampaignPosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="crisis-badge-urgent">
+          <i class="fa-solid fa-hospital"></i> Priority Blueprint &bull; $757,500 USD
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-top: 0.35rem;">
+          Establishment of the First Elephant Hospital &amp; Orphanage
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          Habarana / Minneriya / Anuradhapura &bull; Eliminating the 250 km Emergency Gap
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/elephant-hospital-campaign-poster.jpg" alt="Elephant Hospital Campaign Poster - $757,500 USD" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div> Instantly</span>
+          <div style="font-size: 0.95rem; font-weight: 800; color: #ffffff; margin: 0.2rem 0;">SAMPATH BANK &bull; A/C: 0088 6000 0033</div>
+          <p style="font-size: 0.78rem; color: var(--text-slate); margin-bottom: 0.5rem; line-height: 1.35;">
+            Point your camera at this QR code to pop up bank transfer details directly on your phone, or tap below to pop it up right now.
+          </p>
+          <button type="button" class="btn btn-neon-glow" onclick="closeBvfModal('elephantCampaignPosterModal'); openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1);" style="padding: 0.45rem 1rem; font-size: 0.82rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+            <i class="fa-solid fa-building-columns"></i> Pop Up Bank Details (<div class="modal-overlay" id="elephantCampaignPosterModal" onclick="if(event.target===this) closeBvfModal('elephantCampaignPosterModal')">
+    <div class="modal-dialog" style="max-width: 720px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('elephantCampaignPosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="crisis-badge-urgent">
+          <i class="fa-solid fa-hospital"></i> Priority Blueprint &bull; $757,500 USD
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-top: 0.35rem;">
+          Establishment of the First Elephant Hospital &amp; Orphanage
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          Habarana / Minneriya / Anuradhapura &bull; Eliminating the 250 km Emergency Gap
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/elephant-hospital-campaign-poster.jpg" alt="Elephant Hospital Campaign Poster - $757,500 USD" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div> Fund)
+          </button>
+        </div>
+      </div>
+
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
         <button type="button" class="btn btn-neon-glow" onclick="closeBvfModal('elephantCampaignPosterModal'); openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)');" style="flex: 1; min-width: 200px; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
           <i class="fa-solid fa-hand-holding-dollar"></i> Donate to Elephant Hospital
@@ -685,6 +760,77 @@
         <img src="assets/images/stray-dog-rescue-tiers-poster.jpg" alt="Stray Dog Rescue Sponsorship Tiers Poster" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
       </div>
 
+      <!-- Direct QR Scan & Instant Bank Details Trigger in Poster Lightbox -->
+      <div class="poster-qr-strip" id="dogRescuePosterModalQrStrip">
+        <div style="flex-shrink: 0; text-align: center; cursor: pointer;" onclick="closeBvfModal('dogRescuePosterModal'); openDonationModal('Island-Wide Stray Dog Rescue &amp; Shelter', 1);" title="Click to pop up bank details">
+          <div style="background: #ffffff; padding: 6px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.4); line-height: 0;">
+            <img src="assets/images/bvf-donation-qr.png" alt="Scan QR Code to Donate <div class="modal-overlay" id="dogRescuePosterModal" onclick="if(event.target===this) closeBvfModal('dogRescuePosterModal')">
+    <div class="modal-dialog" style="max-width: 700px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('dogRescuePosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="dog-appeal-badge">
+          <i class="fa-solid fa-dog"></i> $1 A Day Saves A Life Program
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-top: 0.35rem;">
+          Stray Dog Rescue: Sponsorship Tiers &amp; Shelter
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          $1/Day saves a life &bull; $5/Month feeding program &bull; $30/Month adopt a dog
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/stray-dog-rescue-tiers-poster.jpg" alt="Stray Dog Rescue Sponsorship Tiers Poster" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div>" style="width: 105px; height: 105px; display: block;" />
+          </div>
+          <span style="font-size: 0.68rem; font-weight: 800; color: var(--amber-solar); display: block; margin-top: 0.3rem;"><i class="fa-solid fa-camera"></i> SCAN TO POP UP</span>
+        </div>
+        <div style="flex: 1; min-width: 240px;">
+          <span style="font-size: 0.72rem; font-weight: 800; color: var(--amber-solar); text-transform: uppercase; letter-spacing: 0.05em;"><i class="fa-solid fa-qrcode"></i> Scan to Donate <div class="modal-overlay" id="dogRescuePosterModal" onclick="if(event.target===this) closeBvfModal('dogRescuePosterModal')">
+    <div class="modal-dialog" style="max-width: 700px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('dogRescuePosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="dog-appeal-badge">
+          <i class="fa-solid fa-dog"></i> $1 A Day Saves A Life Program
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-top: 0.35rem;">
+          Stray Dog Rescue: Sponsorship Tiers &amp; Shelter
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          $1/Day saves a life &bull; $5/Month feeding program &bull; $30/Month adopt a dog
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/stray-dog-rescue-tiers-poster.jpg" alt="Stray Dog Rescue Sponsorship Tiers Poster" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div> Instantly</span>
+          <div style="font-size: 0.95rem; font-weight: 800; color: #ffffff; margin: 0.2rem 0;">SAMPATH BANK &bull; A/C: 0088 6000 0033</div>
+          <p style="font-size: 0.78rem; color: var(--text-slate); margin-bottom: 0.5rem; line-height: 1.35;">
+            Point your camera at this QR code to pop up bank transfer details directly on your phone, or tap below to pop it up right now.
+          </p>
+          <button type="button" class="btn btn-neon-glow" onclick="closeBvfModal('dogRescuePosterModal'); openDonationModal('Island-Wide Stray Dog Rescue &amp; Shelter', 1);" style="padding: 0.45rem 1rem; font-size: 0.82rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+            <i class="fa-solid fa-building-columns"></i> Pop Up Bank Details (<div class="modal-overlay" id="dogRescuePosterModal" onclick="if(event.target===this) closeBvfModal('dogRescuePosterModal')">
+    <div class="modal-dialog" style="max-width: 700px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('dogRescuePosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="dog-appeal-badge">
+          <i class="fa-solid fa-dog"></i> $1 A Day Saves A Life Program
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-top: 0.35rem;">
+          Stray Dog Rescue: Sponsorship Tiers &amp; Shelter
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          $1/Day saves a life &bull; $5/Month feeding program &bull; $30/Month adopt a dog
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/stray-dog-rescue-tiers-poster.jpg" alt="Stray Dog Rescue Sponsorship Tiers Poster" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div> Fund)
+          </button>
+        </div>
+      </div>
+
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
         <button type="button" class="btn btn-neon-glow" onclick="closeBvfModal('dogRescuePosterModal'); openDonationModal('Island-Wide Stray Dog Rescue &amp; Shelter', 30);" style="flex: 1; min-width: 200px; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
           <i class="fa-solid fa-hand-holding-dollar"></i> Sponsor $1/Day ($30/mo)
@@ -717,6 +863,77 @@
 
       <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
         <img src="assets/images/stray-dog-rescue-appeal-poster.jpg" alt="Urgent Appeal - Stray Dog Rescue Project" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div>
+
+      <!-- Direct QR Scan & Instant Bank Details Trigger in Poster Lightbox -->
+      <div class="poster-qr-strip" id="dogAppealPosterModalQrStrip">
+        <div style="flex-shrink: 0; text-align: center; cursor: pointer;" onclick="closeBvfModal('dogAppealPosterModal'); openDonationModal('Island-Wide Stray Dog Rescue &amp; Shelter', 1);" title="Click to pop up bank details">
+          <div style="background: #ffffff; padding: 6px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.4); line-height: 0;">
+            <img src="assets/images/bvf-donation-qr.png" alt="Scan QR Code to Donate <div class="modal-overlay" id="dogAppealPosterModal" onclick="if(event.target===this) closeBvfModal('dogAppealPosterModal')">
+    <div class="modal-dialog" style="max-width: 700px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('dogAppealPosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="dog-appeal-badge">
+          <i class="fa-solid fa-triangle-exclamation"></i> Urgent Animal Welfare Appeal
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-top: 0.35rem;">
+          Stray Dog Crisis Appeal: Treatment &amp; Safe Shelter
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          Saving abandoned, injured, and infected stray dogs across Sri Lanka
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/stray-dog-rescue-appeal-poster.jpg" alt="Urgent Appeal - Stray Dog Rescue Project" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div>" style="width: 105px; height: 105px; display: block;" />
+          </div>
+          <span style="font-size: 0.68rem; font-weight: 800; color: var(--amber-solar); display: block; margin-top: 0.3rem;"><i class="fa-solid fa-camera"></i> SCAN TO POP UP</span>
+        </div>
+        <div style="flex: 1; min-width: 240px;">
+          <span style="font-size: 0.72rem; font-weight: 800; color: var(--amber-solar); text-transform: uppercase; letter-spacing: 0.05em;"><i class="fa-solid fa-qrcode"></i> Scan to Donate <div class="modal-overlay" id="dogAppealPosterModal" onclick="if(event.target===this) closeBvfModal('dogAppealPosterModal')">
+    <div class="modal-dialog" style="max-width: 700px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('dogAppealPosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="dog-appeal-badge">
+          <i class="fa-solid fa-triangle-exclamation"></i> Urgent Animal Welfare Appeal
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-top: 0.35rem;">
+          Stray Dog Crisis Appeal: Treatment &amp; Safe Shelter
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          Saving abandoned, injured, and infected stray dogs across Sri Lanka
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/stray-dog-rescue-appeal-poster.jpg" alt="Urgent Appeal - Stray Dog Rescue Project" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div> Instantly</span>
+          <div style="font-size: 0.95rem; font-weight: 800; color: #ffffff; margin: 0.2rem 0;">SAMPATH BANK &bull; A/C: 0088 6000 0033</div>
+          <p style="font-size: 0.78rem; color: var(--text-slate); margin-bottom: 0.5rem; line-height: 1.35;">
+            Point your camera at this QR code to pop up bank transfer details directly on your phone, or tap below to pop it up right now.
+          </p>
+          <button type="button" class="btn btn-neon-glow" onclick="closeBvfModal('dogAppealPosterModal'); openDonationModal('Island-Wide Stray Dog Rescue &amp; Shelter', 1);" style="padding: 0.45rem 1rem; font-size: 0.82rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+            <i class="fa-solid fa-building-columns"></i> Pop Up Bank Details (<div class="modal-overlay" id="dogAppealPosterModal" onclick="if(event.target===this) closeBvfModal('dogAppealPosterModal')">
+    <div class="modal-dialog" style="max-width: 700px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('dogAppealPosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="dog-appeal-badge">
+          <i class="fa-solid fa-triangle-exclamation"></i> Urgent Animal Welfare Appeal
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-top: 0.35rem;">
+          Stray Dog Crisis Appeal: Treatment &amp; Safe Shelter
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          Saving abandoned, injured, and infected stray dogs across Sri Lanka
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/stray-dog-rescue-appeal-poster.jpg" alt="Urgent Appeal - Stray Dog Rescue Project" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div> Fund)
+          </button>
+        </div>
       </div>
 
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
@@ -873,6 +1090,77 @@
 
       <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
         <img src="assets/images/negombo-lagoon-cleanup-poster.jpg" alt="Proposal Poster - Sunken Boats and Ghost Net Removal in Negombo Lagoon" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div>
+
+      <!-- Direct QR Scan & Instant Bank Details Trigger in Poster Lightbox -->
+      <div class="poster-qr-strip" id="lagoonPosterModalQrStrip">
+        <div style="flex-shrink: 0; text-align: center; cursor: pointer;" onclick="closeBvfModal('lagoonPosterModal'); openDonationModal('Negombo Lagoon Sunken Vessels &amp; Debris Recovery', 1);" title="Click to pop up bank details">
+          <div style="background: #ffffff; padding: 6px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.4); line-height: 0;">
+            <img src="assets/images/bvf-donation-qr.png" alt="Scan QR Code to Donate <div class="modal-overlay" id="lagoonPosterModal" onclick="if(event.target===this) closeBvfModal('lagoonPosterModal')">
+    <div class="modal-dialog" style="max-width: 720px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('lagoonPosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="section-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--cyan-neon); border-color: rgba(6, 182, 212, 0.4);">
+          <i class="fa-solid fa-anchor"></i> Formal Ministry Proposal &bull; $97,000 USD
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-top: 0.35rem;">
+          Recovery of Sunken Boats, Ghost Nets &amp; Debris in Negombo Lagoon
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          Submitted to Ministry of Fisheries &amp; Marine Environment Protection Authority (MEPA)
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/negombo-lagoon-cleanup-poster.jpg" alt="Proposal Poster - Sunken Boats and Ghost Net Removal in Negombo Lagoon" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div>" style="width: 105px; height: 105px; display: block;" />
+          </div>
+          <span style="font-size: 0.68rem; font-weight: 800; color: var(--amber-solar); display: block; margin-top: 0.3rem;"><i class="fa-solid fa-camera"></i> SCAN TO POP UP</span>
+        </div>
+        <div style="flex: 1; min-width: 240px;">
+          <span style="font-size: 0.72rem; font-weight: 800; color: var(--amber-solar); text-transform: uppercase; letter-spacing: 0.05em;"><i class="fa-solid fa-qrcode"></i> Scan to Donate <div class="modal-overlay" id="lagoonPosterModal" onclick="if(event.target===this) closeBvfModal('lagoonPosterModal')">
+    <div class="modal-dialog" style="max-width: 720px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('lagoonPosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="section-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--cyan-neon); border-color: rgba(6, 182, 212, 0.4);">
+          <i class="fa-solid fa-anchor"></i> Formal Ministry Proposal &bull; $97,000 USD
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-top: 0.35rem;">
+          Recovery of Sunken Boats, Ghost Nets &amp; Debris in Negombo Lagoon
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          Submitted to Ministry of Fisheries &amp; Marine Environment Protection Authority (MEPA)
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/negombo-lagoon-cleanup-poster.jpg" alt="Proposal Poster - Sunken Boats and Ghost Net Removal in Negombo Lagoon" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div> Instantly</span>
+          <div style="font-size: 0.95rem; font-weight: 800; color: #ffffff; margin: 0.2rem 0;">SAMPATH BANK &bull; A/C: 0088 6000 0033</div>
+          <p style="font-size: 0.78rem; color: var(--text-slate); margin-bottom: 0.5rem; line-height: 1.35;">
+            Point your camera at this QR code to pop up bank transfer details directly on your phone, or tap below to pop it up right now.
+          </p>
+          <button type="button" class="btn btn-neon-glow" onclick="closeBvfModal('lagoonPosterModal'); openDonationModal('Negombo Lagoon Sunken Vessels &amp; Debris Recovery', 1);" style="padding: 0.45rem 1rem; font-size: 0.82rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+            <i class="fa-solid fa-building-columns"></i> Pop Up Bank Details (<div class="modal-overlay" id="lagoonPosterModal" onclick="if(event.target===this) closeBvfModal('lagoonPosterModal')">
+    <div class="modal-dialog" style="max-width: 720px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('lagoonPosterModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="section-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--cyan-neon); border-color: rgba(6, 182, 212, 0.4);">
+          <i class="fa-solid fa-anchor"></i> Formal Ministry Proposal &bull; $97,000 USD
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-white); margin-top: 0.35rem;">
+          Recovery of Sunken Boats, Ghost Nets &amp; Debris in Negombo Lagoon
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          Submitted to Ministry of Fisheries &amp; Marine Environment Protection Authority (MEPA)
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/negombo-lagoon-cleanup-poster.jpg" alt="Proposal Poster - Sunken Boats and Ghost Net Removal in Negombo Lagoon" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div> Fund)
+          </button>
+        </div>
       </div>
 
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
@@ -1093,6 +1381,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=4.1"></script>
+  <script src="assets/js/main.js?v=4.2"></script>
 </body>
 </html>

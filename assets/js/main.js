@@ -168,6 +168,33 @@ window.openLagoonReportModal = function(e) {
   }
 };
 
+
+// Auto-detect ?donate=1 or #donate from QR code scans to immediately pop up bank transfer modal
+window.checkAutoOpenDonation = function() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const hash = (window.location.hash || '').toLowerCase();
+    if (params.has('donate') || params.has('qr') || hash.includes('donate') || hash === '#bank-details') {
+      const amt = params.get('donate') || params.get('amt') || '1';
+      let proj = params.get('project') || params.get('proj') || '';
+      if (proj.toLowerCase().includes('elephant')) {
+        proj = 'Elephant Hospital & Orphanage (Habarana / Minneriya / Anuradhapura)';
+      } else if (proj.toLowerCase().includes('dog')) {
+        proj = 'Island-Wide Stray Dog Rescue & Shelter';
+      } else if (proj.toLowerCase().includes('lagoon')) {
+        proj = 'Negombo Lagoon Sunken Vessels & Debris Recovery';
+      } else {
+        proj = 'Elephant Hospital & Orphanage (Habarana / Minneriya / Anuradhapura)';
+      }
+      setTimeout(() => {
+        window.openDonationModal(proj, amt);
+      }, 250);
+    }
+  } catch (err) {
+    console.error('Auto-open donation modal error:', err);
+  }
+};
+
 window.closeBvfModal = function(modalId) {
   const modal = document.getElementById(modalId);
   if (modal) {
@@ -177,6 +204,7 @@ window.closeBvfModal = function(modalId) {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  window.checkAutoOpenDonation();
 
   // ==========================================
   // 1. Mobile Navigation & Drawer
@@ -751,3 +779,5 @@ Address: No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake - Sri Lanka`;
 
 });
 
+
+window.addEventListener('load', window.checkAutoOpenDonation);

@@ -3738,3 +3738,114 @@ textarea.form-control {
 }
 
 
+
+
+/* ==========================================================
+   Prominent QR Code Showcases & Badges
+   ========================================================== */
+.prominent-qr-showcase {
+  background: linear-gradient(135deg, rgba(3, 27, 19, 0.92) 0%, rgba(5, 41, 29, 0.98) 100%);
+  border: 2px solid var(--amber-solar);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 25px rgba(245, 158, 11, 0.25);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prominent-qr-showcase:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45), 0 0 35px rgba(245, 158, 11, 0.35);
+}
+
+.prominent-qr-box {
+  flex-shrink: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.prominent-qr-img-wrap {
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  line-height: 0;
+  transition: transform 0.2s ease;
+}
+
+.prominent-qr-img-wrap:hover {
+  transform: scale(1.05);
+}
+
+.prominent-qr-img-wrap img {
+  width: 125px;
+  height: 125px;
+  display: block;
+}
+
+.poster-qr-strip {
+  background: rgba(3, 27, 19, 0.88);
+  border: 1.5px solid var(--amber-solar);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  text-align: left;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.qr-nav-pill {
+  border: 1.5px solid var(--amber-solar) !important;
+  color: #fbbf24 !important;
+  background: rgba(245, 158, 11, 0.12) !important;
+  font-weight: 800 !important;
+  font-size: 0.82rem !important;
+  padding: 0.45rem 0.95rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  border-radius: 9999px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.2) !important;
+  text-decoration: none !important;
+}
+
+.qr-nav-pill:hover {
+  background: var(--amber-solar) !important;
+  color: #000000 !important;
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.5) !important;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .prominent-qr-showcase {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 1.25rem 1rem !important;
+    gap: 1rem !important;
+  }
+  .prominent-qr-showcase .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .poster-qr-strip {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 0.85rem !important;
+  }
+  .poster-qr-strip .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}

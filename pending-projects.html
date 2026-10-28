@@ -72,6 +72,10 @@
       </nav>
 
       <div class="nav-actions">
+        <button type="button" class="btn qr-nav-pill" onclick="openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1)" title="Scan or Click to Donate $1 via Bank Transfer">
+          <i class="fa-solid fa-qrcode"></i>
+          <span>$1 QR Fund</span>
+        </button>
         <button class="btn btn-header-donate btn-open-donation">
           <i class="fa-solid fa-heart"></i>
           <span>Donate Now</span>
@@ -388,6 +392,37 @@
             <p class="opt-text">
               Your small contribution can save a magnificent life. Please donate just <strong>$1</strong> to our Elephant Hospital Project Fund to help us start construction immediately.
             </p>
+
+            <!-- Prominent Instant $1 QR Scan Showcase -->
+          <div class="prominent-qr-showcase">
+            <div class="prominent-qr-box" onclick="openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1)" title="Click or tap to open Bank Details">
+              <div class="prominent-qr-img-wrap">
+                <img src="assets/images/bvf-donation-qr.png" alt="Scan QR Code to Donate $1" />
+              </div>
+              <span style="font-size: 0.72rem; font-weight: 800; color: var(--amber-solar); display: block; margin-top: 0.4rem; letter-spacing: 0.05em;">
+                <i class="fa-solid fa-camera"></i> SCAN TO POP UP
+              </span>
+            </div>
+            <div style="flex-grow: 1;">
+              <span class="opt-badge opt-badge-gold" style="font-size: 0.72rem; margin-bottom: 0.35rem; display: inline-flex;">
+                <i class="fa-solid fa-qrcode"></i> Instant $1 Tourist Fund
+              </span>
+              <h5 style="font-size: 1.1rem; color: #ffffff; margin-bottom: 0.3rem; font-weight: 800;">
+                Scan to Open Bank Details Directly
+              </h5>
+              <p style="font-size: 0.82rem; color: var(--text-slate); margin-bottom: 0.65rem; line-height: 1.45;">
+                Point your mobile camera at this QR code to pop up official Sampath Bank transfer credentials directly on your phone.
+              </p>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <button type="button" class="btn btn-neon-glow" onclick="openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1)" style="padding: 0.5rem 1rem; font-size: 0.85rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+                  <i class="fa-solid fa-building-columns"></i> View Bank Details &amp; Ref
+                </button>
+                <a href="assets/images/bvf-donation-qr.png" download="BVF-Donate-1Dollar-QR.png" class="btn btn-glass" style="padding: 0.5rem 0.85rem; font-size: 0.82rem;">
+                  <i class="fa-solid fa-download"></i> Save QR
+                </a>
+              </div>
+            </div>
+          </div>
 
             <div class="poster-preview-card">
               <a href="assets/images/elephant-hospital-tourist-poster.jpg" target="_blank" rel="noopener" class="poster-thumb-wrap" onclick="openPosterLightbox(event)" title="Click or tap to enlarge full donation poster">
@@ -1194,6 +1229,77 @@
         <img src="assets/images/elephant-hospital-tourist-poster.jpg" alt="Official Elephant Hospital $1 Tourist Campaign Poster with QR" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
       </div>
 
+      <!-- Direct QR Scan & Instant Bank Details Trigger in Poster Lightbox -->
+      <div class="poster-qr-strip">
+        <div style="flex-shrink: 0; text-align: center; cursor: pointer;" onclick="closeBvfModal('posterLightboxModal'); openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1);" title="Click to pop up bank details">
+          <div style="background: #ffffff; padding: 6px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.4); line-height: 0;">
+            <img src="assets/images/bvf-donation-qr.png" alt="Scan QR Code to Donate <div class="modal-overlay" id="posterLightboxModal" onclick="if(event.target===this) closeBvfModal('posterLightboxModal')">
+    <div class="modal-dialog" style="max-width: 680px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('posterLightboxModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="opt-badge opt-badge-gold">
+          <i class="fa-solid fa-qrcode"></i> Official $1 Tourist Campaign Poster
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--text-white); margin-top: 0.35rem;">
+          Save Sri Lankan Elephants &bull; $1 Per Tourist Program
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          Scan the QR code below on your mobile device to contribute $1, or download and display at your hotel, travel agency, or safari vehicle.
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/elephant-hospital-tourist-poster.jpg" alt="Official Elephant Hospital $1 Tourist Campaign Poster with QR" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div>" style="width: 105px; height: 105px; display: block;" />
+          </div>
+          <span style="font-size: 0.68rem; font-weight: 800; color: var(--amber-solar); display: block; margin-top: 0.3rem;"><i class="fa-solid fa-camera"></i> SCAN TO POP UP</span>
+        </div>
+        <div style="flex: 1; min-width: 240px;">
+          <span style="font-size: 0.72rem; font-weight: 800; color: var(--amber-solar); text-transform: uppercase; letter-spacing: 0.05em;"><i class="fa-solid fa-qrcode"></i> Scan to Donate <div class="modal-overlay" id="posterLightboxModal" onclick="if(event.target===this) closeBvfModal('posterLightboxModal')">
+    <div class="modal-dialog" style="max-width: 680px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('posterLightboxModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="opt-badge opt-badge-gold">
+          <i class="fa-solid fa-qrcode"></i> Official $1 Tourist Campaign Poster
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--text-white); margin-top: 0.35rem;">
+          Save Sri Lankan Elephants &bull; $1 Per Tourist Program
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          Scan the QR code below on your mobile device to contribute $1, or download and display at your hotel, travel agency, or safari vehicle.
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/elephant-hospital-tourist-poster.jpg" alt="Official Elephant Hospital $1 Tourist Campaign Poster with QR" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div> Instantly</span>
+          <div style="font-size: 0.95rem; font-weight: 800; color: #ffffff; margin: 0.2rem 0;">SAMPATH BANK &bull; A/C: 0088 6000 0033</div>
+          <p style="font-size: 0.78rem; color: var(--text-slate); margin-bottom: 0.5rem; line-height: 1.35;">
+            Point your camera at this QR code to pop up bank transfer details directly on your phone, or tap below to pop it up right now.
+          </p>
+          <button type="button" class="btn btn-neon-glow" onclick="closeBvfModal('posterLightboxModal'); openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1);" style="padding: 0.45rem 1rem; font-size: 0.82rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+            <i class="fa-solid fa-building-columns"></i> Pop Up Bank Details (<div class="modal-overlay" id="posterLightboxModal" onclick="if(event.target===this) closeBvfModal('posterLightboxModal')">
+    <div class="modal-dialog" style="max-width: 680px; padding: 1.5rem; text-align: center;">
+      <button class="modal-close" onclick="closeBvfModal('posterLightboxModal')">&times;</button>
+      <div style="margin-bottom: 1rem;">
+        <span class="opt-badge opt-badge-gold">
+          <i class="fa-solid fa-qrcode"></i> Official $1 Tourist Campaign Poster
+        </span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--text-white); margin-top: 0.35rem;">
+          Save Sri Lankan Elephants &bull; $1 Per Tourist Program
+        </h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0;">
+          Scan the QR code below on your mobile device to contribute $1, or download and display at your hotel, travel agency, or safari vehicle.
+        </p>
+      </div>
+
+      <div style="background: #000000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/elephant-hospital-tourist-poster.jpg" alt="Official Elephant Hospital $1 Tourist Campaign Poster with QR" style="width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain;">
+      </div> Fund)
+          </button>
+        </div>
+      </div>
+
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
         <button type="button" class="btn btn-neon-glow" onclick="closeBvfModal('posterLightboxModal'); openDonationModalWithAmount(1);" style="flex: 1; min-width: 200px; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
           <i class="fa-solid fa-hand-holding-dollar"></i> Donate $1 Online Now
@@ -1808,6 +1914,6 @@
   </footer>
 
   <!-- Main JavaScript Engine -->
-  <script src="assets/js/main.js?v=4.1"></script>
+  <script src="assets/js/main.js?v=4.2"></script>
 </body>
 </html>
