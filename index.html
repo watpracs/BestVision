@@ -983,14 +983,19 @@
           <!-- $1 QR Scan Card -->
           <div class="bank-qr-card">
             <span style="font-size: 0.72rem; font-weight: 800; color: var(--amber-solar); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem; display: block;">
-              <i class="fa-solid fa-qrcode"></i> Donate $1
+              <i class="fa-solid fa-qrcode"></i> Donate $1 QR
             </span>
-            <div style="background: #ffffff; padding: 6px; border-radius: 6px; display: inline-block; box-shadow: 0 2px 8px rgba(0,0,0,0.15); line-height: 0;">
-              <img src="assets/images/bvf-donation-qr.svg" alt="Scan QR to Donate $1" style="width: 110px; height: 110px; display: block;" />
-            </div>
-            <span style="font-size: 0.68rem; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.25; display: block;">
-              Scan on mobile to view bank info &amp; donate $1
+            <a href="assets/images/bvf-donation-qr.png" target="_blank" rel="noopener" title="Tap to view / enlarge QR code" style="display: inline-block; cursor: pointer; text-decoration: none;">
+              <div style="background: #ffffff; padding: 6px; border-radius: 6px; display: inline-block; box-shadow: 0 2px 8px rgba(0,0,0,0.15); line-height: 0;">
+                <img src="assets/images/bvf-donation-qr.png" alt="Scan QR to Donate $1" style="width: 110px; height: 110px; display: block;" />
+              </div>
+            </a>
+            <span style="font-size: 0.68rem; color: var(--text-muted); margin-top: 0.35rem; line-height: 1.25; display: block;">
+              Scan with phone camera or tap to enlarge
             </span>
+            <a href="assets/images/bvf-donation-qr.png" download="BVF-Donate-1Dollar-QR.png" class="btn btn-glass" style="margin-top: 0.35rem; padding: 0.2rem 0.5rem; font-size: 0.68rem; width: 100%; justify-content: center;">
+              <i class="fa-solid fa-download"></i> Save QR
+            </a>
           </div>
         </div>
 
@@ -1712,6 +1717,6 @@
   </footer>
 
   <!-- Main JavaScript Engine -->
-  <script src="assets/js/main.js?v=4.0"></script>
+  <script src="assets/js/main.js?v=4.1"></script>
 </body>
 </html>
