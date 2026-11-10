@@ -5,23 +5,60 @@ window.activeDonationProject = 'Elephant Hospital & Orphanage (Habarana / Minner
 window.activeDonationAmount = 1;
 
 window.setQuickDonationAmount = function(amount, btnElement) {
-  const amt = parseInt(amount, 10) || 1;
+  const amt = parseFloat(amount) || 1;
   window.activeDonationAmount = amt;
+
+  // Clear custom amount input fields so donor sees preset is selected
+  const customInputs = document.querySelectorAll('.custom-amount-field, #modalCustomAmountInput, .custom-donation-input');
+  customInputs.forEach(inp => { inp.value = ''; });
+
   const allQuickBtns = document.querySelectorAll('.quick-amount-btn');
   allQuickBtns.forEach(btn => {
-    const btnAmt = parseInt(btn.getAttribute('data-amount'), 10);
+    const btnAmt = parseFloat(btn.getAttribute('data-amount'));
     if (btnAmt === amt) {
       btn.classList.add('active');
     } else {
       btn.classList.remove('active');
     }
   });
+
   const amountDisplays = document.querySelectorAll('.modal-selected-amount-display');
   amountDisplays.forEach(el => {
     el.innerText = `$${amt} USD`;
   });
-  const customInputs = document.querySelectorAll('.custom-donation-input');
-  customInputs.forEach(inp => { inp.value = amt; });
+};
+
+window.setCustomDonationAmount = function(val) {
+  const cleanVal = (val || '').toString().trim();
+  const num = parseFloat(cleanVal);
+
+  // Un-highlight all preset buttons
+  const allQuickBtns = document.querySelectorAll('.quick-amount-btn');
+  allQuickBtns.forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  // Sync all custom amount inputs across modal/page if needed
+  const customInputs = document.querySelectorAll('.custom-amount-field, #modalCustomAmountInput');
+  customInputs.forEach(inp => {
+    if (inp.value !== cleanVal && document.activeElement !== inp) {
+      inp.value = cleanVal;
+    }
+  });
+
+  const amountDisplays = document.querySelectorAll('.modal-selected-amount-display');
+
+  if (!isNaN(num) && num > 0) {
+    window.activeDonationAmount = num;
+    amountDisplays.forEach(el => {
+      el.innerText = `$${num} USD`;
+    });
+  } else {
+    window.activeDonationAmount = 1;
+    amountDisplays.forEach(el => {
+      el.innerText = '$1 USD';
+    });
+  }
 };
 
 window.getProjectRefCode = function(proj) {
@@ -73,9 +110,20 @@ window.openDonationModal = function(projectName, amount) {
     }
 
     if (amount) {
-      window.setQuickDonationAmount(amount);
+      const presets = [1, 5, 10, 20, 50];
+      if (presets.includes(Number(amount))) {
+        window.setQuickDonationAmount(amount);
+      } else {
+        const customInputs = document.querySelectorAll('.custom-amount-field, #modalCustomAmountInput');
+        customInputs.forEach(inp => { inp.value = amount; });
+        window.setCustomDonationAmount(amount);
+      }
     } else {
-      window.setQuickDonationAmount(window.activeDonationAmount || 1);
+      if (window.activeDonationAmount && ![1, 5, 10, 20, 50].includes(Number(window.activeDonationAmount))) {
+        window.setCustomDonationAmount(window.activeDonationAmount);
+      } else {
+        window.setQuickDonationAmount(window.activeDonationAmount || 1);
+      }
     }
   }
 };

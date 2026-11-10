@@ -3965,3 +3965,301 @@ textarea.form-control {
     font-size: 0.58rem !important;
   }
 }
+
+/* ==========================================
+   Modern Clean Donation Modal & Custom Amount Engine
+   ========================================== */
+.donation-modal-dialog {
+  max-width: 680px;
+  width: 100%;
+  padding: 2rem 2.25rem !important;
+  border-radius: 20px !important;
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-neon) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(16, 185, 129, 0.25) !important;
+}
+
+@media (max-width: 640px) {
+  .donation-modal-dialog {
+    padding: 1.5rem 1rem !important;
+  }
+}
+
+.donation-modal-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.donation-modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  color: var(--text-white);
+  margin-top: 0.4rem;
+  margin-bottom: 0.25rem;
+  font-weight: 800;
+}
+
+.donation-modal-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.donation-step-box {
+  background: rgba(13, 23, 32, 0.7);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+.donation-step-box:focus-within {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.12);
+}
+
+.donation-step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.donation-step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--emerald-neon);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.donation-step-badge .step-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--emerald-neon);
+  color: #06281e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.donation-step-sub {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.donation-project-ref-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  font-size: 0.76rem;
+  color: var(--text-slate);
+}
+
+.donation-project-ref-strip strong {
+  color: var(--cyan-neon);
+}
+
+.btn-copy-ref {
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: var(--cyan-neon);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.2s ease;
+}
+
+.btn-copy-ref:hover {
+  background: var(--cyan-neon);
+  color: #0d1720;
+}
+
+/* Custom / Other Amount Input */
+.custom-amount-row {
+  margin-top: 0.65rem;
+}
+
+.custom-amount-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-currency-symbol {
+  position: absolute;
+  left: 0.95rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--emerald-neon);
+  pointer-events: none;
+  font-family: var(--font-mono);
+}
+
+.custom-amount-field {
+  width: 100%;
+  padding: 0.65rem 3.5rem 0.65rem 2.2rem;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-white);
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  transition: all 0.2s ease;
+}
+
+.custom-amount-field:focus {
+  border-color: var(--emerald-neon);
+  outline: none;
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.25);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.custom-amount-field::placeholder {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+
+.custom-currency-badge {
+  position: absolute;
+  right: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  pointer-events: none;
+}
+
+/* Bank Box Clean */
+.bank-box-clean {
+  background: rgba(6, 40, 30, 0.35) !important;
+  border-color: var(--border-neon) !important;
+}
+
+.bank-detail-highlight {
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+.bank-detail-ref {
+  border-color: rgba(6, 182, 212, 0.4) !important;
+  background: rgba(6, 182, 212, 0.08) !important;
+}
+
+.qr-card-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--amber-solar);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.qr-img-frame {
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  line-height: 0;
+  transition: transform 0.2s ease;
+}
+
+.qr-img-frame:hover {
+  transform: scale(1.03);
+}
+
+.qr-img-frame img {
+  width: 105px;
+  height: 105px;
+  display: block;
+}
+
+.qr-card-hint {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  line-height: 1.25;
+  display: block;
+}
+
+.qr-save-btn {
+  margin-top: 0.35rem;
+  padding: 0.25rem 0.55rem !important;
+  font-size: 0.7rem !important;
+  width: 100%;
+  justify-content: center;
+}
+
+.bank-note-text {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0.75rem 0 0 0;
+  line-height: 1.4;
+}
+
+.bank-note-text i {
+  color: var(--cyan-neon);
+  margin-right: 0.25rem;
+}
+
+/* Modal Action Footer */
+.donation-modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+.btn-modal-action {
+  flex: 1;
+  min-width: 180px;
+  font-size: 0.88rem;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+}
+
+.btn-modal-whatsapp {
+  flex: 1.2;
+  min-width: 200px;
+  font-size: 0.88rem;
+  background: #25d366 !important;
+  border-color: #25d366 !important;
+  color: #ffffff !important;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+}
+
+.btn-modal-whatsapp:hover {
+  background: #20bd5a !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+  transform: translateY(-2px);
+}

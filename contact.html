@@ -7,7 +7,7 @@
   <meta name="description" content="Contact the Best Vision Foundation secretariat in Kurana, Katunayake. Phone: +94 77 730 4152 / +94 77 970 5752, Email: bvfsrilanka@gmail.com, Reg: L-184510.">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=3.7">
+  <link rel="stylesheet" href="assets/css/style.css?v=4.4">
 
   <!-- Immediate Theme Restore (Prevents Flash) -->
   <script>
@@ -250,49 +250,56 @@
   </div>
 
   <!-- Dual-Option Contribution & Payment Center Modal -->
+    <!-- Dual Payment Modal Component -->
   <div class="modal-overlay" id="donationModal">
-    <div class="modal-dialog" style="max-width: 660px;">
+    <div class="modal-dialog donation-modal-dialog">
       <button class="modal-close">&times;</button>
       
-      <div style="text-align: center; margin-bottom: 1.5rem;">
-        <span class="section-badge"><i class="fa-solid fa-hand-holding-heart"></i> Fuel The Frontlines</span>
-        <h3 style="font-family: var(--font-heading); font-size: 1.65rem; color: var(--text-white); margin-top: 0.5rem; margin-bottom: 0.25rem;">
-          Make a Contribution
-        </h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">
-          Directly supports active field missions, elephant corridors, and community rescue. NGO Reg: <strong>L-184510</strong>
+      <!-- Clean Modern Header -->
+      <div class="donation-modal-header">
+        <span class="section-badge"><i class="fa-solid fa-hand-holding-heart"></i> NGO REG: L-184510</span>
+        <h3 class="donation-modal-title">Make a Contribution</h3>
+        <p class="donation-modal-desc">
+          100% of your gift directly fuels active field rescue &amp; habitat conservation in Sri Lanka.
         </p>
       </div>
 
-      <!-- Designated Project Selector (Directly Earmarks Donation) -->
-      <div class="form-group" style="background: rgba(16, 185, 129, 0.08); border: 1px solid var(--border-neon); border-radius: var(--radius-sm); padding: 0.85rem; margin-bottom: 1.25rem;">
-        <label class="form-label" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; color: var(--emerald-neon); font-weight: 700;">
-          <span><i class="fa-solid fa-bullseye"></i> Earmark Contribution To:</span>
-          <span style="font-size: 0.72rem; font-family: var(--font-mono); color: var(--text-muted);">Direct Designation</span>
-        </label>
-        <select id="donationProjectSelect" class="form-control" onchange="onDonationProjectChanged(this.value)" style="font-weight: 700; color: var(--text-white); background: var(--bg-surface);">
-          <option value="General Frontline Fund">General Frontline Fund (All Missions)</option>
-          <option value="Elephant Hospital & Orphanage (Habarana / Minneriya / Anuradhapura)">Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura - $757.5k)</option>
-          <option value="Island-Wide Stray Dog Rescue & Shelter">Island-Wide Stray Dog Rescue &amp; Safe Shelter ($225k)</option>
-          <option value="Negombo Lagoon Sunken Vessels & Debris Recovery">Negombo Lagoon Sunken Vessels &amp; Debris Recovery ($97k)</option>
-          <option value="Digital Rights & Freedom Defense (CSMD)">Digital Rights &amp; Online Safety (CSMD)</option>
-          <option value="Artisanal Fisherfolk & Youth Empowerment">Artisanal Fisherfolk &amp; Youth Eco-Clubs</option>
+      <!-- Step 1: Designate Project -->
+      <div class="donation-step-box">
+        <div class="donation-step-header">
+          <span class="donation-step-badge">
+            <span class="step-circle">1</span> SELECT DESIGNATED PROJECT
+          </span>
+          <span class="donation-step-sub">Direct Earmarked Fund</span>
+        </div>
+        <select id="donationProjectSelect" class="form-control donation-project-select" onchange="onDonationProjectChanged(this.value)" style="font-weight: 700; font-size: 0.92rem; border-color: var(--emerald-neon); background: var(--bg-card); color: var(--text-white);">
+          <option value="Elephant Hospital & Orphanage (Habarana / Minneriya / Anuradhapura)">🔴 Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)</option>
+          <option value="Island-Wide Stray Dog Rescue & Shelter">🐶 Island-Wide Stray Dog Rescue, Treatment &amp; Safe Shelter</option>
+          <option value="Negombo Lagoon Sunken Vessels & Debris Recovery">🌊 Negombo Lagoon Sunken Vessels, Ghost Nets &amp; Debris Recovery</option>
+          <option value="General Conservation & Welfare Fund">🌿 General Wildlife &amp; Community Welfare Fund</option>
         </select>
-        <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 0.35rem;">
-          <i class="fa-solid fa-circle-check" style="color: var(--emerald-neon);"></i> 100% of your gift is audited and allocated exclusively to the designated mission.
+        <div class="donation-project-ref-strip">
+          <span>Deposit Reference: <strong class="modal-bank-project-ref font-mono">BVF-ELEPHANT-HOSPITAL</strong></span>
+          <button type="button" class="btn-copy-ref" onclick="copyAccountInfo(document.querySelector('.modal-bank-project-ref').textContent, this)" title="Copy Reference Code">
+            <i class="fa-solid fa-copy"></i> Copy Ref
+          </button>
         </div>
       </div>
 
-                  <!-- Quick Contribution Amount Selector ($1, $5, $10, $20, $50) -->
-      <div class="quick-amount-selector-wrap">
-        <div class="quick-amount-label">
-          <span><i class="fa-solid fa-hand-holding-dollar"></i> SELECT CONTRIBUTION AMOUNT:</span>
-          <span class="modal-selected-amount-display" style="font-family: var(--font-mono); color: var(--emerald-neon); font-size: 0.85rem; font-weight: 800;">$1 USD</span>
+      <!-- Step 2: Choose Preset or Enter Any Custom Amount -->
+      <div class="donation-step-box">
+        <div class="donation-step-header">
+          <span class="donation-step-badge">
+            <span class="step-circle">2</span> CHOOSE OR ENTER AMOUNT
+          </span>
+          <span class="modal-selected-amount-display font-mono" style="font-size: 0.9rem; font-weight: 800; color: var(--emerald-neon);">$1 USD</span>
         </div>
+
+        <!-- Preset Buttons -->
         <div class="quick-amount-grid">
           <button type="button" class="quick-amount-btn active" data-amount="1" onclick="setQuickDonationAmount(1, this)">
             <span class="quick-amount-val">$1</span>
-            <span class="quick-amount-tag">Starter</span>
+            <span class="quick-amount-tag">Starter / QR</span>
           </button>
           <button type="button" class="quick-amount-btn" data-amount="5" onclick="setQuickDonationAmount(5, this)">
             <span class="quick-amount-val">$5</span>
@@ -311,42 +318,50 @@
             <span class="quick-amount-tag">Patron</span>
           </button>
         </div>
-        <div class="quick-amount-summary">
-          <span><i class="fa-solid fa-circle-check"></i> Transfer any chosen amount via bank deposit / mobile app</span>
-          <span>Reference: <strong class="modal-bank-project-ref font-mono">BVF-ELEPHANT-HOSPITAL</strong></span>
+
+        <!-- Custom / Other Amount Input -->
+        <div class="custom-amount-row">
+          <div class="custom-amount-input-wrap">
+            <span class="custom-currency-symbol">$</span>
+            <input type="number" 
+                   id="modalCustomAmountInput" 
+                   class="custom-amount-field" 
+                   placeholder="Or enter any custom amount (e.g. 15, 25, 75, 100...)" 
+                   min="1" 
+                   step="any"
+                   oninput="setCustomDonationAmount(this.value)" />
+            <span class="custom-currency-badge">USD</span>
+          </div>
         </div>
       </div>
 
-      <!-- Direct Official Bank Transfer & $1 QR Code -->
-      <div class="bank-wire-box" style="margin-bottom: 1.25rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem; flex-wrap: wrap; gap: 0.5rem;">
-          <span style="font-weight: 800; color: var(--emerald-neon); font-size: 1rem;">
-            <i class="fa-solid fa-building-columns"></i> SAMPATH BANK SRI LANKA
+      <!-- Step 3: Official Bank Details & QR Code -->
+      <div class="donation-step-box bank-box-clean">
+        <div class="donation-step-header">
+          <span class="donation-step-badge">
+            <span class="step-circle">3</span> OFFICIAL BANK DETAILS &amp; $1 QR
           </span>
-          <span class="section-badge" style="margin: 0; font-size: 0.75rem;">Official NGO Reg: L-184510</span>
+          <span class="donation-step-sub" style="color: var(--amber-solar);"><i class="fa-solid fa-shield-halved"></i> Sampath Bank Negombo</span>
         </div>
 
         <div class="bank-transfer-qr-layout">
+          <!-- Details Grid -->
           <div class="bank-detail-grid" style="margin-bottom: 0;">
             <div class="bank-detail-item">
               <span class="label">ACCOUNT NAME</span>
-              <span class="value" style="font-size: 0.9rem;">BEST VISION FOUNDATION</span>
+              <span class="value" style="font-size: 0.92rem;">BEST VISION FOUNDATION</span>
             </div>
             <div class="bank-detail-item">
-              <span class="label">BANK NAME</span>
-              <span class="value">SAMPATH BANK</span>
+              <span class="label">BANK &amp; BRANCH</span>
+              <span class="value">SAMPATH BANK &bull; NEGOMBO (02)</span>
             </div>
-            <div class="bank-detail-item">
-              <span class="label">BRANCH</span>
-              <span class="value">NEGOMBO (02)</span>
-            </div>
-            <div class="bank-detail-item">
+            <div class="bank-detail-item bank-detail-highlight">
               <span class="label">CURRENT ACCOUNT NUMBER</span>
-              <span class="value" style="color: var(--emerald-neon); letter-spacing: 0.05em; font-size: 1.15rem;">0088 6000 0033</span>
+              <span class="value" style="color: var(--emerald-neon); font-size: 1.15rem; letter-spacing: 0.05em;">0088 6000 0033</span>
               <i class="fa-solid fa-copy bank-copy-icon" onclick="copyAccountInfo('0088 6000 0033', this)" title="Copy Account Number"></i>
             </div>
             <div class="bank-detail-item">
-              <span class="label">SWIFT CODE (INTERNATIONAL)</span>
+              <span class="label">SWIFT CODE (FOR OVERSEAS)</span>
               <span class="value" style="color: var(--cyan-neon);">BSAMLKLX</span>
               <i class="fa-solid fa-copy bank-copy-icon" onclick="copyAccountInfo('BSAMLKLX', this)" title="Copy SWIFT Code"></i>
             </div>
@@ -354,53 +369,42 @@
               <span class="label">BRANCH CODE / BANK CODE</span>
               <span class="value">7278 / 088</span>
             </div>
+            <div class="bank-detail-item bank-detail-ref">
+              <span class="label">TRANSFER REMARK / REFERENCE</span>
+              <span class="value modal-bank-project-ref" style="color: var(--emerald-vibrant);">BVF-ELEPHANT-HOSPITAL</span>
+              <i class="fa-solid fa-copy bank-copy-icon" onclick="copyAccountInfo(document.querySelector('.modal-bank-project-ref').textContent, this)" title="Copy Reference"></i>
+            </div>
           </div>
 
           <!-- $1 QR Scan Card -->
           <div class="bank-qr-card">
-            <span style="font-size: 0.72rem; font-weight: 800; color: var(--amber-solar); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem; display: block;">
-              <i class="fa-solid fa-qrcode"></i> Donate $1 QR
-            </span>
-            <a href="assets/images/bvf-donation-qr.png" target="_blank" rel="noopener" title="Tap to view / enlarge QR code" style="display: inline-block; cursor: pointer; text-decoration: none;">
-              <div style="background: #ffffff; padding: 6px; border-radius: 6px; display: inline-block; box-shadow: 0 2px 8px rgba(0,0,0,0.15); line-height: 0;">
-                <img src="assets/images/bvf-donation-qr.png" alt="Scan QR to Donate $1" style="width: 110px; height: 110px; display: block;" />
+            <span class="qr-card-title"><i class="fa-solid fa-qrcode"></i> Instant $1 QR</span>
+            <a href="assets/images/bvf-donation-qr.png" target="_blank" rel="noopener" title="Tap to view / enlarge QR code">
+              <div class="qr-img-frame">
+                <img src="assets/images/bvf-donation-qr.png" alt="Scan QR to Donate $1" />
               </div>
             </a>
-            <span style="font-size: 0.68rem; color: var(--text-muted); margin-top: 0.35rem; line-height: 1.25; display: block;">
-              Scan with phone camera or tap to enlarge
-            </span>
-            <a href="assets/images/bvf-donation-qr.png" download="BVF-Donate-1Dollar-QR.png" class="btn btn-glass" style="margin-top: 0.35rem; padding: 0.2rem 0.5rem; font-size: 0.68rem; width: 100%; justify-content: center;">
+            <span class="qr-card-hint">Scan with camera or banking app</span>
+            <a href="assets/images/bvf-donation-qr.png" download="BVF-Donation-QR.png" class="btn btn-glass qr-save-btn">
               <i class="fa-solid fa-download"></i> Save QR
             </a>
           </div>
         </div>
 
-        <!-- Mandatory Deposit Reference Narration -->
-        <div class="bank-detail-item" style="margin-top: 0.85rem; background: rgba(16, 185, 129, 0.12); border: 1px solid var(--border-neon); border-radius: 6px; padding: 0.65rem 0.85rem;">
-          <span class="label" style="color: var(--emerald-neon); font-weight: 800;">MANDATORY DEPOSIT REFERENCE (REMARKS / NARRATION)</span>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.25rem;">
-            <span class="value modal-bank-project-ref font-mono" style="font-size: 1.05rem; color: var(--emerald-vibrant); font-weight: 800; letter-spacing: 0.05em;">BVF-ELEPHANT-HOSPITAL</span>
-            <i class="fa-solid fa-copy bank-copy-icon" onclick="copyAccountInfo(document.querySelector('.modal-bank-project-ref').textContent, this)" title="Copy Deposit Reference Code"></i>
-          </div>
-          <span style="font-size: 0.74rem; color: var(--text-muted); display: block; margin-top: 0.25rem;">
-            Type this reference code in your transfer description so funds are strictly credited to your chosen project.
-          </span>
-        </div>
-
-        <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0.75rem 0 0 0;">
-          <i class="fa-solid fa-circle-info" style="color: var(--cyan-neon);"></i> Applicable for local CEFT, SLIPS, online banking, and international SWIFT wire transfers.
+        <p class="bank-note-text">
+          <i class="fa-solid fa-circle-info"></i> Supports local CEFT / SLIPS, mobile banking apps, online transfers, and international SWIFT wire transfers.
         </p>
       </div>
 
-      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-        <button type="button" onclick="copyAccountInfo('', this)" class="btn btn-glass" style="flex: 1; font-size: 0.88rem; justify-content: center;">
+      <!-- Action Buttons -->
+      <div class="donation-modal-actions">
+        <button type="button" onclick="copyAccountInfo('', this)" class="btn btn-glass btn-modal-action">
           <i class="fa-solid fa-copy"></i> Copy All Bank Details
         </button>
-        <button type="button" onclick="sendDepositSlipWhatsApp()" class="btn btn-neon-glow" style="flex: 1; font-size: 0.88rem; background: #25d366; border-color: #25d366; color: #ffffff; justify-content: center;">
-          <i class="fa-brands fa-whatsapp"></i> Send Slip via WhatsApp
+        <button type="button" onclick="sendDepositSlipWhatsApp()" class="btn btn-neon-glow btn-modal-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Notify Treasurer on WhatsApp
         </button>
       </div>
-
     </div>
   </div>
 
@@ -493,6 +497,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=4.3"></script>
+  <script src="assets/js/main.js?v=4.4"></script>
 </body>
 </html>
