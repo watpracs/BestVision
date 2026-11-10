@@ -2,6 +2,27 @@
 // Global Instant Modal, Lightbox & Donation Engine
 // ==========================================
 window.activeDonationProject = 'Elephant Hospital & Orphanage (Habarana / Minneriya / Anuradhapura)';
+window.activeDonationAmount = 1;
+
+window.setQuickDonationAmount = function(amount, btnElement) {
+  const amt = parseInt(amount, 10) || 1;
+  window.activeDonationAmount = amt;
+  const allQuickBtns = document.querySelectorAll('.quick-amount-btn');
+  allQuickBtns.forEach(btn => {
+    const btnAmt = parseInt(btn.getAttribute('data-amount'), 10);
+    if (btnAmt === amt) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  const amountDisplays = document.querySelectorAll('.modal-selected-amount-display');
+  amountDisplays.forEach(el => {
+    el.innerText = `$${amt} USD`;
+  });
+  const customInputs = document.querySelectorAll('.custom-donation-input');
+  customInputs.forEach(inp => { inp.value = amt; });
+};
 
 window.getProjectRefCode = function(proj) {
   if (!proj) return 'BVF-ELEPHANT-HOSPITAL';
@@ -52,16 +73,9 @@ window.openDonationModal = function(projectName, amount) {
     }
 
     if (amount) {
-      const customInputs = document.querySelectorAll('.custom-donation-input');
-      customInputs.forEach(inp => { inp.value = amount; });
-      const amountBtns = document.querySelectorAll('.donation-preset-btn');
-      amountBtns.forEach(b => {
-        if (b.innerText.trim().startsWith(`$${amount}`)) {
-          b.classList.add('active');
-        } else {
-          b.classList.remove('active');
-        }
-      });
+      window.setQuickDonationAmount(amount);
+    } else {
+      window.setQuickDonationAmount(window.activeDonationAmount || 1);
     }
   }
 };
@@ -266,10 +280,11 @@ document.addEventListener('DOMContentLoaded', () => {
       { amount: 25000, label: 'Rs. 25,000', impactTitle: 'Lagoon Boat Clearance Sweep', impactDesc: 'Sponsors a full-day fuel and logistics sweep for artisanal boats clearing plastic debris.' }
     ],
     USD: [
-      { amount: 1, label: '$1 USD', impactTitle: 'Elephant Hospital Fund (Tourist Program)', impactDesc: 'Contributes directly to starting construction on the First Emergency Elephant Hospital in Habarana / Minneriya / Anuradhapura.' },
+      { amount: 1, label: '$1 USD', impactTitle: 'Elephant Hospital Fund (Starter)', impactDesc: 'Contributes directly to starting construction on the First Emergency Elephant Hospital in Habarana / Minneriya / Anuradhapura.' },
+      { amount: 5, label: '$5 USD', impactTitle: 'Stray Dog Care & Treatment', impactDesc: 'Provides emergency medical relief, rabies vaccination, and parasite care for a rescued stray animal.' },
       { amount: 10, label: '$10 USD', impactTitle: 'Mangrove & Cleaner Waters', impactDesc: 'Supplies 1 Mangrove Sapling Restoration Kit & protective gear for lagoon volunteers.' },
-      { amount: 25, label: '$25 USD', impactTitle: 'Anti-Snare & Wildlife Patrol', impactDesc: 'Funds an emergency snare removal and first-aid medical patrol in elephant buffer zones.' },
-      { amount: 100, label: '$100 USD', impactTitle: 'Lagoon Boat Clearance Sweep', impactDesc: 'Sponsors a full-day fuel and logistics sweep for artisanal boats clearing plastic debris.' }
+      { amount: 20, label: '$20 USD', impactTitle: 'Anti-Snare & Wildlife Patrol', impactDesc: 'Funds an emergency snare removal and first-aid medical patrol in elephant buffer zones.' },
+      { amount: 50, label: '$50 USD', impactTitle: 'Lagoon Ghost Net & Debris Recovery', impactDesc: 'Sponsors logistics, protective gear, and boat sweep operations to clear hazardous marine debris.' }
     ]
   };
 
@@ -574,9 +589,11 @@ Address: No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake - Sri Lanka`;
   window.sendDepositSlipWhatsApp = () => {
     const proj = window.activeDonationProject || 'Elephant Hospital Project Fund';
     const ref = (window.getProjectRefCode) ? window.getProjectRefCode(proj) : 'BVF-DIRECT';
+    const chosenAmt = window.activeDonationAmount ? `$${window.activeDonationAmount} USD` : '$1 USD';
     const msg = `*Best Vision Foundation (BVF) - Bank Deposit Notification*\n\n` +
       `Hello Treasurer D.W.M. Perera,\n` +
       `I have initiated a donation to your Sampath Bank account for:\n` +
+      `• *Contribution Amount:* ${chosenAmt}\n` +
       `• *Designated Project:* ${proj}\n` +
       `• *Deposit Reference:* ${ref}\n` +
       `• *Bank:* SAMPATH BANK (Branch: NEGOMBO 02)\n` +

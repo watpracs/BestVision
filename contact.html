@@ -283,7 +283,41 @@
         </div>
       </div>
 
-            <!-- Direct Official Bank Transfer & $1 QR Code -->
+                  <!-- Quick Contribution Amount Selector ($1, $5, $10, $20, $50) -->
+      <div class="quick-amount-selector-wrap">
+        <div class="quick-amount-label">
+          <span><i class="fa-solid fa-hand-holding-dollar"></i> SELECT CONTRIBUTION AMOUNT:</span>
+          <span class="modal-selected-amount-display" style="font-family: var(--font-mono); color: var(--emerald-neon); font-size: 0.85rem; font-weight: 800;">$1 USD</span>
+        </div>
+        <div class="quick-amount-grid">
+          <button type="button" class="quick-amount-btn active" data-amount="1" onclick="setQuickDonationAmount(1, this)">
+            <span class="quick-amount-val">$1</span>
+            <span class="quick-amount-tag">Starter</span>
+          </button>
+          <button type="button" class="quick-amount-btn" data-amount="5" onclick="setQuickDonationAmount(5, this)">
+            <span class="quick-amount-val">$5</span>
+            <span class="quick-amount-tag">Support</span>
+          </button>
+          <button type="button" class="quick-amount-btn" data-amount="10" onclick="setQuickDonationAmount(10, this)">
+            <span class="quick-amount-val">$10</span>
+            <span class="quick-amount-tag">Care</span>
+          </button>
+          <button type="button" class="quick-amount-btn" data-amount="20" onclick="setQuickDonationAmount(20, this)">
+            <span class="quick-amount-val">$20</span>
+            <span class="quick-amount-tag">Rescue</span>
+          </button>
+          <button type="button" class="quick-amount-btn" data-amount="50" onclick="setQuickDonationAmount(50, this)">
+            <span class="quick-amount-val">$50</span>
+            <span class="quick-amount-tag">Patron</span>
+          </button>
+        </div>
+        <div class="quick-amount-summary">
+          <span><i class="fa-solid fa-circle-check"></i> Transfer any chosen amount via bank deposit / mobile app</span>
+          <span>Reference: <strong class="modal-bank-project-ref font-mono">BVF-ELEPHANT-HOSPITAL</strong></span>
+        </div>
+      </div>
+
+      <!-- Direct Official Bank Transfer & $1 QR Code -->
       <div class="bank-wire-box" style="margin-bottom: 1.25rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem; flex-wrap: wrap; gap: 0.5rem;">
           <span style="font-weight: 800; color: var(--emerald-neon); font-size: 1rem;">
@@ -459,6 +493,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=4.2"></script>
+  <script src="assets/js/main.js?v=4.3"></script>
 </body>
 </html>
