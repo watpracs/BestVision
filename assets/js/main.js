@@ -822,10 +822,10 @@ Address: No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake - Sri Lanka`;
   const radarTicker = document.getElementById('liveRadarTicker');
   if (radarTicker) {
     const dispatches = [
-      "Negombo Lagoon Debris Interception Active • Field Patrols On Duty",
-      "Wildlife Alert: Elephant Railway Corridor Patrols Active Near Buffer Zones",
-      "Urgent Appeal: 350 to 400 Elephants Face Hazards • 20 Projects Pending",
-      "Coastal Watch: Sea Turtle Patrols & Ghost Net Sweeps Active • Hotline 24/7"
+      "Wildlife Alert: 350 to 400 Elephants Face Lethal Hazards • First Emergency Elephant Hospital Fund Active",
+      "Field Dispatch: Round-the-Clock Railway Corridor & Anti-Snare Patrols Active in Habarana / Minneriya",
+      "Urgent Appeal: $1 Per Tourist Campaign Launched to Break Ground on North Central Elephant Hospital",
+      "Field Report: First 24/7 Wildlife Trauma Suite & Hydrotherapy Facility Approved for Danger Zone"
     ];
 
     let dispatchIndex = 0;

@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Main Futuristic Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=4.4">
+  <link rel="stylesheet" href="assets/css/style.css?v=4.5">
 
   <!-- Immediate Theme Restore (Prevents Flash) -->
   <script>
@@ -33,7 +33,7 @@
       <div class="radar-indicator">
         <span class="pulse-beacon"></span>
         <span class="radar-live-pill">LIVE RADAR</span>
-        <span id="liveRadarTicker" class="radar-ticker-text">Negombo Lagoon Debris Interception Active • Artisanal Boats Deployed</span>
+        <span id="liveRadarTicker" class="radar-ticker-text">Wildlife Alert: 350 to 400 Elephants Face Lethal Hazards • First Emergency Elephant Hospital Fund Active</span>
       </div>
       <div class="radar-links">
         <span><i class="fa-solid fa-certificate"></i> Govt Reg: <strong>L-184510</strong></span>
@@ -156,35 +156,35 @@
         </div>
       </div>
 
-      <!-- Holographic Feature Card -->
+      <!-- Featured News Hero Visual Card (Elephants Priority) -->
       <div class="hero-visual">
         <div class="holo-card">
           <div class="holo-media">
-            <img src="assets/images/negombo-lagoon.jpg" alt="Save Negombo Lagoon Mission">
-            <div class="holo-status-pill">
-              <span class="pulse-dot"></span> PRIORITY MISSION
+            <img src="assets/images/elephant-hospital-habarana.jpg" alt="First Emergency Elephant Hospital &amp; Rescue Center in Habarana / Minneriya / Anuradhapura">
+            <div class="holo-status-pill" style="background: rgba(220, 38, 38, 0.25); border-color: #ef4444; color: #fca5a5;">
+              <span class="pulse-dot" style="background: #ef4444;"></span> FEATURED NEWS &bull; TOP APPEAL
             </div>
           </div>
           <div class="holo-body">
-            <h3 class="holo-title">Negombo Lagoon Debris Interception</h3>
+            <h3 class="holo-title">First Emergency Elephant Hospital &amp; Sanctuary</h3>
             <p class="holo-desc">
-              Deploying volunteer sweeps and artisanal boats to extract micro-plastics, clear aquatic choke points, and replant mangrove nurseries along coastal waterways.
+              Constructing Sri Lanka's first 24/7 wildlife trauma hospital directly in the North Central danger zone (Habarana / Minneriya / Anuradhapura) to save 350&ndash;400 elephants from railway collisions, jaw bombs, and wire snares.
             </p>
             
             <div class="progress-track">
-              <div class="progress-fill" style="width: 78%;"></div>
+              <div class="progress-fill" style="width: 32%; background: linear-gradient(90deg, #f59e0b, #10b981);"></div>
             </div>
             <div class="progress-meta">
-              <span>Goal: 25 Sweeps in 2026</span>
-              <strong style="color: var(--emerald-neon);">18 Completed (78%)</strong>
+              <span>Target: $757,500 USD Fund</span>
+              <strong style="color: var(--amber-solar);"><i class="fa-solid fa-qrcode"></i> $1 Tourist Campaign Active</strong>
             </div>
 
             <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem;">
-              <button class="btn btn-neon-glow btn-open-volunteer" style="flex: 1; padding: 0.6rem 1rem; font-size: 0.85rem;">
-                <i class="fa-solid fa-hand-holding-heart"></i> Volunteer
+              <button class="btn btn-neon-glow" onclick="openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1)" style="flex: 1; padding: 0.6rem 1rem; font-size: 0.85rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
+                <i class="fa-solid fa-heart"></i> Donate $1 QR / Wire
               </button>
-              <a href="https://www.facebook.com/profile.php?id=100095383907228" target="_blank" rel="noopener noreferrer" class="btn btn-glass" style="padding: 0.6rem 1rem; font-size: 0.85rem;">
-                <i class="fa-brands fa-facebook"></i> Field Log
+              <a href="#elephant-hospital" class="btn btn-glass" style="padding: 0.6rem 1rem; font-size: 0.85rem;">
+                <i class="fa-solid fa-hospital"></i> Hospital Blueprint
               </a>
             </div>
           </div>
@@ -458,7 +458,99 @@
     </div>
   </section>
 
-  <!-- Interactive Bento Grid: What We Do -->
+    <!-- Featured News Section (Elephant Conservation & Crisis Dispatches) -->
+  <section class="section" id="featured-news" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header" style="text-align: center; max-width: 760px; margin: 0 auto 2.5rem;">
+        <span class="section-badge"><i class="fa-solid fa-newspaper"></i> Featured News &amp; Field Dispatches</span>
+        <h2 class="section-title">Latest Dispatches: Sri Lanka Elephant Emergency</h2>
+        <p class="section-desc">
+          Real-time field updates from our emergency response units, migration corridor patrols, and the groundbreaking of the First Emergency Elephant Hospital in North Central Province.
+        </p>
+      </div>
+
+      <div class="featured-news-grid">
+        <!-- News Card 1: Featured Lead Story (Elephant Hospital) -->
+        <article class="news-card news-card-featured">
+          <div class="news-media">
+            <img src="assets/images/elephant-hospital-habarana.jpg" alt="Establishment of First Elephant Hospital in Habarana / Minneriya / Anuradhapura">
+            <span class="news-badge news-badge-urgent"><i class="fa-solid fa-bullhorn"></i> Breaking News &bull; Top Priority</span>
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="fa-solid fa-calendar-days"></i> Field Report &bull; November 2026</span>
+              <span><i class="fa-solid fa-location-dot" style="color: #ef4444;"></i> Habarana / Minneriya / Anuradhapura</span>
+            </div>
+            <h3 class="news-title">
+              <a href="#elephant-hospital">First 24/7 Emergency Elephant Hospital &amp; Orphan Sanctuary Approved for Danger Zone</a>
+            </h3>
+            <p class="news-excerpt">
+              With 350 to 400 wild elephants suffering fatal train strikes, Hakka Patas (jaw-bombs), and wire snares annually, Best Vision Foundation has launched a $757,500 campaign to construct the country's first dedicated 24/7 wildlife hospital directly in North Central Province, eliminating lethal 250km transport delays.
+            </p>
+            <div class="news-footer">
+              <button type="button" class="btn btn-neon-glow" onclick="openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1)" style="font-size: 0.82rem; padding: 0.45rem 1rem;">
+                <i class="fa-solid fa-hand-holding-dollar"></i> Support Hospital Fund ($1)
+              </button>
+              <a href="#elephant-hospital" class="news-link">Read Blueprint <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- News Card 2: Railway Corridors & Anti-Snare Patrols -->
+        <article class="news-card">
+          <div class="news-media">
+            <img src="assets/images/elephant-wildlife.jpg" alt="Elephant railway corridor night patrols and anti-snare operations">
+            <span class="news-badge"><i class="fa-solid fa-shield-halved"></i> Field Operation</span>
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="fa-solid fa-calendar-days"></i> Active Mission</span>
+              <span><i class="fa-solid fa-train"></i> Train Corridor Buffer</span>
+            </div>
+            <h3 class="news-title">
+              <a href="pending-projects.html">Night Patrols &amp; Acoustic Warning Systems Deployed Along Railway Tracks</a>
+            </h3>
+            <p class="news-excerpt">
+              Rapid response volunteer squads have expanded nightly corridor sweeps along high-risk railway stretches in Galgamuwa, Habarana, and Minneriya, averting critical herd collisions during seasonal migrations.
+            </p>
+            <div class="news-footer">
+              <a href="pending-projects.html" class="news-link">View 20 Pending Projects <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- News Card 3: $1 Per Tourist Campaign -->
+        <article class="news-card">
+          <div class="news-media">
+            <img src="assets/images/elephant-hospital-tourist-poster.jpg" alt="Official $1 Per Tourist Campaign Poster for Sri Lanka Elephants">
+            <span class="news-badge news-badge-gold"><i class="fa-solid fa-qrcode"></i> Global Tourist Program</span>
+          </div>
+          <div class="news-content">
+            <div class="news-meta">
+              <span><i class="fa-solid fa-calendar-days"></i> Island-Wide Rollout</span>
+              <span><i class="fa-solid fa-hotel"></i> Hotels &amp; Safari Hubs</span>
+            </div>
+            <h3 class="news-title">
+              <a href="javascript:void(0)" onclick="openBvfModal('posterLightboxModal')">Global "$1 Per Tourist" Campaign Expands Across Safari Lodges and Hotels</a>
+            </h3>
+            <p class="news-excerpt">
+              Tourists visiting Sri Lanka's national parks are rallying behind the "$1 Dollar Campaign" by scanning posters placed at safari jeeps and reception desks, generating direct micro-donations into audited Sampath Bank accounts.
+            </p>
+            <div class="news-footer">
+              <button type="button" class="btn btn-glass" onclick="openBvfModal('posterLightboxModal')" style="font-size: 0.82rem; padding: 0.45rem 0.85rem;">
+                <i class="fa-solid fa-qrcode"></i> View Poster &amp; QR
+              </button>
+              <button type="button" class="btn btn-neon-glow" onclick="openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1)" style="font-size: 0.82rem; padding: 0.45rem 0.85rem; background: #f59e0b; border-color: #f59e0b; color: #000000;">
+                <i class="fa-solid fa-heart"></i> Donate $1
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<!-- Interactive Bento Grid: What We Do -->
   <section class="section" id="missions">
     <div class="container">
       <div class="section-header">
@@ -1871,6 +1963,6 @@
   </footer>
 
   <!-- Main JavaScript Engine -->
-  <script src="assets/js/main.js?v=4.4"></script>
+  <script src="assets/js/main.js?v=4.5"></script>
 </body>
 </html>
