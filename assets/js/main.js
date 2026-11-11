@@ -607,6 +607,7 @@ BANK : SAMPATH BANK
 BRANCH : NEGOMBO (02)
 BRANCH CODE : 7278
 BANK CODE : 088
+BANK COUNTRY : SRI LANKA
 CURRENT ACCOUNT NUMBER : 0088 6000 0033
 SWIFT CODE : BSAMLKLX
 NGO REG NO : L-184510
@@ -644,7 +645,8 @@ Address: No. 297, Munidasa Kumaratunge Mawatha, Kurana, Katunayake - Sri Lanka`;
       `• *Contribution Amount:* ${chosenAmt}\n` +
       `• *Designated Project:* ${proj}\n` +
       `• *Deposit Reference:* ${ref}\n` +
-      `• *Bank:* SAMPATH BANK (Branch: NEGOMBO 02)\n` +
+      `• *Bank:* SAMPATH BANK (Branch: NEGOMBO 02, Sri Lanka)\n` +
+      `• *Bank Country:* SRI LANKA\n` +
       `• *Account Name:* BEST VISION FOUNDATION\n` +
       `• *Account Number:* 0088 6000 0033\n` +
       `• *SWIFT Code:* BSAMLKLX\n\n` +
