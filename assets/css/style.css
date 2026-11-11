@@ -4435,3 +4435,138 @@ textarea.form-control {
 .news-link:hover {
   gap: 0.6rem;
 }
+
+/* ==========================================
+   Ultra-Simple Donor Bank Copy Interface (No QR)
+   ========================================== */
+.bank-copy-list-box {
+  background: rgba(13, 23, 32, 0.75) !important;
+  border: 1px solid var(--border-neon) !important;
+  border-radius: 12px;
+  padding: 1.1rem !important;
+}
+
+.bank-copy-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.bank-copy-row {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.bank-copy-row:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  background: rgba(16, 185, 129, 0.04);
+}
+
+.bank-copy-row.highlight-row {
+  border-color: rgba(16, 185, 129, 0.6);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.bank-copy-row.highlight-ref {
+  border-color: rgba(6, 182, 212, 0.6);
+  background: rgba(6, 182, 212, 0.08);
+}
+
+.bank-copy-row-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+@media (max-width: 520px) {
+  .bank-copy-row-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bank-copy-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.bank-copy-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.15rem;
+  line-height: 1.2;
+}
+
+.bank-copy-val {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-white);
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bank-copy-val.num-large {
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  color: var(--emerald-neon);
+}
+
+.btn-copy-field {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-slate);
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  font-family: var(--font-heading, inherit);
+}
+
+.btn-copy-field:hover {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: var(--emerald-neon);
+  color: var(--emerald-neon);
+  transform: translateY(-1px);
+}
+
+.btn-copy-field.btn-copy-primary {
+  background: var(--emerald-neon);
+  border-color: var(--emerald-neon);
+  color: #06281e;
+  font-weight: 800;
+}
+
+.btn-copy-field.btn-copy-primary:hover {
+  background: #34d399;
+  color: #06281e;
+}
+
+.btn-copy-field.btn-copy-cyan {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: var(--cyan-neon);
+  color: var(--cyan-neon);
+}
+
+.btn-copy-field.btn-copy-cyan:hover {
+  background: var(--cyan-neon);
+  color: #0d1720;
+}
