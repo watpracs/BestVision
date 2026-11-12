@@ -64,10 +64,27 @@ window.setCustomDonationAmount = function(val) {
 window.getProjectRefCode = function(proj) {
   if (!proj) return 'BVF-ELEPHANT-HOSPITAL';
   const p = proj.toLowerCase();
-  if (p.includes('elephant')) return 'BVF-ELEPHANT-HOSPITAL';
-  if (p.includes('dog')) return 'BVF-STRAY-DOG-RESCUE';
-  if (p.includes('lagoon')) return 'BVF-NEGOMBO-LAGOON';
-  return 'BVF-DIRECT';
+  if (p.includes('elephant') || p.includes('hospital') || p.includes('orphanage')) return 'BVF-ELEPHANT-HOSPITAL';
+  if (p.includes('dog') || p.includes('shelter')) return 'BVF-STRAY-DOG-RESCUE';
+  if (p.includes('lagoon') || p.includes('sunken') || p.includes('vessel')) return 'BVF-NEGOMBO-LAGOON';
+  if (p.includes('monkey')) return 'BVF-MONKEY-ISLAND';
+  if (p.includes('waterway')) return 'BVF-CLEAN-WATERWAYS';
+  if (p.includes('fishing gear')) return 'BVF-FISHING-GEAR';
+  if (p.includes('school')) return 'BVF-RURAL-SCHOOLS';
+  if (p.includes('education') || p.includes('scholarship') || p.includes('children')) return 'BVF-CHILDREN-EDU';
+  if (p.includes('machinery') || p.includes('skilled worker')) return 'BVF-SKILLED-WORKERS';
+  if (p.includes('toilet') || p.includes('sanitary')) return 'BVF-PUBLIC-TOILETS';
+  if (p.includes('fence') || p.includes('corridor')) return 'BVF-ELEPHANT-FENCES';
+  if (p.includes('mangrove')) return 'BVF-MANGROVES';
+  if (p.includes('coral') || p.includes('reef')) return 'BVF-CORAL-RESTORE';
+  if (p.includes('turtle')) return 'BVF-SEA-TURTLES';
+  if (p.includes('battery') || p.includes('e-waste')) return 'BVF-EWASTE-PROGRAM';
+  if (p.includes('rainwater') || p.includes('harvesting')) return 'BVF-RAINWATER-SYSTEMS';
+  if (p.includes('gardening') || p.includes('organic')) return 'BVF-HOME-GARDENING';
+  if (p.includes('life jacket')) return 'BVF-LIFE-JACKETS';
+  if (p.includes('marine tech') || p.includes('vocational')) return 'BVF-MARINE-TECH';
+  if (p.includes('market') || p.includes('women')) return 'BVF-MARKET-CLEANING';
+  return 'BVF-PROJECT-DONATION';
 };
 
 window.onDonationProjectChanged = function(projectName) {
@@ -98,12 +115,21 @@ window.openDonationModal = function(projectName, amount) {
       selects.forEach(s => {
         let matched = false;
         for (let opt of s.options) {
-          if (opt.value === projectName || (projectName.toLowerCase().includes('elephant') && opt.value.toLowerCase().includes('elephant'))) {
+          if (opt.value.trim().toLowerCase() === projectName.trim().toLowerCase() ||
+              (projectName.toLowerCase().includes('elephant') && opt.value.toLowerCase().includes('elephant')) ||
+              (projectName.toLowerCase().includes('dog') && opt.value.toLowerCase().includes('dog')) ||
+              (projectName.toLowerCase().includes('lagoon') && opt.value.toLowerCase().includes('lagoon'))) {
             s.value = opt.value;
             window.activeDonationProject = opt.value;
             matched = true;
             break;
           }
+        }
+        if (!matched && projectName) {
+          const newOpt = new Option(projectName, projectName, true, true);
+          s.add(newOpt);
+          s.value = projectName;
+          window.activeDonationProject = projectName;
         }
       });
       window.onDonationProjectChanged(window.activeDonationProject);
@@ -230,6 +256,328 @@ window.openLagoonReportModal = function(e) {
   }
 };
 
+// 20 Pending Projects Master Registry
+window.pendingProjectsData = {
+  1: {
+    num: "01",
+    title: "Recovery of Sunken Vessels, Ghost Nets & Marine Debris in Negombo Lagoon",
+    category: "Waterways & Marine",
+    categoryIcon: "fa-water",
+    badge: "Formal Ministry Proposal",
+    badgeClass: "badge-urgent",
+    lead: "MEPA & Ministry of Fisheries Collaboration",
+    target: "Negombo Lagoon Estuary, Western Province",
+    budget: "$97,000 USD (Barge Salvage & Net Clearing)",
+    ref: "BVF-NEGOMBO-LAGOON",
+    hasCustomModal: 'openLagoonReportModal',
+    desc: "Submitted to Ministry of Fisheries & MEPA: Salvaging 50–80 abandoned and sunken boats and clearing 80–100 tons of suffocating synthetic ghost nets using a 10-ton crane floating barge to safeguard 4,000+ fishing families. Budget: $97,000 USD."
+  },
+  2: {
+    num: "02",
+    title: "Providing Continuous Food Supply to Monkey Island in Negombo",
+    category: "Wildlife & Animals",
+    categoryIcon: "fa-paw",
+    badge: "Priority Pending",
+    badgeClass: "badge-urgent",
+    lead: "Negombo Wildlife Conservation Division",
+    target: "Monkey Island (Negombo Lagoon Mangrove Islet)",
+    budget: "$12,500 USD / Year ($1,040 / Month)",
+    ref: "BVF-MONKEY-ISLAND",
+    desc: "Establishing a reliable, nutritious dietary replenishment protocol for native toque macaque primates inhabiting Monkey Island in Negombo, preventing starvation, nutritional stress, and destructive human scavenging across urban waterways."
+  },
+  3: {
+    num: "03",
+    title: "Continuous Cleaning Program for All Waterways in the Island",
+    category: "Waterways & Marine",
+    categoryIcon: "fa-water",
+    badge: "Priority Pending",
+    badgeClass: "badge-urgent",
+    lead: "All-Island River Basin Restoration Team",
+    target: "Kelani, Maha Oya, Gin Ganga, and Negombo Canals",
+    budget: "$48,000 USD / Year (12 Strategic Waterways)",
+    ref: "BVF-CLEAN-WATERWAYS",
+    desc: "Islandwide network mobilization engaging grassroots teams to continually clean river mouths, canal networks, and estuary streams, stopping toxic plastic, polythene, and industrial discharge before it reaches ocean waters."
+  },
+  4: {
+    num: "04",
+    title: "Providing Fishing Gear to Underprivileged Fishing Families",
+    category: "Livelihoods & Training",
+    categoryIcon: "fa-fish",
+    badge: "Priority Pending",
+    badgeClass: "badge-urgent",
+    lead: "Artisanal Fishermen Welfare Council",
+    target: "Western, Southern & Northwestern Coastal Villages",
+    budget: "$35,000 USD (150 Coastal Families)",
+    ref: "BVF-FISHING-GEAR",
+    desc: "Supplying essential eco-friendly nets, navigational safety equipment, and gear to impoverished coastal artisanal fishermen unable to afford equipment, lifting their families from generational poverty."
+  },
+  5: {
+    num: "05",
+    title: "Providing Necessary Facilities to Underprivileged Rural Schools",
+    category: "Community & Schools",
+    categoryIcon: "fa-graduation-cap",
+    badge: "Priority Pending",
+    badgeClass: "badge-urgent",
+    lead: "Rural Education Uplift Taskforce",
+    target: "Monaragala, Nuwara Eliya & Polonnaruwa Districts",
+    budget: "$42,000 USD (14 Remote Primary Schools)",
+    ref: "BVF-RURAL-SCHOOLS",
+    desc: "Supplying clean drinking water filtration systems, proper sanitation units, essential classroom furniture, and learning materials to neglected remote schools across marginalized rural districts."
+  },
+  6: {
+    num: "06",
+    title: "Supporting Poor Children in Education with Career-Long Follow-up",
+    category: "Community & Schools",
+    categoryIcon: "fa-graduation-cap",
+    badge: "Priority Pending",
+    badgeClass: "badge-urgent",
+    lead: "BVF Student Mentorship Board",
+    target: "Island-wide Marginalized Communities",
+    budget: "$25 / Month Per Student ($300 / Year)",
+    ref: "BVF-CHILDREN-EDU",
+    desc: "A comprehensive scholarship and mentorship program that financially and academically sponsors underprivileged students from primary grades until completion of their final school career."
+  },
+  7: {
+    num: "07",
+    title: "Material & Machinery Support to Skilled Workers in Need",
+    category: "Livelihoods & Training",
+    categoryIcon: "fa-wrench",
+    badge: "Priority Pending",
+    badgeClass: "badge-urgent",
+    lead: "Artisan & Vocational Empowerment Unit",
+    target: "Gampaha, Colombo & Kurunegala Semi-Urban Belts",
+    budget: "$28,000 USD (Toolkits & Machinery for 60 Craftsmen)",
+    ref: "BVF-SKILLED-WORKERS",
+    desc: "Equipping skilled carpenters, mechanics, welders, and artisans with the vital machinery and tools they cannot afford, unlocking sustainable self-employment and dignified local livelihoods."
+  },
+  8: {
+    num: "08",
+    title: "Construction & Proper Maintenance of Public Toilet Facilities",
+    category: "Community & Schools",
+    categoryIcon: "fa-restroom",
+    badge: "Priority Pending",
+    badgeClass: "badge-urgent",
+    lead: "Urban Sanitation & Public Health Group",
+    target: "High-Traffic Rural Hubs, Weekly Fairs & Coastal Points",
+    budget: "$32,000 USD (8 Modular Sanitation Facilities)",
+    ref: "BVF-PUBLIC-TOILETS",
+    desc: "Building hygienic, universally accessible public sanitary facilities in bustling town centers and markets with an institutional ongoing maintenance framework to prevent health hazards."
+  },
+  9: {
+    num: "09",
+    title: "Safeguarding Elephants in Danger Zones via Fences & Railway Corridors",
+    category: "Wildlife & Animals",
+    categoryIcon: "fa-paw",
+    badge: "High Urgency",
+    badgeClass: "badge-urgent",
+    lead: "Elephant Corridor Defense Division",
+    target: "Maho, Galgamuwa, Habarana & Anuradhapura Railway Sectors",
+    budget: "$65,000 USD (Early Warning Sensors & Bio-Fencing)",
+    ref: "BVF-ELEPHANT-FENCES",
+    desc: "Installing community bio-fences (lime and palmyra cultivation), electric buffer boundaries, and engineered railway pathway corridors at high-risk collision tracks to save elephants from gruesome deaths."
+  },
+  10: {
+    num: "10",
+    title: "Establishment of First Elephant Hospital, Rescue Center & Orphanage in North Central Province",
+    category: "Wildlife & Animals",
+    categoryIcon: "fa-hospital",
+    badge: "Top Priority Project",
+    badgeClass: "badge-urgent",
+    lead: "BVF Veterinary Wildlife Hospital Board",
+    target: "Habarana / Minneriya / Anuradhapura Danger Zone",
+    budget: "$757,500 USD (Trauma ICU, Operating Theatres, Ambulances, Nursery)",
+    ref: "BVF-ELEPHANT-HOSPITAL",
+    hasCustomModal: 'openProjectReportModal',
+    desc: "Constructing a specialized emergency trauma hospital and sanctuary at Habarana / Minneriya danger zone to eliminate the fatal 250 km transport gap and save elephants from train accidents, Hakka Patas jaw bombs, and gunshots. Total Target: $757,500 USD."
+  },
+  11: {
+    num: "11",
+    title: "Mangrove Replanting in Negombo, Chilaw & Puttalam Lagoons",
+    category: "Waterways & Marine",
+    categoryIcon: "fa-seedling",
+    badge: "New Proposed",
+    badgeClass: "badge-proposed",
+    lead: "Coastal Wetland Restoration Wing",
+    target: "Negombo, Chilaw & Puttalam Lagoons",
+    budget: "$22,000 USD (50,000 Native Rhizophora Saplings)",
+    ref: "BVF-MANGROVES",
+    desc: "Restoring vital coastal nurseries by cultivating native Rhizophora mangrove saplings across eroded lagoons, defending biodiversity and bolstering fish and shrimp breeding grounds."
+  },
+  12: {
+    num: "12",
+    title: "Coral Reef Restoration & Ghost Net Removal",
+    category: "Waterways & Marine",
+    categoryIcon: "fa-water",
+    badge: "New Proposed",
+    badgeClass: "badge-proposed",
+    lead: "BVF Marine Diver Reconnaissance Team",
+    target: "Trincomalee (Pigeon Island), Hikkaduwa & Negombo Barrier Reef",
+    budget: "$34,000 USD (Marine Extraction Gear & Coral Nurseries)",
+    ref: "BVF-CORAL-RESTORE",
+    desc: "Deploying diver squads across Trincomalee, Hikkaduwa, and Negombo coastal seas to extract suffocating discarded ghost fishing nets and transplant climate-resilient coral micro-fragments."
+  },
+  13: {
+    num: "13",
+    title: "Sea Turtle Hatchery Protection & Anti-Poaching Patrols",
+    category: "Wildlife & Animals",
+    categoryIcon: "fa-shield-cat",
+    badge: "New Proposed",
+    badgeClass: "badge-proposed",
+    lead: "Southern & Western Marine Wildlife Patrol",
+    target: "Kosgoda, Rekawa & Bentota Nesting Beaches",
+    budget: "$18,500 USD / Year (Beach Patrols & Hatchery Enclosures)",
+    ref: "BVF-SEA-TURTLES",
+    desc: "Guarding vulnerable nesting beaches, intercepting illegal egg poaching, and running community-supervised turtle hatcheries to safely release thousands of endangered hatchlings into the ocean."
+  },
+  14: {
+    num: "14",
+    title: "Urgent Appeal: Stray Dog Rescue, Treatment & Shelter Project",
+    category: "Wildlife & Animals",
+    categoryIcon: "fa-dog",
+    badge: "Urgent Appeal • $225k Budget",
+    badgeClass: "badge-urgent",
+    lead: "BVF Animal Welfare Care Division",
+    target: "Western Province & Central Expressways",
+    budget: "$225,000 USD ($151,250 Setup + $71,760/yr Operating)",
+    ref: "BVF-STRAY-DOG-RESCUE",
+    hasCustomModal: 'openDogReportModal',
+    desc: "First-year budget: $225,000 USD ($151,250 setup + $71,760/yr ops). Emergency medical care, rabies vaccination, de-worming, parasite removal, and safe shelter. Tiers: $1/day saves a life, $5/mo feeding, $30/mo adopt a dog."
+  },
+  15: {
+    num: "15",
+    title: "E-Waste and Hazardous Battery Collection Program",
+    category: "Waterways & Marine",
+    categoryIcon: "fa-battery-three-quarters",
+    badge: "New Proposed",
+    badgeClass: "badge-proposed",
+    lead: "Environmental Contamination Prevention Unit",
+    target: "Major Municipalities & Coastal Collection Bins",
+    budget: "$16,000 USD (Safe Storage & Certified Recycling)",
+    ref: "BVF-EWASTE-PROGRAM",
+    desc: "Setting up dedicated drop-off points for electronics and battery recycling to stop lead, mercury, and cadmium contaminants from leaching into drinking water aquifers and lagoon estuaries."
+  },
+  16: {
+    num: "16",
+    title: "Rainwater Harvesting Systems for Dry Zone Villages",
+    category: "Community & Schools",
+    categoryIcon: "fa-cloud-rain",
+    badge: "New Proposed",
+    badgeClass: "badge-proposed",
+    lead: "Safe Drinking Water Rural Project",
+    target: "Anuradhapura, Polonnaruwa & Hambantota Hamlets",
+    budget: "$38,000 USD (50 Communal Rainwater Harvesting Units)",
+    ref: "BVF-RAINWATER-SYSTEMS",
+    desc: "Installing affordable, robust rooftop rainwater harvesting tanks in drought-prone hamlets across Anuradhapura, Polonnaruwa, and Hambantota to prevent Chronic Kidney Disease (CKDu)."
+  },
+  17: {
+    num: "17",
+    title: "Organic Home Gardening Training for Poor Families",
+    category: "Community & Schools",
+    categoryIcon: "fa-seedling",
+    badge: "New Proposed",
+    badgeClass: "badge-proposed",
+    lead: "Community Nutrition & Food Security Unit",
+    target: "Vulnerable Suburban & Rural Low-Income Families",
+    budget: "$14,000 USD (Starter Seed Banks, Organic Kits & Training for 200 Families)",
+    ref: "BVF-HOME-GARDENING",
+    desc: "Distributing heirloom seeds, composting kits, and agricultural training to low-income households to guarantee daily household nutrition and self-sufficiency amid inflation."
+  },
+  18: {
+    num: "18",
+    title: "Life Jacket Bank for Small-Boat Artisanal Fishermen",
+    category: "Livelihoods & Training",
+    categoryIcon: "fa-life-ring",
+    badge: "New Proposed",
+    badgeClass: "badge-proposed",
+    lead: "Maritime Safety Council",
+    target: "Negombo, Chilaw, Kalpitiya & Beruwala Fishing Harbours",
+    budget: "$19,500 USD (300 Marine Standard Solas Life Jackets)",
+    ref: "BVF-LIFE-JACKETS",
+    desc: "Creating an accessible community revolving safety depository providing ISO-certified life jackets on free loan to small traditional non-motorized craft fishermen, averting open-sea drownings."
+  },
+  19: {
+    num: "19",
+    title: "Vocational Training for Fishermen's Children in Marine Tech",
+    category: "Livelihoods & Training",
+    categoryIcon: "fa-graduation-cap",
+    badge: "New Proposed",
+    badgeClass: "badge-proposed",
+    lead: "BVF Maritime Technical Academy",
+    target: "Negombo Fisheries Training Center",
+    budget: "$29,000 USD (Outboard Engines, Workshop Tools & Curriculum)",
+    ref: "BVF-MARINE-TECH",
+    desc: "Free technical academy training youth in outboard boat engine mechanics, fiberglass vessel maintenance, marine electrical systems, and GPS satellite navigation for modern maritime careers."
+  },
+  20: {
+    num: "20",
+    title: "Beach & Public Market Cleaning with Women's Collectives",
+    category: "Livelihoods & Training",
+    categoryIcon: "fa-broom",
+    badge: "New Proposed",
+    badgeClass: "badge-proposed",
+    lead: "Women's Ecological & Economic Collective",
+    target: "Negombo Beach Strip, Fish Market & Porutota Canal",
+    budget: "$21,000 USD / Year (Daily Stipends & Sanitization Gear for 25 Women)",
+    ref: "BVF-MARKET-CLEANING",
+    desc: "A dual-impact ecological model hiring vulnerable female heads-of-household for paid beach and municipal fish market sanitization, providing dignified daily incomes while cleaning urban habitats."
+  }
+};
+
+window.openProjectBriefModal = function(projectId, e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const data = window.pendingProjectsData && window.pendingProjectsData[projectId];
+  if (!data) return;
+
+  if (data.hasCustomModal && typeof window[data.hasCustomModal] === 'function') {
+    window[data.hasCustomModal](e);
+    return;
+  }
+
+  const modal = document.getElementById('projectBriefModal');
+  if (modal) {
+    const numEl = modal.querySelector('.brief-num');
+    const badgeEl = modal.querySelector('.brief-badge');
+    const catEl = modal.querySelector('.brief-category');
+    const titleEl = modal.querySelector('.brief-title');
+    const targetEl = modal.querySelector('.brief-target');
+    const budgetEl = modal.querySelector('.brief-budget');
+    const refEl = modal.querySelector('.brief-ref');
+    const descEl = modal.querySelector('.brief-desc');
+    const donateBtn = modal.querySelector('.brief-donate-btn');
+    const waBtn = modal.querySelector('.brief-wa-btn');
+
+    if (numEl) numEl.textContent = '#' + data.num;
+    if (badgeEl) {
+      badgeEl.textContent = data.badge;
+      badgeEl.className = 'brief-badge opt-badge ' + (data.badgeClass || 'opt-badge-gold');
+    }
+    if (catEl) catEl.innerHTML = '<i class="fa-solid ' + data.categoryIcon + '"></i> ' + data.category;
+    if (titleEl) titleEl.textContent = data.title;
+    if (targetEl) targetEl.textContent = data.target;
+    if (budgetEl) budgetEl.textContent = data.budget;
+    if (refEl) refEl.textContent = data.ref;
+    if (descEl) descEl.textContent = data.desc;
+
+    if (donateBtn) {
+      donateBtn.onclick = function() {
+        closeBvfModal('projectBriefModal');
+        openDonationModal(data.title);
+      };
+    }
+
+    if (waBtn) {
+      waBtn.href = 'https://wa.me/94777304152?text=' + encodeURIComponent('Hello Best Vision Foundation, I would like to sponsor / inquire about Project #' + data.num + ': ' + data.title + ' (Ref: ' + data.ref + ')');
+    }
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  } else {
+    // If no brief modal on this page, open donation modal directly
+    openDonationModal(data.title);
+  }
+};
+
+
 
 // Auto-detect ?donate=1 or #donate from QR code scans to immediately pop up bank transfer modal
 window.checkAutoOpenDonation = function() {
@@ -266,6 +614,16 @@ window.closeBvfModal = function(modalId) {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Close any active modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active').forEach(m => {
+        m.classList.remove('active');
+      });
+      document.body.style.overflow = '';
+    }
+  });
+
   window.checkAutoOpenDonation();
 
   // ==========================================
