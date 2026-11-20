@@ -7,7 +7,7 @@
   <meta name="description" content="Support Best Vision Foundation through volunteerism, advocacy, and donations. Join our Negombo Lagoon cleanups or support elephant welfare programs.">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=4.8">
+  <link rel="stylesheet" href="assets/css/style.css?v=4.9">
 
   <!-- Immediate Theme Restore (Prevents Flash) -->
   <script>
@@ -366,93 +366,142 @@
         </div>
       </div>
 
-      <!-- Step 2: Sampath Bank Account Details (Direct Copyable List - No QR) -->
+      <!-- Step 2: Payment Method: LANKAQR or Bank Account Transfer -->
       <div class="donation-step-box bank-copy-list-box">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.45rem;">
-          <span style="font-weight: 800; color: var(--emerald-neon); font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.04em;">
-            <i class="fa-solid fa-building-columns"></i> Sampath Bank Account Details
-          </span>
-          <span style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">
-            Tap Copy for Banking App
-          </span>
+        <div class="modal-method-tabs">
+          <button type="button" class="modal-method-tab tab-lankaqr active" onclick="switchDonationMethod('lankaqr', this)">
+            <i class="fa-solid fa-qrcode"></i> LANKAQR Mobile Pay
+          </button>
+          <button type="button" class="modal-method-tab tab-bank" onclick="switchDonationMethod('bank', this)">
+            <i class="fa-solid fa-building-columns"></i> Bank Account &amp; SWIFT
+          </button>
         </div>
 
-        <div class="bank-copy-rows">
-          <!-- Account Number -->
-          <div class="bank-copy-row highlight-row">
-            <div class="bank-copy-info">
-              <span class="bank-copy-label">ACCOUNT NUMBER</span>
-              <span class="bank-copy-val font-mono num-large">0088 6000 0033</span>
+        <!-- Pane 1: LANKAQR Mobile Pay -->
+        <div class="method-pane-lankaqr">
+          <div class="lankaqr-modal-box">
+            <div class="lankaqr-header" style="justify-content: center; gap: 0.65rem; margin-bottom: 0.5rem;">
+              <span class="lankaqr-badge"><i class="fa-solid fa-qrcode"></i> LANKAQR Direct Transfer</span>
+              <span class="lankaqr-instant-pill"><i class="fa-solid fa-bolt"></i> Instant</span>
             </div>
-            <button type="button" class="btn-copy-field btn-copy-primary" onclick="copyAccountInfo('008860000033', this)" title="Copy Account Number">
-              <i class="fa-solid fa-copy"></i> <span>Copy No.</span>
-            </button>
+
+            <div class="lankaqr-img-frame" style="margin-bottom: 0.65rem;">
+              <a href="assets/images/bvf-lankaqr.png" target="_blank" rel="noopener" title="Tap to view full QR">
+                <img src="assets/images/bvf-lankaqr.png" alt="LANKAQR Direct Transfer to BVF Treasurer" style="width: 175px; height: 175px; display: block; object-fit: contain;" />
+              </a>
+            </div>
+
+            <div class="lankaqr-meta" style="max-width: 440px;">
+              <div class="lankaqr-beneficiary">
+                <span class="meta-label">DIRECT TRANSFER BENEFICIARY:</span>
+                <span class="meta-val">DWM PERERA</span>
+                <span class="meta-sub">Treasurer &bull; Best Vision Foundation</span>
+              </div>
+
+              <p class="lankaqr-instructions">
+                Scan with any Sri Lankan mobile banking app (<strong>Commercial Bank Q+</strong>, <strong>Sampath Vishwa</strong>, <strong>Flash</strong>, <strong>BOC SmartPay</strong>, <strong>HNB SOLO</strong>, <strong>FriMi</strong>, <strong>iPay</strong>, etc.) to transfer donations directly to the Treasurer of BVF.
+              </p>
+
+              <div class="lankaqr-actions" style="display: flex; gap: 0.5rem;">
+                <a href="assets/images/bvf-lankaqr.png" download="BVF-LANKAQR-Treasurer.png" class="btn btn-glass lankaqr-dl-btn" style="flex: 1;">
+                  <i class="fa-solid fa-download"></i> Save QR to Phone
+                </a>
+                <button type="button" class="btn btn-glass" onclick="switchDonationMethod('bank', this)" style="flex: 1; font-size: 0.78rem; padding: 0.45rem 0.65rem; justify-content: center;">
+                  <i class="fa-solid fa-building-columns"></i> View Bank Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pane 2: Bank Account Details -->
+        <div class="method-pane-bank" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.45rem;">
+            <span style="font-weight: 800; color: var(--emerald-neon); font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.04em;">
+              <i class="fa-solid fa-building-columns"></i> Sampath Bank Account Details
+            </span>
+            <span style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">
+              Tap Copy for Banking App
+            </span>
           </div>
 
-          <!-- Account Name -->
-          <div class="bank-copy-row">
-            <div class="bank-copy-info">
-              <span class="bank-copy-label">ACCOUNT NAME (BENEFICIARY)</span>
-              <span class="bank-copy-val">BEST VISION FOUNDATION</span>
+          <div class="bank-copy-rows">
+            <!-- Account Number -->
+            <div class="bank-copy-row highlight-row">
+              <div class="bank-copy-info">
+                <span class="bank-copy-label">ACCOUNT NUMBER</span>
+                <span class="bank-copy-val font-mono num-large">0088 6000 0033</span>
+              </div>
+              <button type="button" class="btn-copy-field btn-copy-primary" onclick="copyAccountInfo('008860000033', this)" title="Copy Account Number">
+                <i class="fa-solid fa-copy"></i> <span>Copy No.</span>
+              </button>
             </div>
-            <button type="button" class="btn-copy-field" onclick="copyAccountInfo('BEST VISION FOUNDATION', this)" title="Copy Beneficiary Name">
-              <i class="fa-solid fa-copy"></i> <span>Copy Name</span>
-            </button>
-          </div>
 
-          <!-- Bank & Branch -->
-          <div class="bank-copy-row">
-            <div class="bank-copy-info">
-              <span class="bank-copy-label">BANK &amp; BRANCH</span>
-              <span class="bank-copy-val">SAMPATH BANK &bull; NEGOMBO (02), SRI LANKA</span>
-            </div>
-            <button type="button" class="btn-copy-field" onclick="copyAccountInfo('SAMPATH BANK, NEGOMBO 02, SRI LANKA', this)" title="Copy Bank and Branch">
-              <i class="fa-solid fa-copy"></i> <span>Copy</span>
-            </button>
-          </div>
-
-          <!-- Branch Code & Bank Code -->
-          <div class="bank-copy-row-grid">
+            <!-- Account Name -->
             <div class="bank-copy-row">
               <div class="bank-copy-info">
-                <span class="bank-copy-label">BRANCH CODE</span>
-                <span class="bank-copy-val font-mono">7278</span>
+                <span class="bank-copy-label">ACCOUNT NAME (BENEFICIARY)</span>
+                <span class="bank-copy-val">BEST VISION FOUNDATION</span>
               </div>
-              <button type="button" class="btn-copy-field" onclick="copyAccountInfo('7278', this)" title="Copy Branch Code">
+              <button type="button" class="btn-copy-field" onclick="copyAccountInfo('BEST VISION FOUNDATION', this)" title="Copy Beneficiary Name">
+                <i class="fa-solid fa-copy"></i> <span>Copy Name</span>
+              </button>
+            </div>
+
+            <!-- Bank & Branch -->
+            <div class="bank-copy-row">
+              <div class="bank-copy-info">
+                <span class="bank-copy-label">BANK &amp; BRANCH</span>
+                <span class="bank-copy-val">SAMPATH BANK &bull; NEGOMBO (02), SRI LANKA</span>
+              </div>
+              <button type="button" class="btn-copy-field" onclick="copyAccountInfo('SAMPATH BANK, NEGOMBO 02, SRI LANKA', this)" title="Copy Bank and Branch">
                 <i class="fa-solid fa-copy"></i> <span>Copy</span>
               </button>
             </div>
-            <div class="bank-copy-row">
-              <div class="bank-copy-info">
-                <span class="bank-copy-label">BANK CODE</span>
-                <span class="bank-copy-val font-mono">088</span>
+
+            <!-- Branch Code & Bank Code -->
+            <div class="bank-copy-row-grid">
+              <div class="bank-copy-row">
+                <div class="bank-copy-info">
+                  <span class="bank-copy-label">BRANCH CODE</span>
+                  <span class="bank-copy-val font-mono">7278</span>
+                </div>
+                <button type="button" class="btn-copy-field" onclick="copyAccountInfo('7278', this)" title="Copy Branch Code">
+                  <i class="fa-solid fa-copy"></i> <span>Copy</span>
+                </button>
               </div>
-              <button type="button" class="btn-copy-field" onclick="copyAccountInfo('088', this)" title="Copy Bank Code">
-                <i class="fa-solid fa-copy"></i> <span>Copy</span>
+              <div class="bank-copy-row">
+                <div class="bank-copy-info">
+                  <span class="bank-copy-label">BANK CODE</span>
+                  <span class="bank-copy-val font-mono">088</span>
+                </div>
+                <button type="button" class="btn-copy-field" onclick="copyAccountInfo('088', this)" title="Copy Bank Code">
+                  <i class="fa-solid fa-copy"></i> <span>Copy</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Mandatory Remark / Reference -->
+            <div class="bank-copy-row highlight-ref">
+              <div class="bank-copy-info">
+                <span class="bank-copy-label" style="color: var(--cyan-neon);">TRANSFER REMARKS / REFERENCE</span>
+                <span class="bank-copy-val font-mono modal-bank-project-ref" style="color: var(--cyan-neon); font-size: 1.05rem;">BVF-ELEPHANT-HOSPITAL</span>
+              </div>
+              <button type="button" class="btn-copy-field btn-copy-cyan" onclick="copyAccountInfo(document.querySelector('.modal-bank-project-ref').textContent, this)" title="Copy Deposit Reference">
+                <i class="fa-solid fa-copy"></i> <span>Copy Ref</span>
               </button>
             </div>
-          </div>
 
-          <!-- Mandatory Remark / Reference -->
-          <div class="bank-copy-row highlight-ref">
-            <div class="bank-copy-info">
-              <span class="bank-copy-label" style="color: var(--cyan-neon);">TRANSFER REMARKS / REFERENCE</span>
-              <span class="bank-copy-val font-mono modal-bank-project-ref" style="color: var(--cyan-neon); font-size: 1.05rem;">BVF-ELEPHANT-HOSPITAL</span>
+            <!-- SWIFT Code -->
+            <div class="bank-copy-row">
+              <div class="bank-copy-info">
+                <span class="bank-copy-label">SWIFT CODE (FOR OVERSEAS TRANSFERS)</span>
+                <span class="bank-copy-val font-mono">BSAMLKLX</span>
+              </div>
+              <button type="button" class="btn-copy-field" onclick="copyAccountInfo('BSAMLKLX', this)" title="Copy SWIFT Code">
+                <i class="fa-solid fa-copy"></i> <span>Copy SWIFT</span>
+              </button>
             </div>
-            <button type="button" class="btn-copy-field btn-copy-cyan" onclick="copyAccountInfo(document.querySelector('.modal-bank-project-ref').textContent, this)" title="Copy Deposit Reference">
-              <i class="fa-solid fa-copy"></i> <span>Copy Ref</span>
-            </button>
-          </div>
-
-          <!-- SWIFT Code -->
-          <div class="bank-copy-row">
-            <div class="bank-copy-info">
-              <span class="bank-copy-label">SWIFT CODE (FOR OVERSEAS TRANSFERS)</span>
-              <span class="bank-copy-val font-mono">BSAMLKLX</span>
-            </div>
-            <button type="button" class="btn-copy-field" onclick="copyAccountInfo('BSAMLKLX', this)" title="Copy SWIFT Code">
-              <i class="fa-solid fa-copy"></i> <span>Copy SWIFT</span>
-            </button>
           </div>
         </div>
       </div>
@@ -560,6 +609,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=4.8"></script>
+  <script src="assets/js/main.js?v=4.9"></script>
 </body>
 </html>

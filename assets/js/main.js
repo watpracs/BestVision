@@ -154,6 +154,26 @@ window.openDonationModal = function(projectName, amount) {
   }
 };
 
+window.switchDonationMethod = function(method, btn) {
+  const container = btn ? (btn.closest('.donation-step-box') || btn.closest('.modal-dialog') || document) : document;
+  const lankaqrPane = container.querySelector('.method-pane-lankaqr');
+  const bankPane = container.querySelector('.method-pane-bank');
+  const tabLanka = container.querySelector('.tab-lankaqr');
+  const tabBank = container.querySelector('.tab-bank');
+
+  if (method === 'lankaqr') {
+    if (lankaqrPane) lankaqrPane.style.display = 'block';
+    if (bankPane) bankPane.style.display = 'none';
+    if (tabLanka) tabLanka.classList.add('active');
+    if (tabBank) tabBank.classList.remove('active');
+  } else {
+    if (lankaqrPane) lankaqrPane.style.display = 'none';
+    if (bankPane) bankPane.style.display = 'block';
+    if (tabLanka) tabLanka.classList.remove('active');
+    if (tabBank) tabBank.classList.add('active');
+  }
+};
+
 window.openDonationModalWithAmount = function(amount, projectName) {
   window.openDonationModal(projectName || window.activeDonationProject, amount);
 };
