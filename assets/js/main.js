@@ -64,6 +64,7 @@ window.setCustomDonationAmount = function(val) {
 window.getProjectRefCode = function(proj) {
   if (!proj) return 'BVF-ELEPHANT-HOSPITAL';
   const p = proj.toLowerCase();
+  if (p.includes('galgamuwa')) return 'BVF-GALGAMUWA-RELIEF';
   if (p.includes('elephant') || p.includes('hospital') || p.includes('orphanage')) return 'BVF-ELEPHANT-HOSPITAL';
   if (p.includes('dog') || p.includes('shelter')) return 'BVF-STRAY-DOG-RESCUE';
   if (p.includes('lagoon') || p.includes('sunken') || p.includes('vessel')) return 'BVF-NEGOMBO-LAGOON';
@@ -193,6 +194,17 @@ window.triggerPayPal = function(customAmtId, explicitAmt, explicitProject) {
 };
 
 // Poster Lightboxes
+window.openGalgamuwaPosterModal = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const modal = document.getElementById('galgamuwaPosterModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  } else {
+    window.open('assets/images/galgamuwa-relief-campaign-poster.jpg', '_blank');
+  }
+};
+
 window.openPosterLightbox = function(e) {
   if (e && e.preventDefault) e.preventDefault();
   const modal = document.getElementById('posterLightboxModal');
@@ -607,7 +619,9 @@ window.checkAutoOpenDonation = function() {
     if (params.has('donate') || params.has('qr') || hash.includes('donate') || hash === '#bank-details') {
       const amt = params.get('donate') || params.get('amt') || '1';
       let proj = params.get('project') || params.get('proj') || '';
-      if (proj.toLowerCase().includes('elephant')) {
+      if (proj.toLowerCase().includes('galgamuwa')) {
+        proj = 'Galgamuwa Human-Elephant Conflict Relief & Rebuilding Fund';
+      } else if (proj.toLowerCase().includes('elephant')) {
         proj = 'Elephant Hospital & Orphanage (Habarana / Minneriya / Anuradhapura)';
       } else if (proj.toLowerCase().includes('dog')) {
         proj = 'Island-Wide Stray Dog Rescue & Shelter';
