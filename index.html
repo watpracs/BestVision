@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Main Futuristic Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=5.0">
+  <link rel="stylesheet" href="assets/css/style.css?v=5.1">
 
   <!-- Immediate Theme Restore (Prevents Flash) -->
   <script>
@@ -156,36 +156,45 @@
         </div>
       </div>
 
-      <!-- Featured News Hero Visual Card (Elephants Priority) -->
+      <!-- Featured Top Poster Visual Card (Help Galgamuwa Live Campaign) -->
       <div class="hero-visual">
         <div class="holo-card">
-          <div class="holo-media">
-            <img src="assets/images/elephant-hospital-habarana.jpg" alt="First Emergency Elephant Hospital &amp; Rescue Center in Habarana / Minneriya / Anuradhapura">
-            <div class="holo-status-pill" style="background: rgba(220, 38, 38, 0.25); border-color: #ef4444; color: #fca5a5;">
-              <span class="pulse-dot" style="background: #ef4444;"></span> FEATURED NEWS &bull; TOP APPEAL
+          <div class="holo-media" style="cursor: pointer; height: 320px;" onclick="openBvfModal('galgamuwaPosterModal')" title="Click to enlarge full Galgamuwa Campaign Poster">
+            <img src="assets/images/galgamuwa-relief-campaign-poster.jpg" alt="Help Galgamuwa Live - Human-Elephant Conflict Emergency Relief Campaign Poster" style="object-position: center top;" />
+            <div class="holo-status-pill" style="background: rgba(220, 38, 38, 0.35); border-color: #ef4444; color: #ffffff; font-weight: 800;">
+              <span class="pulse-dot" style="background: #ef4444;"></span> 🚨 FEATURED TOP APPEAL &bull; EMERGENCY POSTER
+            </div>
+            <div style="position: absolute; bottom: 0.75rem; right: 0.75rem; background: rgba(0,0,0,0.78); backdrop-filter: blur(4px); padding: 0.3rem 0.65rem; border-radius: 4px; font-size: 0.75rem; color: #ffffff; border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; gap: 0.35rem;">
+              <i class="fa-solid fa-magnifying-glass-plus"></i> Tap to Enlarge Poster
             </div>
           </div>
           <div class="holo-body">
-            <h3 class="holo-title">First Emergency Elephant Hospital &amp; Sanctuary</h3>
-            <p class="holo-desc">
-              Constructing Sri Lanka's first 24/7 wildlife trauma hospital directly in the North Central danger zone (Habarana / Minneriya / Anuradhapura) to save 350&ndash;400 elephants from railway collisions, jaw bombs, and wire snares.
+            <h3 class="holo-title" style="font-size: 1.25rem; line-height: 1.35; margin-bottom: 0.45rem;">
+              <a href="javascript:void(0)" onclick="openBvfModal('galgamuwaPosterModal')" style="color: inherit; text-decoration: none;">Help Galgamuwa Live: "Not Only Elephants, People Must Also Live"</a>
+            </h3>
+            <p class="holo-desc" style="font-size: 0.84rem; line-height: 1.45; margin-bottom: 0.75rem;">
+              Intense Human-Elephant Conflict in Galgamuwa has left farming families homeless, farmers critically injured, and crops destroyed. BVF is raising emergency relief to rebuild homes, compensate crop losses, and provide medical aid.
             </p>
             
-            <div class="progress-track">
-              <div class="progress-fill" style="width: 32%; background: linear-gradient(90deg, #f59e0b, #10b981);"></div>
-            </div>
-            <div class="progress-meta">
-              <span>Target: $757,500 USD Fund</span>
-              <strong style="color: var(--amber-solar);"><i class="fa-solid fa-qrcode"></i> $1 Tourist Campaign Active</strong>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.85rem;">
+              <span style="font-size: 0.72rem; padding: 0.2rem 0.5rem; border-radius: 4px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; font-weight: 700;">
+                <i class="fa-solid fa-house-chimney-crack"></i> Rebuild Homes
+              </span>
+              <span style="font-size: 0.72rem; padding: 0.2rem 0.5rem; border-radius: 4px; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); color: #fcd34d; font-weight: 700;">
+                <i class="fa-solid fa-wheat-awn"></i> Crop Relief
+              </span>
+              <span style="font-size: 0.72rem; padding: 0.2rem 0.5rem; border-radius: 4px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; font-weight: 700;">
+                <i class="fa-solid fa-kit-medical"></i> Medical Aid
+              </span>
             </div>
 
-            <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem;">
-              <button class="btn btn-neon-glow" onclick="openDonationModal('Elephant Hospital &amp; Orphanage (Habarana / Minneriya / Anuradhapura)', 1)" style="flex: 1; padding: 0.6rem 1rem; font-size: 0.85rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #f59e0b; color: #ffffff;">
-                <i class="fa-solid fa-heart"></i> Donate $1 QR / Wire
+            <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+              <button class="btn btn-neon-glow" onclick="openDonationModal('Galgamuwa Human-Elephant Conflict Relief &amp; Rebuilding Fund', 1)" style="flex: 1.2; padding: 0.6rem 0.85rem; font-size: 0.84rem; background: linear-gradient(135deg, #ef4444, #dc2626); border-color: #ef4444; color: #ffffff;">
+                <i class="fa-solid fa-hand-holding-dollar"></i> Donate to Galgamuwa Fund
               </button>
-              <a href="#elephant-hospital" class="btn btn-glass" style="padding: 0.6rem 1rem; font-size: 0.85rem;">
-                <i class="fa-solid fa-hospital"></i> Hospital Blueprint
-              </a>
+              <button class="btn btn-glass" onclick="openBvfModal('galgamuwaPosterModal')" style="flex: 1; padding: 0.6rem 0.85rem; font-size: 0.84rem;">
+                <i class="fa-solid fa-expand"></i> View Poster &bull; LankaQR
+              </button>
             </div>
           </div>
         </div>
@@ -367,6 +376,9 @@
                   Official $1 Tourist Campaign Poster with QR Code. Perfect for hotels, tour operators, and safari jeeps.
                 </div>
                 <div style="display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.2rem;">
+                  <a href="assets/images/galgamuwa-relief-campaign-poster.jpg" target="_blank" rel="noopener" class="btn btn-glass" onclick="openGalgamuwaPosterModal(event)" style="padding: 0.35rem 0.65rem; font-size: 0.75rem; width: fit-content; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; color: #f87171; border-color: rgba(239, 68, 68, 0.4);">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Galgamuwa Poster
+                  </a>
                   <a href="assets/images/elephant-hospital-tourist-poster.jpg" target="_blank" rel="noopener" class="btn btn-glass" onclick="openPosterLightbox(event)" style="padding: 0.35rem 0.65rem; font-size: 0.75rem; width: fit-content; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
                     <i class="fa-solid fa-expand"></i> $1 QR Poster
                   </a>
@@ -2041,6 +2053,6 @@
   </footer>
 
   <!-- Main JavaScript Engine -->
-  <script src="assets/js/main.js?v=5.0"></script>
+  <script src="assets/js/main.js?v=5.1"></script>
 </body>
 </html>
